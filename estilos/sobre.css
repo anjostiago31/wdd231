@@ -1,11 +1,6 @@
-/* ==========================================
-   CÂMARA DE COMÉRCIO DE GARÇA
-   Arquivo: sobre.css
-   Autor: Tiago dos Anjos
-   Descrição: Estilos da página Sobre Garça
-========================================== */
+/* Câmara de Comércio de Garça | sobre.css */
 
-/* 1. CORES DAS SEÇÕES */
+/* CORES DAS SEÇÕES */
 .sobre-introducao,
 .dados-cidade,
 .turismo {
@@ -18,7 +13,7 @@
     background-color: var(--branco);
 }
 
-/* 2. APRESENTAÇÃO */
+/* INTRODUÇÃO */
 .sobre-introducao {
     text-align: center;
 }
@@ -42,14 +37,14 @@
     box-shadow: var(--sombra);
 }
 
-/* 3. HISTÓRIA */
+/* HISTÓRIA */
 .historia p {
     max-width: 900px;
     margin-bottom: 1.5rem;
     text-align: justify;
 }
 
-/* 4. DADOS DEMOGRÁFICOS */
+/* DADOS DEMOGRÁFICOS */
 .numero-destaque {
     font-size: 1.6rem;
     font-weight: bold;
@@ -67,7 +62,7 @@
     text-decoration: underline;
 }
 
-/* 5. GALERIA */
+/* GALERIA */
 .galeria {
     display: grid;
     gap: 1.5rem;

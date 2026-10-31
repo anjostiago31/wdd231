@@ -1,38 +1,12 @@
-/* ==========================================
-   CÂMARA DE COMÉRCIO DE GARÇA
-   Arquivo: maior.css
-   Autor: Tiago dos Anjos
-   Descrição: Layout responsivo
-========================================== */
+/* Câmara de Comércio de Garça | maior.css */
+/* Carregar após os estilos específicos */
 
-/* 1. AJUSTES GERAIS */
-.card,
-.empresa-card,
-.plano,
-.clima-atual,
-.previsao {
-    min-width: 0;
-}
-
-.card,
-.empresa-card,
-.plano {
-    overflow-wrap: anywhere;
-}
-
-/* 2. TABLETS - A PARTIR DE 600px */
 @media screen and (min-width: 600px) {
-
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.9rem; }
 
     .cabecalho { padding: 1.2rem 2rem; }
-
-    .identidade img {
-        width: 75px;
-        height: 75px;
-    }
-
+    .identidade img { width: 75px; height: 75px; }
     .identidade h2 { font-size: 1.3rem; }
 
     .hero > img { height: 500px; }
@@ -41,9 +15,9 @@
 
     .cards,
     .rodape-conteudo,
-    .galeria,
     .empresas-grade,
     .planos-container,
+    .galeria,
     .clima-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -67,16 +41,13 @@
     }
 }
 
-/* 3. TABLETS MENORES - 600px A 767px */
 @media screen and (min-width: 600px) and (max-width: 767px) {
     .clima-container {
         grid-template-columns: 1fr;
     }
 }
 
-/* 4. NOTEBOOKS - A PARTIR DE 768px */
 @media screen and (min-width: 768px) {
-
     .cabecalho {
         padding: 1rem 2rem;
         flex-wrap: nowrap;
@@ -124,9 +95,7 @@
     }
 }
 
-/* 5. TELAS INTERMEDIÁRIAS - 768px A 899px */
 @media screen and (min-width: 768px) and (max-width: 899px) {
-
     .cabecalho { padding: 1rem 1.5rem; }
     .identidade h2 { font-size: 1.1rem; }
 
@@ -136,16 +105,9 @@
     }
 }
 
-/* 6. COMPUTADORES - A PARTIR DE 1024px */
 @media screen and (min-width: 1024px) {
-
     .cabecalho { padding: 1rem 5%; }
-
-    .identidade img {
-        width: 80px;
-        height: 80px;
-    }
-
+    .identidade img { width: 80px; height: 80px; }
     .identidade h2 { font-size: 1.5rem; }
 
     #navegacao ul { gap: 1rem; }
@@ -180,12 +142,12 @@
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
+    .galeria img { height: 220px; }
+
     .empresas-grade,
     .planos-container {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-
-    .galeria img { height: 220px; }
 
     .formulario button[type="submit"] {
         width: auto;
@@ -193,9 +155,7 @@
     }
 }
 
-/* 7. TELAS GRANDES - A PARTIR DE 1440px */
 @media screen and (min-width: 1440px) {
-
     .informacoes,
     .empresas-destaque {
         padding-left: max(5%, calc((100% - 1400px) / 2));
@@ -208,19 +168,16 @@
     .clima-container { max-width: 1300px; }
 }
 
-/* 8. AJUSTES PARA TELAS BAIXAS */
 @media screen and (max-height: 500px) {
     .hero > img { height: 350px; }
     .hero-conteudo h2 { font-size: 1.5rem; }
     .hero-conteudo p { font-size: 0.9rem; }
 }
 
-/* 9. AJUSTES PARA IMPRESSÃO */
 @media print {
-
     body {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: #fff;
+        color: #000;
     }
 
     .cabecalho,
@@ -235,19 +192,19 @@
 
     .card {
         box-shadow: none;
-        border: 1px solid #999999;
+        border: 1px solid #999;
         break-inside: avoid;
     }
 
     .botao {
         background-color: transparent;
-        color: #000000;
-        border: 1px solid #000000;
+        color: #000;
+        border: 1px solid #000;
     }
 
     footer {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: #fff;
+        color: #000;
     }
 
     footer p,
@@ -255,6 +212,21 @@
     footer a,
     footer time,
     .rodape-conteudo h3 {
-        color: #000000;
+        color: #000;
     }
+}
+
+/* PREVENÇÃO DE TRANSBORDAMENTO */
+.card,
+.empresa-card,
+.plano,
+.clima-atual,
+.previsao {
+    min-width: 0;
+}
+
+.card,
+.empresa-card,
+.plano {
+    overflow-wrap: anywhere;
 }

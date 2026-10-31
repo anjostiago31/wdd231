@@ -1,11 +1,6 @@
-/* ==========================================
-   CÂMARA DE COMÉRCIO DE GARÇA
-   Arquivo: obrigado.css
-   Autor: Tiago dos Anjos
-   Descrição: Página de confirmação
-========================================== */
+/* Câmara de Comércio de Garça | obrigado.css */
 
-/* 1. CONFIRMAÇÃO */
+/* CONFIRMAÇÃO */
 .confirmacao {
     background-color: var(--cinza-claro);
     min-height: 70vh;
@@ -21,7 +16,7 @@
     text-align: center;
 }
 
-/* 2. ÍCONE */
+/* ÍCONE */
 .icone-confirmacao {
     display: flex;
     justify-content: center;
@@ -36,7 +31,7 @@
     font-weight: bold;
 }
 
-/* 3. TÍTULO E MENSAGEM */
+/* TÍTULO */
 .confirmacao-card h1 {
     margin-bottom: 1rem;
 }
@@ -46,14 +41,14 @@
     margin-bottom: 1.5rem;
 }
 
-/* 4. ESPAÇAMENTOS COMPARTILHADOS */
+/* ESPAÇAMENTOS */
 .resumo-solicitacao,
 .aviso-confirmacao,
 .acoes-confirmacao {
     margin-top: 2rem;
 }
 
-/* 5. RESUMO DA SOLICITAÇÃO */
+/* RESUMO */
 .resumo-solicitacao {
     text-align: left;
 }
@@ -63,10 +58,8 @@
     margin-bottom: 1.5rem;
 }
 
-/* 6. DADOS DA CONFIRMAÇÃO */
 .dados-confirmacao {
     --borda-dados: #d6dde5;
-
     border: 1px solid var(--borda-dados);
     border-radius: 8px;
     overflow: hidden;
@@ -96,16 +89,12 @@
     overflow-wrap: anywhere;
 }
 
-/* 7. AVISO */
+/* AVISO */
 .aviso-confirmacao {
-    padding: 1rem;
-    background-color: var(--azul-aviso);
-    border-left: 4px solid var(--azul-secundario);
     text-align: left;
-    font-size: 0.9rem;
 }
 
-/* 8. BOTÕES */
+/* BOTÕES */
 .acoes-confirmacao {
     display: flex;
     flex-direction: column;
