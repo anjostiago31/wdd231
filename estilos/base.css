@@ -5,22 +5,28 @@
    Descrição: Estilos compartilhados - Mobile First
 ========================================== */
 
-/* 1. VARIÁVEIS */
+/* ==========================================
+   1. VARIÁVEIS
+========================================== */
 
 :root {
     --azul-principal: #17324d;
     --azul-secundario: #244c70;
     --dourado: #c59d5f;
     --dourado-escuro: #8b642e;
+
     --branco: #ffffff;
     --cinza-claro: #f4f6f8;
     --cinza-medio: #dce2e7;
     --cinza-escuro: #263238;
+
     --azul-rodape: #10263a;
     --azul-borda-rodape: #38516a;
     --azul-aviso: #e8f0f7;
+
     --cinza-borda-formulario: #8996a3;
     --dourado-hover: #e0b979;
+
     --vermelho-temperatura: #a12b21;
     --verde-confirmacao: #176b32;
     --verde-claro-confirmacao: #e3f4e6;
@@ -32,7 +38,9 @@
     --borda: 8px;
 }
 
-/* 2. RESET */
+/* ==========================================
+   2. RESET E ESTILOS GERAIS
+========================================== */
 
 * {
     margin: 0;
@@ -99,23 +107,38 @@ p {
     margin-bottom: 1rem;
 }
 
-/* 3. ACESSIBILIDADE */
+/* ==========================================
+   3. ACESSIBILIDADE
+========================================== */
 
 :focus-visible {
     outline: 3px solid var(--dourado);
     outline-offset: 4px;
 }
 
-/* 4. CABEÇALHO */
+/* Foco mais visível em áreas escuras */
+
+.cabecalho :focus-visible,
+footer :focus-visible,
+.associacao-destaque :focus-visible {
+    outline-color: var(--branco);
+}
+
+/* ==========================================
+   4. CABEÇALHO
+========================================== */
 
 .cabecalho {
     background-color: var(--azul-principal);
     color: var(--branco);
+
     padding: 1rem;
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+
     box-shadow: var(--sombra);
 }
 
@@ -143,14 +166,18 @@ p {
     margin: 0;
 }
 
-/* 5. MENU MOBILE */
+/* ==========================================
+   5. MENU MOBILE
+========================================== */
 
 #menu {
     background: transparent;
     border: 1px solid var(--branco);
     border-radius: 5px;
+
     color: var(--branco);
     font-size: 1.7rem;
+
     padding: 0.2rem 0.7rem;
 }
 
@@ -170,6 +197,7 @@ p {
 
 #navegacao ul {
     list-style: none;
+
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
@@ -177,9 +205,12 @@ p {
 
 #navegacao a {
     display: block;
+
     padding: 0.8rem 1rem;
+
     color: var(--branco);
     border-radius: 5px;
+
     transition: background-color 0.3s;
 }
 
@@ -189,7 +220,9 @@ p {
     color: var(--azul-principal);
 }
 
-/* 6. CONTEÚDO PRINCIPAL */
+/* ==========================================
+   6. CONTEÚDO PRINCIPAL
+========================================== */
 
 main {
     min-height: 60vh;
@@ -214,11 +247,14 @@ section > p {
     text-align: center;
 }
 
-/* 7. HERO */
+/* ==========================================
+   7. HERO
+========================================== */
 
 .hero {
     position: relative;
     padding: 0;
+
     background-color: var(--azul-principal);
     overflow: hidden;
 }
@@ -226,17 +262,22 @@ section > p {
 .hero > img {
     width: 100%;
     height: 450px;
+
     object-fit: cover;
     opacity: 0.45;
 }
 
 .hero-conteudo {
     position: absolute;
+
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
+
     width: 90%;
     max-width: 800px;
+
     text-align: center;
     color: var(--branco);
 }
@@ -248,20 +289,27 @@ section > p {
 }
 
 .hero-conteudo p {
+    color: var(--branco);
     font-size: 1rem;
     margin-bottom: 1.5rem;
 }
 
-/* 8. BOTÕES */
+/* ==========================================
+   8. BOTÕES
+========================================== */
 
 .botao {
     display: inline-block;
+
     background-color: var(--dourado);
     color: var(--azul-principal);
+
     padding: 0.85rem 1.5rem;
+
     border-radius: 5px;
     font-weight: bold;
     text-align: center;
+
     transition:
         background-color 0.3s,
         transform 0.3s;
@@ -272,7 +320,9 @@ section > p {
     transform: translateY(-2px);
 }
 
-/* 9. INFORMAÇÕES DA CIDADE */
+/* ==========================================
+   9. INFORMAÇÕES DA CIDADE
+========================================== */
 
 .informacoes {
     background-color: var(--branco);
@@ -281,16 +331,21 @@ section > p {
 .cards {
     display: grid;
     gap: 1.5rem;
+
     max-width: 1200px;
     margin: 2rem auto;
 }
 
 .card {
     background-color: var(--branco);
+
     padding: 2rem;
+
     border: 1px solid var(--cinza-medio);
     border-radius: var(--borda);
+
     box-shadow: var(--sombra);
+
     transition:
         transform 0.3s,
         box-shadow 0.3s;
@@ -305,7 +360,9 @@ section > p {
     margin-bottom: 0;
 }
 
-/* 10. PREVISÃO DO TEMPO */
+/* ==========================================
+   10. PREVISÃO DO TEMPO
+========================================== */
 
 .clima {
     background-color: var(--cinza-claro);
@@ -314,6 +371,7 @@ section > p {
 .clima-container {
     display: grid;
     gap: 1.5rem;
+
     max-width: 1100px;
     margin: 2rem auto;
 }
@@ -321,7 +379,9 @@ section > p {
 .clima-atual,
 .previsao {
     background-color: var(--branco);
+
     padding: 2rem;
+
     border-radius: var(--borda);
     box-shadow: var(--sombra);
 }
@@ -348,15 +408,20 @@ section > p {
 
 .dia-previsao {
     padding: 1rem;
+
     background-color: var(--cinza-claro);
     border-radius: 5px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     gap: 1rem;
 }
 
-/* 11. EMPRESAS EM DESTAQUE */
+/* ==========================================
+   11. EMPRESAS EM DESTAQUE
+========================================== */
 
 .empresas-destaque {
     text-align: center;
@@ -370,7 +435,9 @@ section > p {
     margin-top: 1rem;
 }
 
-/* 12. ASSOCIAÇÃO EM DESTAQUE */
+/* ==========================================
+   12. ASSOCIAÇÃO EM DESTAQUE
+========================================== */
 
 .associacao-destaque {
     background-color: var(--azul-principal);
@@ -378,7 +445,10 @@ section > p {
     text-align: center;
 }
 
-.associacao-destaque h2 {
+/* Contraste dos títulos e textos */
+
+.associacao-destaque h2,
+.associacao-destaque p {
     color: var(--branco);
 }
 
@@ -387,18 +457,31 @@ section > p {
     margin: 1rem auto 2rem;
 }
 
-/* 13. RODAPÉ */
+/* ==========================================
+   13. RODAPÉ
+========================================== */
 
 footer {
     background-color: var(--azul-rodape);
     color: var(--branco);
 }
 
+/* Evita textos escuros sobre o fundo azul */
+
+footer p,
+footer span,
+footer a,
+footer time {
+    color: var(--branco);
+}
+
 .rodape-conteudo {
     display: grid;
     gap: 2rem;
+
     max-width: 1200px;
     margin: auto;
+
     padding: 3rem 1.5rem;
 }
 
@@ -412,7 +495,9 @@ footer {
 
 .rodape-final {
     border-top: 1px solid var(--azul-borda-rodape);
+
     padding: 1.5rem;
+
     text-align: center;
     font-size: 0.9rem;
 }
@@ -421,7 +506,9 @@ footer {
     margin-bottom: 0.5rem;
 }
 
-/* 14. PÁGINAS INTERNAS */
+/* ==========================================
+   14. PÁGINAS INTERNAS
+========================================== */
 
 .pagina-conteudo {
     max-width: 1200px;
@@ -437,21 +524,28 @@ footer {
     margin-top: 2rem;
 }
 
-/* 15. FORMULÁRIOS */
+/* ==========================================
+   15. FORMULÁRIOS
+========================================== */
 
 .formulario {
     max-width: 750px;
     margin: 2rem auto;
+
     padding: 2rem;
+
     background-color: var(--cinza-claro);
     border-radius: var(--borda);
 }
 
 .formulario label {
     display: block;
+
     margin-top: 1rem;
     margin-bottom: 0.4rem;
+
     font-weight: bold;
+    color: var(--cinza-escuro);
 }
 
 .formulario input,
@@ -459,24 +553,32 @@ footer {
 .formulario textarea {
     width: 100%;
     padding: 0.8rem;
+
     border: 1px solid var(--cinza-borda-formulario);
     border-radius: 5px;
+
     background-color: var(--branco);
+    color: var(--cinza-escuro);
 }
 
 .formulario input:focus,
 .formulario select:focus,
 .formulario textarea:focus {
     outline: 2px solid var(--azul-secundario);
+    outline-offset: 2px;
 }
 
 .formulario button {
     margin-top: 1.5rem;
+
     border: none;
+    border-radius: 5px;
+
     background-color: var(--azul-principal);
     color: var(--branco);
+
     padding: 0.9rem 1.5rem;
-    border-radius: 5px;
+
     font-weight: bold;
 }
 
@@ -484,11 +586,14 @@ footer {
     background-color: var(--azul-secundario);
 }
 
-/* 16. INFORMAÇÕES COMPLEMENTARES DO CLIMA */
+/* ==========================================
+   16. INFORMAÇÕES COMPLEMENTARES DO CLIMA
+========================================== */
 
 .informacoes-clima {
     margin-top: 1.5rem;
     padding-top: 1rem;
+
     border-top: 1px solid var(--cinza-medio);
 }
 
@@ -499,8 +604,10 @@ footer {
 
 .dia-previsao h4 {
     color: var(--azul-principal);
+
     font-size: 1rem;
     text-transform: capitalize;
+
     margin-bottom: 0.5rem;
 }
 
@@ -523,9 +630,12 @@ footer {
     font-weight: bold;
 }
 
-/* 17. ACESSIBILIDADE E MOVIMENTO */
+/* ==========================================
+   17. ACESSIBILIDADE E MOVIMENTO
+========================================== */
 
 @media (prefers-reduced-motion: reduce) {
+
     html {
         scroll-behavior: auto;
     }
