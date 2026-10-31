@@ -1,9 +1,3 @@
-/* ==========================================
-   WDD231 - PÁGINA INICIAL
-   Autor: Tiago dos Anjos
-   Estilos para telas maiores
-========================================== */
-
 @media screen and (min-width: 768px) {
 
     /* CABEÇALHO */
@@ -94,9 +88,7 @@
     }
 }
 
-/* ==========================================
-   APRESENTAÇÃO PESSOAL - TELAS GRANDES
-========================================== */
+/* APRESENTAÇÃO PESSOAL - TELAS GRANDES*/
 
 @media screen and (min-width: 768px) {
 

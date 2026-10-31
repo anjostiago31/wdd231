@@ -1,8 +1,3 @@
-/* ==========================================
-   WDD231 - CLIMA EM GARÇA
-   Autor: Tiago dos Anjos
-========================================== */
-
 const temperatura = document.querySelector("#temperatura");
 const condicao = document.querySelector("#condicao");
 const umidade = document.querySelector("#umidade");

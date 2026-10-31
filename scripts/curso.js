@@ -1,9 +1,3 @@
-/* ==========================================
-   WDD231 - PÁGINA INICIAL
-   Autor: Tiago dos Anjos
-   Exibição e filtragem de cursos
-========================================== */
-
 // Lista provisória de cursos
 const cursos = [
     {

@@ -1,9 +1,3 @@
-/* ==========================================
-   WDD231 - PÁGINA INICIAL
-   Autor: Tiago dos Anjos
-   Controle da navegação responsiva
-========================================== */
-
 const botaoMenu = document.querySelector("#menu");
 const navegacao = document.querySelector("#navegacao");
 

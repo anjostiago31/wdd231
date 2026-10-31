@@ -1,9 +1,3 @@
-/* ==========================================
-   WDD231 - PÁGINA INICIAL
-   Autor: Tiago dos Anjos
-   Informações dinâmicas do rodapé
-========================================== */
-
 const anoAtual = document.querySelector("#anoAtual");
 const ultimaModificacao = document.querySelector("#ultimaModificacao");
 

@@ -1,11 +1,4 @@
-/* ==========================================
-   WDD231 - PÁGINA INICIAL
-   Autor: Tiago dos Anjos
-   Estilos para dispositivos móveis
-========================================== */
-
 /* CORES E CONFIGURAÇÕES */
-
 :root {
     --primaria: #17324d;
     --secundaria: #24577a;
@@ -244,9 +237,7 @@ h1 {
     font-weight: 700;
 }
 
-/* ==========================================
-   RODAPÉ
-========================================== */
+/* RODAPÉ*/
 
 footer {
     padding: 1.5rem 1rem;
@@ -323,9 +314,7 @@ a:focus-visible {
     }
 }
 
-/* ==========================================
-   APRESENTAÇÃO PESSOAL
-========================================== */
+/*APRESENTAÇÃO PESSOAL*/
 
 .apresentacao-pessoal {
     display: flex;
@@ -362,9 +351,7 @@ a:focus-visible {
     text-align: left;
 }
 
-/* ==========================================
-   CLIMA EM GARÇA
-========================================== */
+/*CLIMA EM GARÇA*/
 
 .clima {
     margin-top: 1.5rem;
