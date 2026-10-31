@@ -327,3 +327,48 @@ a:focus-visible {
     line-height: 1.6;
     text-align: left;
 }
+
+/* ==========================================
+   CLIMA EM GARÇA
+========================================== */
+
+.clima {
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    background: #edf4f8;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.clima h3 {
+    margin: 0 0 0.8rem;
+    color: var(--primaria);
+    font-size: 1.2rem;
+}
+
+.temperatura {
+    margin: 0.5rem 0;
+    color: var(--primaria);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.detalhes-clima {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+    margin-top: 1rem;
+}
+
+.detalhes-clima p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.atualizacao {
+    margin: 1rem 0 0;
+    color: #505b65;
+    font-size: 0.8rem;
+}

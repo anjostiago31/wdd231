@@ -21,6 +21,7 @@
     <script src="scripts/navegacao.js" defer></script>
     <script src="scripts/data.js" defer></script>
     <script src="scripts/curso.js" defer></script>
+    <script src="scripts/clima.js" defer></script>
 </head>
 
 <body>
@@ -93,7 +94,7 @@
 
                         <!-- FOTO PESSOAL -->
                         <img
-                            src="imagens/foto_perfil.webp"
+                            src="imagens/foto-perfil.webp"
                             alt="Fotografia de Tiago dos Anjos de Oliveira"
                             class="foto-perfil"
                             width="180"
@@ -143,30 +144,48 @@
             </section>
 
             <!-- SEÇÃO 2 -->
-            <section class="cartao cidade">
+<section class="cartao cidade">
 
-                <h2>Garça, São Paulo</h2>
+    <h2>Garça, São Paulo</h2>
 
-                <div class="conteudo-cartao">
+    <div class="conteudo-cartao">
 
-                    <figure>
+        <figure>
+            <img
+                src="imagens/garça-monumento.jpg"
+                alt="Vista da cidade de Garça, São Paulo"
+                width="400"
+                height="250"
+                loading="lazy">
 
-                        <img
-                            src="imagens/garça-monumento.jpg"
-                            alt="Vista da cidade de Garça, no interior de São Paulo"
-                            width="400"
-                            height="250"
-                            loading="lazy">
+            <figcaption>
+                Garça, interior de São Paulo, Brasil.
+            </figcaption>
+        </figure>
 
-                        <figcaption>
-                            Garça, interior do estado de São Paulo, Brasil.
-                        </figcaption>
+        <!-- CLIMA ATUAL -->
+        <div class="clima">
 
-                    </figure>
+            <h3>🌤️ Clima em Garça</h3>
 
-                </div>
+            <p class="temperatura" id="temperatura">
+                Carregando...
+            </p>
 
-            </section>
+            <p id="condicao"></p>
+
+            <div class="detalhes-clima">
+                <p>💧 Umidade: <span id="umidade">--</span></p>
+                <p>💨 Vento: <span id="vento">--</span></p>
+            </div>
+
+            <p class="atualizacao" id="atualizacao"></p>
+
+        </div>
+
+    </div>
+
+</section>
 
         </div>
 
