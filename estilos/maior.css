@@ -1,18 +1,26 @@
-/* ==========================================
-   CÂMARA DE COMÉRCIO DE GARÇA
+/* CÂMARA DE COMÉRCIO DE GARÇA
    Arquivo: maior.css
    Autor: Tiago dos Anjos
-   Descrição: Layout responsivo para telas maiores
-========================================== */
+   Layout responsivo para telas maiores
+*/
 
+/* 1. AJUSTES GERAIS */
+.card,
+.empresa-card,
+.plano,
+.clima-atual,
+.previsao {
+    min-width: 0;
+}
 
-/* ==========================================
-   1. TABLETS - A PARTIR DE 600px
-========================================== */
+.card,
+.empresa-card,
+.plano {
+    overflow-wrap: anywhere;
+}
 
+/* 2. TABLETS - A PARTIR DE 600px */
 @media screen and (min-width: 600px) {
-
-    /* TÍTULOS */
 
     h1 {
         font-size: 2.2rem;
@@ -21,8 +29,6 @@
     h2 {
         font-size: 1.9rem;
     }
-
-    /* CABEÇALHO */
 
     .cabecalho {
         padding: 1.2rem 2rem;
@@ -37,8 +43,6 @@
         font-size: 1.3rem;
     }
 
-    /* IMAGEM PRINCIPAL */
-
     .hero > img {
         height: 500px;
     }
@@ -51,33 +55,49 @@
         font-size: 1.1rem;
     }
 
-    /* CARTÕES */
-
-    .cards {
+    .cards,
+    .rodape-conteudo,
+    .galeria,
+    .empresas-grade,
+    .planos-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
-    /* PREVISÃO DO TEMPO */
 
     .clima-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    /* RODAPÉ */
+    .filtros-diretorio {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
 
-    .rodape-conteudo {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .controles-diretorio {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .confirmacao-card {
+        padding: 3rem;
+    }
+
+    .acoes-confirmacao {
+        flex-direction: row;
+        justify-content: center;
     }
 }
 
+/* 3. TABLETS MENORES - DE 600px A 767px */
+@media screen and (min-width: 600px) and (max-width: 767px) {
 
-/* ==========================================
-   2. NOTEBOOKS - A PARTIR DE 768px
-========================================== */
+    .clima-container {
+        grid-template-columns: 1fr;
+    }
+}
 
+/* 4. NOTEBOOKS - A PARTIR DE 768px */
 @media screen and (min-width: 768px) {
-
-    /* CABEÇALHO */
 
     .cabecalho {
         padding: 1rem 2rem;
@@ -89,13 +109,9 @@
         flex-shrink: 0;
     }
 
-    /* ESCONDER BOTÃO MOBILE */
-
     #menu {
         display: none;
     }
-
-    /* MENU HORIZONTAL */
 
     #navegacao,
     #navegacao.aberto {
@@ -117,16 +133,8 @@
         font-size: 0.9rem;
     }
 
-    /* CONTEÚDO */
-
     section {
         padding: 4rem 2rem;
-    }
-
-    /* HERO */
-
-    .hero {
-        padding: 0;
     }
 
     .hero > img {
@@ -137,39 +145,39 @@
         font-size: 2.6rem;
     }
 
-    /* CARTÕES */
-
     .cards {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-
-    /* PREVISÃO DO TEMPO */
 
     .clima-container {
         grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
     }
 
-    /* EMPRESAS */
-
-    .empresas-destaque {
-        padding: 4rem 3rem;
-    }
-
-    /* PÁGINAS INTERNAS */
-
+    .empresas-destaque,
     .pagina-conteudo {
         padding: 4rem 3rem;
     }
 }
 
+/* 5. TELAS INTERMEDIÁRIAS - DE 768px A 899px */
+@media screen and (min-width: 768px) and (max-width: 899px) {
 
-/* ==========================================
-   3. COMPUTADORES - A PARTIR DE 1024px
-========================================== */
+    .cabecalho {
+        padding: 1rem 1.5rem;
+    }
 
+    .identidade h2 {
+        font-size: 1.1rem;
+    }
+
+    #navegacao a {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* 6. COMPUTADORES - A PARTIR DE 1024px */
 @media screen and (min-width: 1024px) {
-
-    /* CABEÇALHO */
 
     .cabecalho {
         padding: 1rem 5%;
@@ -184,8 +192,6 @@
         font-size: 1.5rem;
     }
 
-    /* NAVEGAÇÃO */
-
     #navegacao ul {
         gap: 1rem;
     }
@@ -194,8 +200,6 @@
         font-size: 1rem;
     }
 
-    /* TÍTULOS */
-
     h1 {
         font-size: 2.5rem;
     }
@@ -203,8 +207,6 @@
     h2 {
         font-size: 2.1rem;
     }
-
-    /* HERO */
 
     .hero > img {
         height: 600px;
@@ -222,66 +224,58 @@
         font-size: 1.2rem;
     }
 
-    /* SEÇÕES */
-
     section {
         padding: 5rem 3rem;
     }
 
-    .hero {
-        padding: 0;
-    }
-
-    /* CARTÕES */
-
-    .cards {
-        gap: 2rem;
-    }
-
-    .card {
-        padding: 2.5rem;
-    }
-
-    /* CLIMA */
-
+    .cards,
     .clima-container {
         gap: 2rem;
     }
 
+    .card,
     .clima-atual,
-    .previsao {
+    .previsao,
+    .plano {
         padding: 2.5rem;
     }
-
-    /* ASSOCIAÇÃO */
 
     .associacao-destaque {
         padding: 5rem 2rem;
     }
 
-    /* RODAPÉ */
-
     .rodape-conteudo {
         padding: 4rem 2rem;
     }
+
+    .galeria,
+    .empresas-grade {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .empresas-grade,
+    .planos-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .galeria img {
+        height: 220px;
+    }
+
+    .formulario button[type="submit"] {
+        width: auto;
+        min-width: 220px;
+    }
 }
 
-
-/* ==========================================
-   4. TELAS GRANDES - A PARTIR DE 1440px
-========================================== */
-
+/* 7. TELAS GRANDES - A PARTIR DE 1440px */
 @media screen and (min-width: 1440px) {
-
-    /* LIMITAR LARGURA DO CONTEÚDO */
 
     .informacoes,
     .empresas-destaque {
         padding-left: max(5%, calc((100% - 1400px) / 2));
         padding-right: max(5%, calc((100% - 1400px) / 2));
     }
-
-    /* HERO */
 
     .hero > img {
         height: 650px;
@@ -291,24 +285,16 @@
         font-size: 3.3rem;
     }
 
-    /* CARTÕES */
-
     .cards {
         max-width: 1400px;
     }
-
-    /* PREVISÃO DO TEMPO */
 
     .clima-container {
         max-width: 1300px;
     }
 }
 
-
-/* ==========================================
-   5. AJUSTES PARA TELAS BAIXAS
-========================================== */
-
+/* 8. AJUSTES PARA TELAS BAIXAS */
 @media screen and (max-height: 500px) {
 
     .hero > img {
@@ -324,11 +310,7 @@
     }
 }
 
-
-/* ==========================================
-   6. AJUSTES PARA IMPRESSÃO
-========================================== */
-
+/* 9. AJUSTES PARA IMPRESSÃO */
 @media print {
 
     body {
@@ -371,157 +353,5 @@
     footer time,
     .rodape-conteudo h3 {
         color: #000000;
-    }
-}
-
-
-/* ==========================================
-   7. GALERIA RESPONSIVA
-========================================== */
-
-/* TABLETS */
-
-@media screen and (min-width: 600px) {
-
-    .galeria {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* COMPUTADORES */
-
-@media screen and (min-width: 1024px) {
-
-    .galeria {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .galeria img {
-        height: 220px;
-    }
-}
-
-
-/* ==========================================
-   8. DIRETÓRIO RESPONSIVO
-========================================== */
-
-@media screen and (min-width: 600px) {
-
-    .filtros-diretorio {
-        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-    }
-
-    .empresas-grade {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .controles-diretorio {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-
-    .empresas-grade {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-
-
-/* ==========================================
-   9. ASSOCIAÇÃO RESPONSIVA
-========================================== */
-
-@media screen and (min-width: 600px) {
-
-    .planos-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media screen and (min-width: 1024px) {
-
-    .planos-container {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .plano {
-        padding: 2.5rem;
-    }
-
-    .formulario button[type="submit"] {
-        width: auto;
-        min-width: 220px;
-    }
-}
-
-
-/* ==========================================
-   10. CONFIRMAÇÃO RESPONSIVA
-========================================== */
-
-@media screen and (min-width: 600px) {
-
-    .confirmacao-card {
-        padding: 3rem;
-    }
-
-    .acoes-confirmacao {
-        flex-direction: row;
-        justify-content: center;
-    }
-}
-
-
-/* ==========================================
-   11. AJUSTES ADICIONAIS DE RESPONSIVIDADE
-========================================== */
-
-/* Evitar que cartões e conteúdos ultrapassem a tela */
-
-.card,
-.empresa-card,
-.plano,
-.clima-atual,
-.previsao {
-    min-width: 0;
-}
-
-/* Melhorar a quebra de textos longos */
-
-.card,
-.empresa-card,
-.plano {
-    overflow-wrap: anywhere;
-}
-
-/* Ajustes para tablets menores */
-
-@media screen and (min-width: 768px) and (max-width: 899px) {
-
-    .cabecalho {
-        padding: 1rem 1.5rem;
-    }
-
-    .identidade h2 {
-        font-size: 1.1rem;
-    }
-
-    #navegacao a {
-        padding: 0.6rem;
-        font-size: 0.85rem;
-    }
-}
-
-/* Melhorar a distribuição em telas intermediárias */
-
-@media screen and (min-width: 600px) and (max-width: 767px) {
-
-    .clima-container {
-        grid-template-columns: 1fr;
     }
 }
