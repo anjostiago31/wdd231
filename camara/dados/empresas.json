@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "nome": "Garça Tecnologia",
+        "categoria": "Tecnologia",
+        "endereco": "Centro, Garça - SP",
+        "telefone": "(14) 0000-0001",
+        "site": "",
+        "descricao": "Empresa demonstrativa especializada em soluções tecnológicas e desenvolvimento de sistemas."
+    },
+    {
+        "id": 2,
+        "nome": "Café Jardim",
+        "categoria": "Alimentação",
+        "endereco": "Centro, Garça - SP",
+        "telefone": "(14) 0000-0002",
+        "site": "",
+        "descricao": "Cafeteria fictícia com opções de cafés, lanches e produtos artesanais."
+    },
+    {
+        "id": 3,
+        "nome": "Comercial Avenida",
+        "categoria": "Comércio",
+        "endereco": "Garça - SP",
+        "telefone": "(14) 0000-0003",
+        "site": "",
+        "descricao": "Estabelecimento comercial demonstrativo com produtos variados."
+    },
+    {
+        "id": 4,
+        "nome": "Soluções Empresariais Garça",
+        "categoria": "Serviços",
+        "endereco": "Garça - SP",
+        "telefone": "(14) 0000-0004",
+        "site": "",
+        "descricao": "Empresa fictícia de consultoria administrativa e serviços empresariais."
+    },
+    {
+        "id": 5,
+        "nome": "Centro Educacional Futuro",
+        "categoria": "Educação",
+        "endereco": "Garça - SP",
+        "telefone": "(14) 0000-0005",
+        "site": "",
+        "descricao": "Instituição demonstrativa dedicada à formação profissional."
+    },
+    {
+        "id": 6,
+        "nome": "Mercado Cidade Jardim",
+        "categoria": "Comércio",
+        "endereco": "Garça - SP",
+        "telefone": "(14) 0000-0006",
+        "site": "",
+        "descricao": "Mercado fictício voltado ao atendimento da comunidade local."
+    }
+]

@@ -1,0 +1,463 @@
+/* ==========================================
+   CÂMARA DE COMÉRCIO DE GARÇA
+   Arquivo: maior.css
+   Autor: Tiago dos Anjos
+   Descrição: Layout para telas maiores
+========================================== */
+
+
+/* ==========================================
+   1. TABLETS - A PARTIR DE 600px
+========================================== */
+
+@media screen and (min-width: 600px) {
+
+    /* TÍTULOS */
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.9rem;
+    }
+
+    /* CABEÇALHO */
+
+    .cabecalho {
+        padding: 1.2rem 2rem;
+    }
+
+    .identidade img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .identidade h2 {
+        font-size: 1.3rem;
+    }
+
+    /* IMAGEM PRINCIPAL */
+
+    .hero > img {
+        height: 500px;
+    }
+
+    .hero-conteudo h2 {
+        font-size: 2.3rem;
+    }
+
+    .hero-conteudo p {
+        font-size: 1.1rem;
+    }
+
+    /* CARTÕES */
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* PREVISÃO DO TEMPO */
+
+    .clima-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* RODAPÉ */
+
+    .rodape-conteudo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ==========================================
+   2. NOTEBOOKS - A PARTIR DE 768px
+========================================== */
+
+@media screen and (min-width: 768px) {
+
+    /* CABEÇALHO */
+
+    .cabecalho {
+        padding: 1rem 3rem;
+        flex-wrap: nowrap;
+        gap: 1.5rem;
+    }
+
+    /* ESCONDER BOTÃO MOBILE */
+
+    #menu {
+        display: none;
+    }
+
+    /* MENU HORIZONTAL */
+
+    #navegacao,
+    #navegacao.aberto {
+        display: block;
+        width: auto;
+        margin-top: 0;
+    }
+
+    #navegacao ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    #navegacao a {
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    /* CONTEÚDO */
+
+    section {
+        padding: 4rem 2rem;
+    }
+
+    /* HERO */
+
+    .hero {
+        padding: 0;
+    }
+
+    .hero > img {
+        height: 550px;
+    }
+
+    .hero-conteudo h2 {
+        font-size: 2.6rem;
+    }
+
+    /* CARTÕES */
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* PREVISÃO DO TEMPO */
+
+    .clima-container {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    /* EMPRESAS */
+
+    .empresas-destaque {
+        padding: 4rem 3rem;
+    }
+
+    /* PÁGINAS INTERNAS */
+
+    .pagina-conteudo {
+        padding: 4rem 3rem;
+    }
+
+}
+
+
+/* ==========================================
+   3. COMPUTADORES - A PARTIR DE 1024px
+========================================== */
+
+@media screen and (min-width: 1024px) {
+
+    /* CABEÇALHO */
+
+    .cabecalho {
+        padding: 1rem 5%;
+    }
+
+    .identidade img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .identidade h2 {
+        font-size: 1.5rem;
+    }
+
+    /* NAVEGAÇÃO */
+
+    #navegacao ul {
+        gap: 1rem;
+    }
+
+    #navegacao a {
+        font-size: 1rem;
+    }
+
+    /* TÍTULOS */
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2.1rem;
+    }
+
+    /* HERO */
+
+    .hero > img {
+        height: 600px;
+    }
+
+    .hero-conteudo {
+        max-width: 900px;
+    }
+
+    .hero-conteudo h2 {
+        font-size: 3rem;
+    }
+
+    .hero-conteudo p {
+        font-size: 1.2rem;
+    }
+
+    /* SEÇÕES */
+
+    section {
+        padding: 5rem 3rem;
+    }
+
+    .hero {
+        padding: 0;
+    }
+
+    /* CARTÕES */
+
+    .cards {
+        gap: 2rem;
+    }
+
+    .card {
+        padding: 2.5rem;
+    }
+
+    /* CLIMA */
+
+    .clima-container {
+        gap: 2rem;
+    }
+
+    .clima-atual,
+    .previsao {
+        padding: 2.5rem;
+    }
+
+    /* ASSOCIAÇÃO */
+
+    .associacao-destaque {
+        padding: 5rem 2rem;
+    }
+
+    /* RODAPÉ */
+
+    .rodape-conteudo {
+        padding: 4rem 2rem;
+    }
+
+}
+
+
+/* ==========================================
+   4. TELAS GRANDES - A PARTIR DE 1440px
+========================================== */
+
+@media screen and (min-width: 1440px) {
+
+    /* LIMITAR LARGURA DO CONTEÚDO */
+
+    .informacoes,
+    .empresas-destaque {
+        padding-left: max(5%, calc((100% - 1400px) / 2));
+        padding-right: max(5%, calc((100% - 1400px) / 2));
+    }
+
+    /* HERO */
+
+    .hero > img {
+        height: 650px;
+    }
+
+    .hero-conteudo h2 {
+        font-size: 3.3rem;
+    }
+
+    /* CARTÕES */
+
+    .cards {
+        max-width: 1400px;
+    }
+
+    /* PREVISÃO DO TEMPO */
+
+    .clima-container {
+        max-width: 1300px;
+    }
+
+}
+
+
+/* ==========================================
+   5. AJUSTES PARA TELAS BAIXAS
+========================================== */
+
+@media screen and (max-height: 500px) {
+
+    .hero > img {
+        height: 350px;
+    }
+
+    .hero-conteudo h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-conteudo p {
+        font-size: 0.9rem;
+    }
+
+}
+
+
+/* ==========================================
+   6. AJUSTES PARA IMPRESSÃO
+========================================== */
+
+@media print {
+
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .cabecalho,
+    #menu,
+    .botao {
+        display: none;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .card {
+        box-shadow: none;
+        border: 1px solid #999;
+    }
+
+    footer {
+        background-color: white;
+        color: black;
+    }
+
+}
+
+/* ==========================================
+   GALERIA RESPONSIVA
+========================================== */
+
+/* TABLETS */
+
+@media screen and (min-width: 600px) {
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* COMPUTADORES */
+
+@media screen and (min-width: 1024px) {
+
+    .galeria {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .galeria img {
+        height: 220px;
+    }
+
+}
+
+/* ==========================================
+   DIRETÓRIO RESPONSIVO
+========================================== */
+
+@media screen and (min-width: 600px) {
+
+    .filtros-diretorio {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .empresas-grade {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .controles-diretorio {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    .empresas-grade {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+/* ==========================================
+   ASSOCIAÇÃO RESPONSIVA
+========================================== */
+
+@media screen and (min-width: 600px) {
+
+    .planos-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    .planos-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .plano {
+        padding: 2.5rem;
+    }
+
+    .formulario button[type="submit"] {
+        width: auto;
+        min-width: 220px;
+    }
+
+}
+
+/* ==========================================
+   CONFIRMAÇÃO RESPONSIVA
+========================================== */
+
+@media screen and (min-width: 600px) {
+
+    .confirmacao-card {
+        padding: 3rem;
+    }
+
+    .acoes-confirmacao {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+}
