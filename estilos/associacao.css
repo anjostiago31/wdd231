@@ -18,11 +18,6 @@
 }
 
 /* BENEFÍCIOS E PLANOS */
-.beneficios-associacao,
-.secao-formulario {
-    background-color: var(--branco);
-}
-
 .planos-associacao {
     background-color: var(--cinza-claro);
 }
