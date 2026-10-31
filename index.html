@@ -4,31 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página inicial de Tiago dos Anjos de Oliveira, estudante de Desenvolvimento de Software na BYU-Pathway Worldwide. Projetos e atividades da disciplina WDD231.">
+    <meta name="author" content="Tiago dos Anjos de Oliveira">
+    <title>Tiago dos Anjos | WDD231</title>
 
-    <meta name="description"
-        content="Conheça a Câmara de Comércio de Garça, suas empresas associadas, eventos e oportunidades de negócios.">
-
-    <meta name="author" content="Tiago dos Anjos">
-
-    <title>Câmara de Comércio de Garça | Início</title>
-
-    <!-- GOOGLE FONTS -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- ESTILOS EXTERNOS -->
-    <link rel="stylesheet" href="estilos/base.css">
-    <link rel="stylesheet" href="estilos/maior.css">
-    <link rel="stylesheet" href="estilos/inicio.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="estilos/telas_pequenas.css">
+    <link rel="stylesheet" href="estilos/telas_grandes.css">
 
-    <!-- JAVASCRIPT -->
-    <script src="scripts/menu.js" defer></script>
-    <script src="scripts/clima.js" defer></script>
-    <script src="scripts/slideshow.js" defer></script>
-    <script src="scripts/rodape.js" defer></script>
+    <!-- JavaScript -->
+    <script src="scripts/navegacao.js" defer></script>
+    <script src="scripts/data.js" defer></script>
+    <script src="scripts/curso.js" defer></script>
 </head>
 
 <body>
@@ -37,21 +29,20 @@
     <header class="cabecalho">
 
         <div class="identidade">
-            <img
-                src="imagens/garca_azul_oti.webp"
-                alt="Emblema da Câmara de Comércio de Garça"
-                width="80"
-                height="80">
 
-            <div>
-                <h2>Câmara de Comércio</h2>
-                <p>Garça - São Paulo</p>
-            </div>
+            <img
+                src="imagens/logoTA.svg"
+                alt="Logotipo pessoal de Tiago dos Anjos"
+                width="50"
+                height="50">
+
+            <span>Tiago dos Anjos</span>
+
         </div>
 
-        <!-- MENU MOBILE -->
         <button
             id="menu"
+            class="menu-hamburguer"
             type="button"
             aria-label="Abrir menu de navegação"
             aria-expanded="false"
@@ -59,315 +50,170 @@
             ☰
         </button>
 
-        <!-- NAVEGAÇÃO -->
-        <nav id="navegacao" aria-label="Navegação principal">
-            <ul>
-                <li>
-                    <a href="index.html" aria-current="page">Início</a>
-                </li>
-                <li>
-                    <a href="sobre.html">Sobre</a>
-                </li>
-                <li>
-                    <a href="diretorio.html">Diretório</a>
-                </li>
-                <li>
-                    <a href="associe-se.html">Associe-se</a>
-                </li>
-            </ul>
-        </nav>
-
     </header>
+
+    <!-- NAVEGAÇÃO -->
+    <nav
+        id="navegacao"
+        class="navegacao"
+        aria-label="Navegação principal">
+
+        <a
+            href="index.html"
+            class="ativo"
+            aria-current="page">
+            Página Inicial
+        </a>
+
+        <a href="chamber/index.html">
+            Projeto da Câmara
+        </a>
+
+        <a href="projeto/index.html">
+            Projeto Final
+        </a>
+
+    </nav>
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main>
 
-        <h1 class="titulo-acessivel">
-            Câmara de Comércio de Garça
-        </h1>
+        <h1>Página Inicial</h1>
 
-        <!-- SLIDESHOW PRINCIPAL -->
-        <section class="slideshow" aria-label="Destaques de Garça">
+        <div class="conteudo-principal">
 
-            <div class="slides">
+            <!-- SEÇÃO 1 -->
+            <section class="cartao atividades">
 
-                <!-- SLIDE 1 -->
-                <div class="slide ativo">
-                    <img
-                        src="imagens/banner_principal_oti.webp"
-                        alt="Arte da Câmara de Comércio de Garça com a ave garça, cerejeiras e monumentos históricos da cidade"
-                        fetchpriority="high">
-                </div>
+                <h2>Trabalho do Curso</h2>
 
-                <!-- SLIDE 2 -->
-                <div class="slide">
-                    <img
-                        src="imagens/banner_ppa_oti.webp"
-                        alt="Empresa do setor eletroeletrônico de Garça"
-                        loading="lazy">
+                <div class="conteudo-cartao">
 
-                    <div class="slide-conteudo">
-                        <h2>Garça: Capital da Eletroeletrônica</h2>
+                    <div class="apresentacao-pessoal">
 
-                        <p>
-                            Nossa cidade se destaca pela presença
-                            de empresas que investem em tecnologia,
-                            inovação e desenvolvimento.
-                        </p>
+                        <!-- FOTO PESSOAL -->
+                        <img
+                            src="imagens/foto_perfil.webp"
+                            alt="Fotografia de Tiago dos Anjos de Oliveira"
+                            class="foto-perfil"
+                            width="180"
+                            height="180">
 
-                        <a href="diretorio.html" class="slide-botao">
-                            Conhecer Empresas
-                        </a>
+                        <!-- APRESENTAÇÃO -->
+                        <div class="texto-apresentacao">
+
+                            <h3>Tiago dos Anjos de Oliveira</h3>
+
+                            <p>
+                                Bem-vindo à minha página acadêmica
+                                da disciplina WDD231 - Desenvolvimento Web Frontend I.
+                            </p>
+
+                            <p>
+                                Neste espaço, apresentarei minhas
+                                atividades, projetos e conhecimentos
+                                adquiridos durante o curso.
+                            </p>
+
+                            <p>
+                                Sou formado em Comunicação Social,
+                                com habilitação em Jornalismo, e
+                                atualmente curso Análise e
+                                Desenvolvimento de Sistemas na FATEC.
+                            </p>
+
+                            <p>
+                                Também sou estudante de Engenharia
+                                de Software pela BYU-Pathway Worldwide.
+                            </p>
+
+                            <p>
+                                Meu objetivo é aprimorar minhas
+                                habilidades em HTML, CSS e JavaScript,
+                                desenvolvendo páginas modernas,
+                                acessíveis e responsivas.
+                            </p>
+
+                        </div>
+
                     </div>
+
                 </div>
 
-                <!-- SLIDE 3 -->
-                <div class="slide">
-                    <img
-                        src="imagens/banner_garen_oti.webp"
-                        alt="Indústria e desenvolvimento econômico de Garça"
-                        loading="lazy">
+            </section>
 
-                    <div class="slide-conteudo">
-                        <h2>Indústria, Tecnologia e Inovação</h2>
+            <!-- SEÇÃO 2 -->
+            <section class="cartao cidade">
 
-                        <p>
-                            Empresas que contribuem para a geração
-                            de empregos e o fortalecimento
-                            da economia local.
-                        </p>
+                <h2>Garça, São Paulo</h2>
 
-                        <a href="diretorio.html" class="slide-botao">
-                            Explorar Diretório
-                        </a>
-                    </div>
+                <div class="conteudo-cartao">
+
+                    <figure>
+
+                        <img
+                            src="imagens/garça_monumento.jpg"
+                            alt="Vista da cidade de Garça, no interior de São Paulo"
+                            width="400"
+                            height="250"
+                            loading="lazy">
+
+                        <figcaption>
+                            Garça, interior do estado de São Paulo, Brasil.
+                        </figcaption>
+
+                    </figure>
+
                 </div>
 
-                <!-- SLIDE 4 -->
-                <div class="slide">
-                    <img
-                        src="imagens/camara_comercio_oti.webp"
-                        alt="Comércio e serviços da cidade de Garça"
-                        loading="lazy">
+            </section>
 
-                    <div class="slide-conteudo">
-                        <h2>Fortalecendo o Comércio Local</h2>
+        </div>
 
-                        <p>
-                            Valorizamos os empreendedores
-                            que movimentam a economia
-                            e contribuem para o crescimento de Garça.
-                        </p>
+        <!-- SEÇÃO 3 -->
+        <section class="cartao certificado">
 
-                        <a href="associe-se.html" class="slide-botao">
-                            Faça Parte
-                        </a>
-                    </div>
-                </div>
+            <h2>
+                Certificado de Desenvolvimento Web e Computadores
+            </h2>
 
-                <!-- SLIDE 5 -->
-                <div class="slide">
-                    <img
-                        src="imagens/banner_cultura_oti.webp"
-                        alt="Cerejeiras floridas próximas ao lago em Garça"
-                        loading="lazy">
-
-                    <div class="slide-conteudo">
-                        <h2>Garça: Cultura e Tradição</h2>
-
-                        <p>
-                            A tradição das cerejeiras representa
-                            uma parte importante da identidade
-                            cultural do município.
-                        </p>
-
-                        <a href="sobre.html" class="slide-botao">
-                            Conheça Garça
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- CONTROLES DO SLIDESHOW -->
-            <button
-                class="slide-anterior"
-                type="button"
-                aria-label="Imagem anterior">
-                &#10094;
-            </button>
-
-            <button
-                class="slide-proximo"
-                type="button"
-                aria-label="Próxima imagem">
-                &#10095;
-            </button>
-
-            <!-- INDICADORES -->
-            <div class="slide-indicadores" aria-label="Selecionar imagem">
+            <!-- FILTROS -->
+            <div class="filtros">
 
                 <button
-                    class="indicador ativo"
                     type="button"
-                    aria-label="Mostrar imagem 1"
-                    aria-current="true">
+                    id="todos"
+                    aria-pressed="true">
+                    Todos
                 </button>
 
                 <button
-                    class="indicador"
                     type="button"
-                    aria-label="Mostrar imagem 2">
+                    id="wdd"
+                    aria-pressed="false">
+                    WDD
                 </button>
 
                 <button
-                    class="indicador"
                     type="button"
-                    aria-label="Mostrar imagem 3">
-                </button>
-
-                <button
-                    class="indicador"
-                    type="button"
-                    aria-label="Mostrar imagem 4">
-                </button>
-
-                <button
-                    class="indicador"
-                    type="button"
-                    aria-label="Mostrar imagem 5">
+                    id="cse"
+                    aria-pressed="false">
+                    CSE
                 </button>
 
             </div>
 
-        </section>
+            <!-- CURSOS GERADOS PELO JAVASCRIPT -->
+            <div
+                id="lista-cursos"
+                class="lista-cursos">
+            </div>
 
-        <!-- INFORMAÇÕES DA CIDADE -->
-        <section class="informacoes">
-
-            <h2>Bem-vindo a Garça</h2>
-
-            <p>
-                Localizada no interior do estado de São Paulo,
-                Garça é uma cidade reconhecida por sua história,
-                suas atividades econômicas e suas tradições culturais.
+            <!-- TOTAL DE CRÉDITOS -->
+            <p
+                id="total-creditos"
+                aria-live="polite">
             </p>
-
-            <div class="cards">
-
-                <article class="card">
-                    <h3>Comércio Local</h3>
-                    <p>
-                        Conheça empresas e profissionais que
-                        movimentam a economia da nossa cidade.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <h3>Oportunidades</h3>
-                    <p>
-                        Descubra possibilidades de negócios,
-                        parcerias e desenvolvimento profissional.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <h3>Comunidade</h3>
-                    <p>
-                        Valorizar o comércio local é contribuir
-                        para o crescimento de toda a comunidade.
-                    </p>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- PREVISÃO DO TEMPO -->
-        <section class="clima">
-
-            <h2>Previsão do Tempo</h2>
-
-            <div class="clima-container">
-
-                <article class="clima-atual">
-                    <h3>Garça - SP</h3>
-
-                    <p id="temperatura">
-                        Carregando temperatura...
-                    </p>
-
-                    <p id="descricao-clima"></p>
-                </article>
-
-                <article class="previsao">
-                    <h3>Previsão para os próximos dias</h3>
-
-                    <div id="previsao-dias">
-                        <p>Carregando previsão...</p>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- EMPRESAS EM DESTAQUE -->
-        <section class="empresas-destaque">
-
-            <h2>Empresas em Destaque</h2>
-
-            <p>
-                Conheça algumas empresas que fazem parte
-                da nossa comunidade empresarial.
-            </p>
-
-            <div id="empresas-container" class="cards">
-
-                <article class="card">
-                    <h3>Comércio Local</h3>
-                    <p>
-                        Conheça estabelecimentos
-                        e serviços da cidade.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <h3>Empreendedores</h3>
-                    <p>
-                        Descubra iniciativas que
-                        fortalecem a economia.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <h3>Novas Oportunidades</h3>
-                    <p>
-                        Encontre empresas e possíveis
-                        parceiros comerciais.
-                    </p>
-                </article>
-
-            </div>
-
-            <a href="diretorio.html" class="botao">
-                Ver Diretório Completo
-            </a>
-
-        </section>
-
-        <!-- CHAMADA PARA ASSOCIAÇÃO -->
-        <section class="associacao-destaque">
-
-            <h2>Faça parte da Câmara de Comércio</h2>
-
-            <p>
-                Amplie sua rede de contatos, participe de iniciativas
-                empresariais e descubra os benefícios de fazer parte
-                da nossa comunidade.
-            </p>
-
-            <a href="associe-se.html" class="botao">
-                Quero me associar
-            </a>
 
         </section>
 
@@ -376,30 +222,40 @@
     <!-- RODAPÉ -->
     <footer>
 
-        <div class="rodape-conteudo">
+        <div class="redes-sociais">
 
-            <div>
-                <h3>Câmara de Comércio de Garça</h3>
-                <p>Garça - São Paulo - Brasil</p>
-                <p>Projeto acadêmico demonstrativo</p>
-            </div>
+            <a
+                href="https://github.com/anjostiago31"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub de Tiago dos Anjos">
+                GitHub
+            </a>
 
-            <div>
-                <h3>Desenvolvimento</h3>
-                <p>Tiago dos Anjos e Oliveira</p>
-                <p>Desenvolvimento Frontend para Web 1</p>
-            </div>
+            <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn">
+                LinkedIn
+            </a>
+
+            <a
+                href="https://www.instagram.com/anjostiago_five/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram">
+                Instagram
+            </a>
 
         </div>
 
-        <div class="rodape-final">
-    <p>&copy; 2026 Câmara de Comércio de Garça</p>
+        <p>
+            &copy; <span id="anoAtual"></span>
+            | Tiago dos Anjos de Oliveira | São Paulo, Brasil
+        </p>
 
-    <p>
-        Última modificação:
-        <span id="ultima-modificacao"></span>
-    </p>
-</div>
+        <p id="ultimaModificacao"></p>
 
     </footer>
 

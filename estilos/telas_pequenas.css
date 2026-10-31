@@ -1,0 +1,329 @@
+/* ==========================================
+   WDD231 - PÁGINA INICIAL
+   Autor: Tiago dos Anjos
+   Estilos para dispositivos móveis
+========================================== */
+
+/* CORES E CONFIGURAÇÕES */
+
+:root {
+    --primaria: #17324d;
+    --secundaria: #24577a;
+    --destaque: #e8b44b;
+    --fundo: #f3f5f7;
+    --branco: #ffffff;
+    --texto: #25313d;
+    --borda: #d9e0e6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--primaria);
+    color: var(--branco);
+}
+
+.identidade {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.identidade img {
+    width: 50px;
+    height: 50px;
+}
+
+.identidade span {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.menu-hamburguer {
+    background: transparent;
+    border: 1px solid var(--branco);
+    border-radius: 5px;
+    color: var(--branco);
+    font-size: 1.6rem;
+    padding: 0.2rem 0.7rem;
+    cursor: pointer;
+}
+
+/* NAVEGAÇÃO */
+
+.navegacao {
+    display: none;
+    background: var(--secundaria);
+}
+
+.navegacao.aberto {
+    display: flex;
+    flex-direction: column;
+}
+
+.navegacao a {
+    display: block;
+    padding: 0.9rem;
+    color: var(--branco);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navegacao a:hover,
+.navegacao a:focus-visible {
+    background: var(--primaria);
+    color: var(--destaque);
+}
+
+.navegacao .ativo {
+    background: var(--primaria);
+    border-bottom: 3px solid var(--destaque);
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1 {
+    margin: 0 0 1.2rem;
+    font-size: 1.8rem;
+    color: var(--primaria);
+}
+
+.conteudo-principal {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
+
+/* CARTÕES */
+
+.cartao {
+    margin-bottom: 1.2rem;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 6%);
+}
+
+.cartao h2 {
+    margin: 0;
+    padding: 0.8rem 1rem;
+    background: var(--primaria);
+    color: var(--branco);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.conteudo-cartao {
+    padding: 1.2rem;
+}
+
+.conteudo-cartao p {
+    margin: 0 0 1rem;
+}
+
+.conteudo-cartao p:last-child {
+    margin-bottom: 0;
+}
+
+/* IMAGEM DA CIDADE */
+
+.cidade figure {
+    margin: 0;
+    text-align: center;
+}
+
+.cidade img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.cidade figcaption {
+    margin-top: 0.7rem;
+    font-size: 0.9rem;
+    color: #505b65;
+}
+
+/* CERTIFICADO */
+
+.certificado {
+    padding-bottom: 1.2rem;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    padding: 1.2rem;
+}
+
+.filtros button {
+    min-width: 80px;
+    padding: 0.7rem 1rem;
+    border: 0;
+    border-radius: 5px;
+    background: var(--secundaria);
+    color: var(--branco);
+    font: inherit;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.filtros button:hover,
+.filtros button:focus-visible {
+    background: var(--primaria);
+}
+
+.filtros button.selecionado {
+    background: var(--primaria);
+    outline: 2px solid var(--destaque);
+    outline-offset: 2px;
+}
+
+/* LISTA DE CURSOS */
+
+.lista-cursos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 0 1.2rem;
+}
+
+.curso {
+    padding: 0.9rem;
+    border: 1px solid var(--borda);
+    border-radius: 5px;
+    background: #e8edf2;
+    text-align: center;
+    font-weight: 700;
+}
+
+.curso.concluido {
+    background: #d4edda;
+    border-color: #8ac69a;
+    color: #174b2b;
+}
+
+#total-creditos {
+    margin: 1.2rem 1rem 0;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* RODAPÉ */
+
+footer {
+    padding: 1.5rem 1rem;
+    background: var(--primaria);
+    color: var(--branco);
+    text-align: center;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.redes-sociais a {
+    color: var(--branco);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.redes-sociais a:hover,
+.redes-sociais a:focus-visible {
+    color: var(--destaque);
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+#ultimaModificacao {
+    color: #f2cd7a;
+    font-size: 0.9rem;
+}
+
+/* ACESSIBILIDADE */
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--destaque);
+    outline-offset: 3px;
+}
+
+/* ==========================================
+   APRESENTAÇÃO PESSOAL
+========================================== */
+
+.apresentacao-pessoal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.foto-perfil {
+    display: block;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--primaria);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+    flex-shrink: 0;
+}
+
+.texto-apresentacao {
+    width: 100%;
+    min-width: 0;
+}
+
+.texto-apresentacao h3 {
+    margin: 0 0 1rem;
+    color: var(--primaria);
+    font-size: 1.3rem;
+}
+
+.texto-apresentacao p {
+    margin: 0 0 0.8rem;
+    line-height: 1.6;
+    text-align: left;
+}

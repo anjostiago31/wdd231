@@ -1,0 +1,119 @@
+/* ==========================================
+   WDD231 - PÁGINA INICIAL
+   Autor: Tiago dos Anjos
+   Estilos para telas maiores
+========================================== */
+
+@media screen and (min-width: 768px) {
+
+    /* CABEÇALHO */
+
+    .cabecalho {
+        padding: 1.2rem 3rem;
+    }
+
+    .identidade span {
+        font-size: 1.5rem;
+    }
+
+    .menu-hamburguer {
+        display: none;
+    }
+
+    /* NAVEGAÇÃO */
+
+    .navegacao,
+    .navegacao.aberto {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .navegacao a {
+        padding: 1rem 1.5rem;
+    }
+
+    /* CONTEÚDO */
+
+    main {
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .conteudo-principal {
+        grid-template-columns: 2fr 1fr;
+        align-items: stretch;
+    }
+
+    .conteudo-principal .cartao {
+        height: 100%;
+    }
+
+    /* CERTIFICADO */
+
+    .lista-cursos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .filtros {
+        gap: 1rem;
+    }
+
+    .filtros button {
+        min-width: 120px;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+        padding: 2rem;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+
+    .cabecalho {
+        padding-left: max(3rem, calc((100% - 1200px) / 2));
+        padding-right: max(3rem, calc((100% - 1200px) / 2));
+    }
+
+    .conteudo-principal {
+        grid-template-columns: 1.8fr 1fr;
+    }
+
+    .lista-cursos {
+        gap: 1rem;
+    }
+
+    .curso {
+        padding: 1.2rem;
+    }
+}
+
+/* ==========================================
+   APRESENTAÇÃO PESSOAL - TELAS GRANDES
+========================================== */
+
+@media screen and (min-width: 768px) {
+
+    .apresentacao-pessoal {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .foto-perfil {
+        width: 150px;
+        height: 150px;
+    }
+
+    .texto-apresentacao {
+        flex: 1;
+        min-width: 0;
+    }
+
+}
