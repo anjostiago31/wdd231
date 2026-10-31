@@ -76,6 +76,7 @@ img {
 .navegacao {
     display: none;
     background: var(--secundaria);
+    color:  #ffffff;
 }
 
 .navegacao.aberto {
