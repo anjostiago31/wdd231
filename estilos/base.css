@@ -1,8 +1,9 @@
-/* CÂMARA DE COMÉRCIO DE GARÇA
+/* ==========================================
+   CÂMARA DE COMÉRCIO DE GARÇA
    Arquivo: base.css
    Autor: Tiago dos Anjos
-   Estilos compartilhados - Mobile First
-*/
+   Descrição: Estilos principais - Mobile First
+========================================== */
 
 /* 1. VARIÁVEIS */
 :root {
@@ -35,9 +36,7 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     font-family: var(--fonte-principal);
@@ -57,13 +56,8 @@ a {
     color: inherit;
 }
 
-button, input, select, textarea {
-    font: inherit;
-}
-
-button {
-    cursor: pointer;
-}
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
 
 h1, h2, h3 {
     font-family: var(--fonte-titulos);
@@ -71,9 +65,7 @@ h1, h2, h3 {
     color: var(--azul-principal);
 }
 
-h1 {
-    font-size: 1.8rem;
-}
+h1 { font-size: 1.8rem; }
 
 h2 {
     font-size: 1.6rem;
@@ -85,9 +77,7 @@ h3 {
     margin-bottom: 0.8rem;
 }
 
-p {
-    margin-bottom: 1rem;
-}
+p { margin-bottom: 1rem; }
 
 /* 3. ACESSIBILIDADE */
 :focus-visible {
@@ -157,9 +147,7 @@ footer :focus-visible,
     margin-top: 1rem;
 }
 
-#navegacao.aberto {
-    display: block;
-}
+#navegacao.aberto { display: block; }
 
 #navegacao ul {
     list-style: none;
@@ -183,22 +171,15 @@ footer :focus-visible,
 }
 
 /* 6. CONTEÚDO PRINCIPAL */
-main {
-    min-height: 60vh;
-}
+main { min-height: 60vh; }
 
 main > h1 {
     text-align: center;
     padding: 2rem 1rem;
 }
 
-section {
-    padding: 3rem 1.2rem;
-}
-
-section > h2 {
-    text-align: center;
-}
+section { padding: 3rem 1.2rem; }
+section > h2 { text-align: center; }
 
 section > p {
     max-width: 800px;
@@ -239,7 +220,6 @@ section > p {
 }
 
 .hero-conteudo p {
-    color: var(--branco);
     font-size: 1rem;
     margin-bottom: 1.5rem;
 }
@@ -262,9 +242,7 @@ section > p {
 }
 
 /* 9. INFORMAÇÕES DA CIDADE */
-.informacoes {
-    background-color: var(--branco);
-}
+.informacoes { background-color: var(--branco); }
 
 .cards {
     display: grid;
@@ -287,14 +265,10 @@ section > p {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-.card p {
-    margin-bottom: 0;
-}
+.card p { margin-bottom: 0; }
 
 /* 10. PREVISÃO DO TEMPO */
-.clima {
-    background-color: var(--cinza-claro);
-}
+.clima { background-color: var(--cinza-claro); }
 
 .clima-container {
     display: grid;
@@ -310,9 +284,7 @@ section > p {
     box-shadow: var(--sombra);
 }
 
-.clima-atual {
-    text-align: center;
-}
+.clima-atual { text-align: center; }
 
 #temperatura {
     font-size: 2.5rem;
@@ -320,9 +292,7 @@ section > p {
     color: var(--azul-principal);
 }
 
-#descricao-clima {
-    font-size: 1rem;
-}
+#descricao-clima { font-size: 1rem; }
 
 #previsao-dias {
     display: flex;
@@ -341,17 +311,9 @@ section > p {
 }
 
 /* 11. EMPRESAS EM DESTAQUE */
-.empresas-destaque {
-    text-align: center;
-}
-
-.empresas-destaque .card {
-    text-align: left;
-}
-
-.empresas-destaque .botao {
-    margin-top: 1rem;
-}
+.empresas-destaque { text-align: center; }
+.empresas-destaque .card { text-align: left; }
+.empresas-destaque .botao { margin-top: 1rem; }
 
 /* 12. ASSOCIAÇÃO EM DESTAQUE */
 .associacao-destaque {
@@ -360,10 +322,7 @@ section > p {
     text-align: center;
 }
 
-.associacao-destaque h2,
-.associacao-destaque p {
-    color: var(--branco);
-}
+.associacao-destaque h2 { color: var(--branco); }
 
 .associacao-destaque p {
     max-width: 750px;
@@ -376,9 +335,7 @@ footer {
     color: var(--branco);
 }
 
-footer h3 {
-    color: var(--dourado);
-}
+footer h3 { color: var(--dourado); }
 
 footer p, footer span, footer a, footer time {
     color: var(--branco);
@@ -392,7 +349,8 @@ footer p, footer span, footer a, footer time {
     padding: 3rem 1.5rem;
 }
 
-.rodape-conteudo p {
+.rodape-conteudo p,
+.rodape-final p {
     margin-bottom: 0.5rem;
 }
 
@@ -403,10 +361,6 @@ footer p, footer span, footer a, footer time {
     font-size: 0.9rem;
 }
 
-.rodape-final p {
-    margin-bottom: 0.5rem;
-}
-
 /* 14. PÁGINAS INTERNAS */
 .pagina-conteudo {
     max-width: 1200px;
@@ -414,13 +368,8 @@ footer p, footer span, footer a, footer time {
     padding: 3rem 1.5rem;
 }
 
-.pagina-conteudo h1 {
-    margin-bottom: 1.5rem;
-}
-
-.pagina-conteudo h2 {
-    margin-top: 2rem;
-}
+.pagina-conteudo h1 { margin-bottom: 1.5rem; }
+.pagina-conteudo h2 { margin-top: 2rem; }
 
 /* 15. FORMULÁRIOS */
 .formulario {
@@ -490,9 +439,7 @@ footer p, footer span, footer a, footer time {
     margin-bottom: 0.5rem;
 }
 
-.dia-previsao p {
-    margin-bottom: 0.3rem;
-}
+.dia-previsao p { margin-bottom: 0.3rem; }
 
 .temperaturas-dia {
     text-align: right;
@@ -511,9 +458,7 @@ footer p, footer span, footer a, footer time {
 
 /* 17. ACESSIBILIDADE E MOVIMENTO */
 @media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
+    html { scroll-behavior: auto; }
 
     *, *::before, *::after {
         transition-duration: 0.01ms !important;

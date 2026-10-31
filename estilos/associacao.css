@@ -1,10 +1,11 @@
 /* ==========================================
    CÂMARA DE COMÉRCIO DE GARÇA
    Arquivo: associacao.css
+   Autor: Tiago dos Anjos
+   Descrição: Estilos da página de associação
 ========================================== */
 
-/* INTRODUÇÃO */
-
+/* 1. INTRODUÇÃO */
 .associacao-introducao {
     background-color: var(--azul-principal);
     color: var(--branco);
@@ -21,14 +22,12 @@
     margin: 0 auto 2rem;
 }
 
-/* BENEFÍCIOS */
-
+/* 2. BENEFÍCIOS */
 .beneficios-associacao {
     background-color: var(--branco);
 }
 
-/* PLANOS */
-
+/* 3. PLANOS */
 .planos-associacao {
     background-color: var(--cinza-claro);
 }
@@ -74,8 +73,7 @@
     border: none;
 }
 
-/* PLANO OURO */
-
+/* 4. PLANO OURO */
 .plano-destaque {
     border: 2px solid var(--dourado);
 }
@@ -91,8 +89,7 @@
     font-weight: bold;
 }
 
-/* FORMULÁRIO */
-
+/* 5. FORMULÁRIO */
 .secao-formulario {
     background-color: var(--branco);
 }
@@ -133,8 +130,7 @@
     transition: background-color 0.3s;
 }
 
-/* ROLAGEM ATÉ O FORMULÁRIO */
-
+/* 6. ROLAGEM ATÉ O FORMULÁRIO */
 #formulario-associacao {
     scroll-margin-top: 2rem;
 }

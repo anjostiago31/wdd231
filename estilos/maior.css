@@ -1,8 +1,9 @@
-/* CÂMARA DE COMÉRCIO DE GARÇA
+/* ==========================================
+   CÂMARA DE COMÉRCIO DE GARÇA
    Arquivo: maior.css
    Autor: Tiago dos Anjos
-   Layout responsivo para telas maiores
-*/
+   Descrição: Layout responsivo
+========================================== */
 
 /* 1. AJUSTES GERAIS */
 .card,
@@ -22,47 +23,27 @@
 /* 2. TABLETS - A PARTIR DE 600px */
 @media screen and (min-width: 600px) {
 
-    h1 {
-        font-size: 2.2rem;
-    }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.9rem; }
 
-    h2 {
-        font-size: 1.9rem;
-    }
-
-    .cabecalho {
-        padding: 1.2rem 2rem;
-    }
+    .cabecalho { padding: 1.2rem 2rem; }
 
     .identidade img {
         width: 75px;
         height: 75px;
     }
 
-    .identidade h2 {
-        font-size: 1.3rem;
-    }
+    .identidade h2 { font-size: 1.3rem; }
 
-    .hero > img {
-        height: 500px;
-    }
-
-    .hero-conteudo h2 {
-        font-size: 2.3rem;
-    }
-
-    .hero-conteudo p {
-        font-size: 1.1rem;
-    }
+    .hero > img { height: 500px; }
+    .hero-conteudo h2 { font-size: 2.3rem; }
+    .hero-conteudo p { font-size: 1.1rem; }
 
     .cards,
     .rodape-conteudo,
     .galeria,
     .empresas-grade,
-    .planos-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
+    .planos-container,
     .clima-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -78,9 +59,7 @@
         flex-wrap: wrap;
     }
 
-    .confirmacao-card {
-        padding: 3rem;
-    }
+    .confirmacao-card { padding: 3rem; }
 
     .acoes-confirmacao {
         flex-direction: row;
@@ -88,9 +67,8 @@
     }
 }
 
-/* 3. TABLETS MENORES - DE 600px A 767px */
+/* 3. TABLETS MENORES - 600px A 767px */
 @media screen and (min-width: 600px) and (max-width: 767px) {
-
     .clima-container {
         grid-template-columns: 1fr;
     }
@@ -105,13 +83,8 @@
         gap: 1rem;
     }
 
-    .identidade {
-        flex-shrink: 0;
-    }
-
-    #menu {
-        display: none;
-    }
+    .identidade { flex-shrink: 0; }
+    #menu { display: none; }
 
     #navegacao,
     #navegacao.aberto {
@@ -121,7 +94,6 @@
     }
 
     #navegacao ul {
-        display: flex;
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
@@ -133,17 +105,10 @@
         font-size: 0.9rem;
     }
 
-    section {
-        padding: 4rem 2rem;
-    }
+    section { padding: 4rem 2rem; }
 
-    .hero > img {
-        height: 550px;
-    }
-
-    .hero-conteudo h2 {
-        font-size: 2.6rem;
-    }
+    .hero > img { height: 550px; }
+    .hero-conteudo h2 { font-size: 2.6rem; }
 
     .cards {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -159,16 +124,11 @@
     }
 }
 
-/* 5. TELAS INTERMEDIÁRIAS - DE 768px A 899px */
+/* 5. TELAS INTERMEDIÁRIAS - 768px A 899px */
 @media screen and (min-width: 768px) and (max-width: 899px) {
 
-    .cabecalho {
-        padding: 1rem 1.5rem;
-    }
-
-    .identidade h2 {
-        font-size: 1.1rem;
-    }
+    .cabecalho { padding: 1rem 1.5rem; }
+    .identidade h2 { font-size: 1.1rem; }
 
     #navegacao a {
         padding: 0.6rem;
@@ -179,54 +139,27 @@
 /* 6. COMPUTADORES - A PARTIR DE 1024px */
 @media screen and (min-width: 1024px) {
 
-    .cabecalho {
-        padding: 1rem 5%;
-    }
+    .cabecalho { padding: 1rem 5%; }
 
     .identidade img {
         width: 80px;
         height: 80px;
     }
 
-    .identidade h2 {
-        font-size: 1.5rem;
-    }
+    .identidade h2 { font-size: 1.5rem; }
 
-    #navegacao ul {
-        gap: 1rem;
-    }
+    #navegacao ul { gap: 1rem; }
+    #navegacao a { font-size: 1rem; }
 
-    #navegacao a {
-        font-size: 1rem;
-    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2.1rem; }
 
-    h1 {
-        font-size: 2.5rem;
-    }
+    .hero > img { height: 600px; }
+    .hero-conteudo { max-width: 900px; }
+    .hero-conteudo h2 { font-size: 3rem; }
+    .hero-conteudo p { font-size: 1.2rem; }
 
-    h2 {
-        font-size: 2.1rem;
-    }
-
-    .hero > img {
-        height: 600px;
-    }
-
-    .hero-conteudo {
-        max-width: 900px;
-    }
-
-    .hero-conteudo h2 {
-        font-size: 3rem;
-    }
-
-    .hero-conteudo p {
-        font-size: 1.2rem;
-    }
-
-    section {
-        padding: 5rem 3rem;
-    }
+    section { padding: 5rem 3rem; }
 
     .cards,
     .clima-container {
@@ -240,16 +173,10 @@
         padding: 2.5rem;
     }
 
-    .associacao-destaque {
-        padding: 5rem 2rem;
-    }
+    .associacao-destaque { padding: 5rem 2rem; }
+    .rodape-conteudo { padding: 4rem 2rem; }
 
-    .rodape-conteudo {
-        padding: 4rem 2rem;
-    }
-
-    .galeria,
-    .empresas-grade {
+    .galeria {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
@@ -258,9 +185,7 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .galeria img {
-        height: 220px;
-    }
+    .galeria img { height: 220px; }
 
     .formulario button[type="submit"] {
         width: auto;
@@ -277,37 +202,17 @@
         padding-right: max(5%, calc((100% - 1400px) / 2));
     }
 
-    .hero > img {
-        height: 650px;
-    }
-
-    .hero-conteudo h2 {
-        font-size: 3.3rem;
-    }
-
-    .cards {
-        max-width: 1400px;
-    }
-
-    .clima-container {
-        max-width: 1300px;
-    }
+    .hero > img { height: 650px; }
+    .hero-conteudo h2 { font-size: 3.3rem; }
+    .cards { max-width: 1400px; }
+    .clima-container { max-width: 1300px; }
 }
 
 /* 8. AJUSTES PARA TELAS BAIXAS */
 @media screen and (max-height: 500px) {
-
-    .hero > img {
-        height: 350px;
-    }
-
-    .hero-conteudo h2 {
-        font-size: 1.5rem;
-    }
-
-    .hero-conteudo p {
-        font-size: 0.9rem;
-    }
+    .hero > img { height: 350px; }
+    .hero-conteudo h2 { font-size: 1.5rem; }
+    .hero-conteudo p { font-size: 0.9rem; }
 }
 
 /* 9. AJUSTES PARA IMPRESSÃO */
@@ -326,9 +231,7 @@
         display: none;
     }
 
-    section {
-        padding: 1rem;
-    }
+    section { padding: 1rem; }
 
     .card {
         box-shadow: none;

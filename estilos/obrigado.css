@@ -1,8 +1,11 @@
 /* ==========================================
    CÂMARA DE COMÉRCIO DE GARÇA
    Arquivo: obrigado.css
+   Autor: Tiago dos Anjos
+   Descrição: Página de confirmação
 ========================================== */
 
+/* 1. CONFIRMAÇÃO */
 .confirmacao {
     background-color: var(--cinza-claro);
     min-height: 70vh;
@@ -18,8 +21,7 @@
     text-align: center;
 }
 
-/* ÍCONE */
-
+/* 2. ÍCONE */
 .icone-confirmacao {
     display: flex;
     justify-content: center;
@@ -34,8 +36,7 @@
     font-weight: bold;
 }
 
-/* TÍTULO */
-
+/* 3. TÍTULO E MENSAGEM */
 .confirmacao-card h1 {
     margin-bottom: 1rem;
 }
@@ -45,10 +46,15 @@
     margin-bottom: 1.5rem;
 }
 
-/* RESUMO */
-
-.resumo-solicitacao {
+/* 4. ESPAÇAMENTOS COMPARTILHADOS */
+.resumo-solicitacao,
+.aviso-confirmacao,
+.acoes-confirmacao {
     margin-top: 2rem;
+}
+
+/* 5. RESUMO DA SOLICITAÇÃO */
+.resumo-solicitacao {
     text-align: left;
 }
 
@@ -57,15 +63,18 @@
     margin-bottom: 1.5rem;
 }
 
+/* 6. DADOS DA CONFIRMAÇÃO */
 .dados-confirmacao {
-    border: 1px solid #d6dde5;
+    --borda-dados: #d6dde5;
+
+    border: 1px solid var(--borda-dados);
     border-radius: 8px;
     overflow: hidden;
 }
 
 .dados-confirmacao > div {
     padding: 1rem;
-    border-bottom: 1px solid #d6dde5;
+    border-bottom: 1px solid var(--borda-dados);
 }
 
 .dados-confirmacao > div:last-child {
@@ -87,10 +96,8 @@
     overflow-wrap: anywhere;
 }
 
-/* AVISO */
-
+/* 7. AVISO */
 .aviso-confirmacao {
-    margin-top: 2rem;
     padding: 1rem;
     background-color: var(--azul-aviso);
     border-left: 4px solid var(--azul-secundario);
@@ -98,13 +105,11 @@
     font-size: 0.9rem;
 }
 
-/* BOTÕES */
-
+/* 8. BOTÕES */
 .acoes-confirmacao {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-top: 2rem;
 }
 
 .botao-secundario {

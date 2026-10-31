@@ -1,10 +1,11 @@
 /* ==========================================
    CÂMARA DE COMÉRCIO DE GARÇA
    Arquivo: diretorio.css
+   Autor: Tiago dos Anjos
+   Descrição: Estilos do diretório de empresas
 ========================================== */
 
-/* INTRODUÇÃO */
-
+/* 1. INTRODUÇÃO */
 .diretorio-introducao {
     background-color: var(--cinza-claro);
     text-align: center;
@@ -19,8 +20,7 @@
     margin: 0 auto 1rem;
 }
 
-/* PESQUISA */
-
+/* 2. PESQUISA E FILTROS */
 .diretorio-pesquisa {
     background-color: var(--branco);
 }
@@ -46,8 +46,7 @@
     background-color: var(--branco);
 }
 
-/* CONTROLES */
-
+/* 3. CONTROLES DE VISUALIZAÇÃO */
 .controles-diretorio {
     display: flex;
     flex-direction: column;
@@ -75,15 +74,13 @@
     color: var(--branco);
 }
 
-/* VISUALIZAÇÃO EM GRADE */
-
+/* 4. VISUALIZAÇÃO EM GRADE */
 .empresas-grade {
     display: grid;
     gap: 1.5rem;
 }
 
-/* CARTÕES */
-
+/* 5. CARTÕES DAS EMPRESAS */
 .empresa-card {
     background-color: var(--branco);
     padding: 1.8rem;
@@ -98,7 +95,6 @@
 
 .empresa-card p {
     margin-bottom: 0.8rem;
-    overflow-wrap: anywhere;
 }
 
 .empresa-categoria {
@@ -118,8 +114,7 @@
     text-decoration: underline;
 }
 
-/* VISUALIZAÇÃO EM LISTA */
-
+/* 6. VISUALIZAÇÃO EM LISTA */
 .empresas-lista {
     display: flex;
     flex-direction: column;
