@@ -1,6 +1,11 @@
-/* Câmara de Comércio de Garça | inicio.css */
+/* ==========================================
+   CÂMARA DE COMÉRCIO DE GARÇA
+   Arquivo: inicio.css
+   Autor: Tiago dos Anjos
+   Descrição: Estilos da página inicial
+========================================== */
 
-/* TÍTULO ACESSÍVEL */
+/* ACESSIBILIDADE */
 .titulo-acessivel {
     position: absolute;
     width: 1px;
@@ -13,26 +18,21 @@
     border: 0;
 }
 
-/* BANNER */
+/* SLIDESHOW */
 main > .slideshow {
     position: relative;
-    display: block;
     width: 100%;
     max-width: none;
-    margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: var(--azul-principal);
+    background: var(--azul-principal);
     color: var(--branco);
 }
 
-/* SLIDES */
 .slideshow .slides {
     position: relative;
     width: 100%;
     height: clamp(300px, 38vw, 600px);
-    margin: 0;
-    padding: 0;
     overflow: hidden;
 }
 
@@ -41,9 +41,8 @@ main > .slideshow {
     inset: 0;
     opacity: 0;
     visibility: hidden;
-    transition:
-        opacity 1.2s ease-in-out,
-        visibility 1.2s ease-in-out;
+    transition: opacity 1.2s ease-in-out,
+                visibility 1.2s ease-in-out;
 }
 
 .slideshow .slide.ativo {
@@ -59,7 +58,7 @@ main > .slideshow {
     object-position: center;
 }
 
-/* CONTEÚDO DO SLIDE */
+/* CONTEÚDO */
 .slideshow .slide-conteudo {
     position: absolute;
     bottom: 0;
@@ -90,14 +89,14 @@ main > .slideshow {
 .slideshow .slide-botao {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background-color: var(--dourado);
+    background: var(--dourado);
     color: var(--azul-principal);
     border-radius: 5px;
     font-weight: bold;
 }
 
 .slideshow .slide-botao:hover {
-    background-color: var(--dourado-hover);
+    background: var(--dourado-hover);
 }
 
 /* SETAS */
@@ -114,7 +113,7 @@ main > .slideshow {
     height: 44px;
     border: none;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.55);
     color: var(--branco);
     font-size: 1.4rem;
 }
@@ -129,7 +128,7 @@ main > .slideshow {
 
 .slideshow .slide-anterior:hover,
 .slideshow .slide-proximo:hover {
-    background-color: var(--dourado);
+    background: var(--dourado);
     color: var(--azul-principal);
 }
 
@@ -150,11 +149,11 @@ main > .slideshow {
     padding: 0;
     border: 1px solid var(--branco);
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .slideshow .indicador.ativo {
-    background-color: var(--dourado);
+    background: var(--dourado);
 }
 
 /* TELAS GRANDES */

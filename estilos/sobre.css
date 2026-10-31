@@ -7,12 +7,6 @@
     background-color: var(--cinza-claro);
 }
 
-.historia,
-.economia,
-.eventos {
-    background-color: var(--branco);
-}
-
 /* INTRODUÇÃO */
 .sobre-introducao {
     text-align: center;
@@ -24,7 +18,6 @@
 
 .subtitulo {
     font-size: 1.1rem;
-    color: var(--cinza-escuro);
     max-width: 800px;
     margin: 0 auto 2rem;
 }

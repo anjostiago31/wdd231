@@ -1,12 +1,23 @@
-/* Câmara de Comércio de Garça | maior.css */
-/* Carregar após os estilos específicos */
+/* ==========================================
+   CÂMARA DE COMÉRCIO DE GARÇA
+   Arquivo: maior.css
+   Autor: Tiago dos Anjos
+   Descrição: Responsividade do site
+========================================== */
 
+/* TABLETS - 600px */
 @media screen and (min-width: 600px) {
+
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.9rem; }
 
     .cabecalho { padding: 1.2rem 2rem; }
-    .identidade img { width: 75px; height: 75px; }
+
+    .identidade img {
+        width: 75px;
+        height: 75px;
+    }
+
     .identidade h2 { font-size: 1.3rem; }
 
     .hero > img { height: 500px; }
@@ -17,8 +28,7 @@
     .rodape-conteudo,
     .empresas-grade,
     .planos-container,
-    .galeria,
-    .clima-container {
+    .galeria {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -41,13 +51,9 @@
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 767px) {
-    .clima-container {
-        grid-template-columns: 1fr;
-    }
-}
-
+/* DESKTOP - 768px */
 @media screen and (min-width: 768px) {
+
     .cabecalho {
         padding: 1rem 2rem;
         flex-wrap: nowrap;
@@ -55,6 +61,7 @@
     }
 
     .identidade { flex-shrink: 0; }
+
     #menu { display: none; }
 
     #navegacao,
@@ -95,8 +102,11 @@
     }
 }
 
+/* TABLETS HORIZONTAIS - 768px A 899px */
 @media screen and (min-width: 768px) and (max-width: 899px) {
+
     .cabecalho { padding: 1rem 1.5rem; }
+
     .identidade h2 { font-size: 1.1rem; }
 
     #navegacao a {
@@ -105,9 +115,16 @@
     }
 }
 
+/* DESKTOP - 1024px */
 @media screen and (min-width: 1024px) {
+
     .cabecalho { padding: 1rem 5%; }
-    .identidade img { width: 80px; height: 80px; }
+
+    .identidade img {
+        width: 80px;
+        height: 80px;
+    }
+
     .identidade h2 { font-size: 1.5rem; }
 
     #navegacao ul { gap: 1rem; }
@@ -155,7 +172,9 @@
     }
 }
 
+/* TELAS GRANDES - 1440px */
 @media screen and (min-width: 1440px) {
+
     .informacoes,
     .empresas-destaque {
         padding-left: max(5%, calc((100% - 1400px) / 2));
@@ -168,13 +187,17 @@
     .clima-container { max-width: 1300px; }
 }
 
+/* TELAS COM POUCA ALTURA */
 @media screen and (max-height: 500px) {
+
     .hero > img { height: 350px; }
     .hero-conteudo h2 { font-size: 1.5rem; }
     .hero-conteudo p { font-size: 0.9rem; }
 }
 
+/* IMPRESSÃO */
 @media print {
+
     body {
         background-color: #fff;
         color: #000;
