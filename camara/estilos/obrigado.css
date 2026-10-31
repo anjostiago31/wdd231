@@ -1,0 +1,113 @@
+/* ==========================================
+   CÂMARA DE COMÉRCIO DE GARÇA
+   Arquivo: obrigado.css
+========================================== */
+
+.confirmacao {
+    background-color: var(--cinza-claro);
+    min-height: 70vh;
+}
+
+.confirmacao-card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--branco);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+/* ÍCONE */
+
+.icone-confirmacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background-color: var(--verde-claro-confirmacao);
+    color: var(--verde-confirmacao);
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* TÍTULO */
+
+.confirmacao-card h1 {
+    margin-bottom: 1rem;
+}
+
+.mensagem-confirmacao {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* RESUMO */
+
+.resumo-solicitacao {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.resumo-solicitacao h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.dados-confirmacao {
+    border: 1px solid #d6dde5;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dados-confirmacao > div {
+    padding: 1rem;
+    border-bottom: 1px solid #d6dde5;
+}
+
+.dados-confirmacao > div:last-child {
+    border-bottom: none;
+}
+
+.dados-confirmacao > div:nth-child(even) {
+    background-color: #f4f7fa;
+}
+
+.dados-confirmacao dt {
+    font-weight: bold;
+    color: var(--azul-principal);
+    margin-bottom: 0.4rem;
+}
+
+.dados-confirmacao dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+/* AVISO */
+
+.aviso-confirmacao {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--azul-aviso);
+    border-left: 4px solid var(--azul-secundario);
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+/* BOTÕES */
+
+.acoes-confirmacao {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.botao-secundario {
+    background-color: var(--azul-secundario);
+    color: var(--branco);
+}

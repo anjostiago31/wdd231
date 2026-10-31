@@ -1,0 +1,140 @@
+/* ==========================================
+   CÂMARA DE COMÉRCIO DE GARÇA
+   Arquivo: associacao.css
+========================================== */
+
+/* INTRODUÇÃO */
+
+.associacao-introducao {
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    text-align: center;
+}
+
+.associacao-introducao h1 {
+    color: var(--branco);
+    margin-bottom: 1.5rem;
+}
+
+.associacao-introducao p {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+/* BENEFÍCIOS */
+
+.beneficios-associacao {
+    background-color: var(--branco);
+}
+
+/* PLANOS */
+
+.planos-associacao {
+    background-color: var(--cinza-claro);
+}
+
+.planos-container {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.plano {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--branco);
+    padding: 2rem;
+    border: 1px solid var(--cinza-medio);
+    border-radius: var(--borda);
+    box-shadow: var(--sombra);
+}
+
+.plano h3 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.plano-descricao {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.plano ul {
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.plano li {
+    margin-bottom: 0.8rem;
+}
+
+.plano .botao {
+    margin-top: auto;
+    border: none;
+}
+
+/* PLANO OURO */
+
+.plano-destaque {
+    border: 2px solid var(--dourado);
+}
+
+.selo-plano {
+    display: block;
+    background-color: var(--dourado);
+    color: var(--azul-principal);
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* FORMULÁRIO */
+
+.secao-formulario {
+    background-color: var(--branco);
+}
+
+.formulario fieldset {
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.formulario legend {
+    color: var(--azul-principal);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--dourado);
+}
+
+.formulario textarea {
+    resize: vertical;
+}
+
+.aviso-formulario {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.aviso-privacidade {
+    font-size: 0.9rem;
+    padding: 1rem;
+    background-color: var(--azul-aviso);
+    border-left: 4px solid var(--azul-secundario);
+    border-radius: 4px;
+}
+
+.formulario button[type="submit"] {
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+/* ROLAGEM ATÉ O FORMULÁRIO */
+
+#formulario-associacao {
+    scroll-margin-top: 2rem;
+}

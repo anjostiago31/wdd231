@@ -2,7 +2,7 @@
    CÂMARA DE COMÉRCIO DE GARÇA
    Arquivo: maior.css
    Autor: Tiago dos Anjos
-   Descrição: Layout para telas maiores
+   Descrição: Layout responsivo para telas maiores
 ========================================== */
 
 
@@ -54,21 +54,20 @@
     /* CARTÕES */
 
     .cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     /* PREVISÃO DO TEMPO */
 
     .clima-container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     /* RODAPÉ */
 
     .rodape-conteudo {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
 }
 
 
@@ -81,9 +80,13 @@
     /* CABEÇALHO */
 
     .cabecalho {
-        padding: 1rem 3rem;
+        padding: 1rem 2rem;
         flex-wrap: nowrap;
-        gap: 1.5rem;
+        gap: 1rem;
+    }
+
+    .identidade {
+        flex-shrink: 0;
     }
 
     /* ESCONDER BOTÃO MOBILE */
@@ -105,12 +108,13 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 0.5rem;
+        flex-wrap: wrap;
+        gap: 0.3rem;
     }
 
     #navegacao a {
-        padding: 0.7rem 1rem;
-        font-size: 0.95rem;
+        padding: 0.7rem 0.8rem;
+        font-size: 0.9rem;
     }
 
     /* CONTEÚDO */
@@ -136,13 +140,13 @@
     /* CARTÕES */
 
     .cards {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     /* PREVISÃO DO TEMPO */
 
     .clima-container {
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
     }
 
     /* EMPRESAS */
@@ -156,7 +160,6 @@
     .pagina-conteudo {
         padding: 4rem 3rem;
     }
-
 }
 
 
@@ -261,7 +264,6 @@
     .rodape-conteudo {
         padding: 4rem 2rem;
     }
-
 }
 
 
@@ -300,7 +302,6 @@
     .clima-container {
         max-width: 1300px;
     }
-
 }
 
 
@@ -321,7 +322,6 @@
     .hero-conteudo p {
         font-size: 0.9rem;
     }
-
 }
 
 
@@ -332,13 +332,15 @@
 @media print {
 
     body {
-        background-color: white;
-        color: black;
+        background-color: #ffffff;
+        color: #000000;
     }
 
     .cabecalho,
     #menu,
-    .botao {
+    .slide-anterior,
+    .slide-proximo,
+    .slide-indicadores {
         display: none;
     }
 
@@ -348,18 +350,29 @@
 
     .card {
         box-shadow: none;
-        border: 1px solid #999;
+        border: 1px solid #999999;
+        break-inside: avoid;
+    }
+
+    .botao {
+        background-color: transparent;
+        color: #000000;
+        border: 1px solid #000000;
     }
 
     footer {
-        background-color: white;
-        color: black;
+        background-color: #ffffff;
+        color: #000000;
     }
 
+    .rodape-conteudo h3 {
+        color: #000000;
+    }
 }
 
+
 /* ==========================================
-   GALERIA RESPONSIVA
+   7. GALERIA RESPONSIVA
 ========================================== */
 
 /* TABLETS */
@@ -367,9 +380,8 @@
 @media screen and (min-width: 600px) {
 
     .galeria {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
 }
 
 /* COMPUTADORES */
@@ -377,61 +389,60 @@
 @media screen and (min-width: 1024px) {
 
     .galeria {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     .galeria img {
         height: 220px;
     }
-
 }
 
+
 /* ==========================================
-   DIRETÓRIO RESPONSIVO
+   8. DIRETÓRIO RESPONSIVO
 ========================================== */
 
 @media screen and (min-width: 600px) {
 
     .filtros-diretorio {
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     }
 
     .empresas-grade {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .controles-diretorio {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
     }
-
 }
 
 @media screen and (min-width: 1024px) {
 
     .empresas-grade {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-
 }
 
+
 /* ==========================================
-   ASSOCIAÇÃO RESPONSIVA
+   9. ASSOCIAÇÃO RESPONSIVA
 ========================================== */
 
 @media screen and (min-width: 600px) {
 
     .planos-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
 }
 
 @media screen and (min-width: 1024px) {
 
     .planos-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .plano {
@@ -442,11 +453,11 @@
         width: auto;
         min-width: 220px;
     }
-
 }
 
+
 /* ==========================================
-   CONFIRMAÇÃO RESPONSIVA
+   10. CONFIRMAÇÃO RESPONSIVA
 ========================================== */
 
 @media screen and (min-width: 600px) {
@@ -459,5 +470,54 @@
         flex-direction: row;
         justify-content: center;
     }
+}
 
+
+/* ==========================================
+   11. AJUSTES ADICIONAIS DE RESPONSIVIDADE
+========================================== */
+
+/* Evitar que cartões e conteúdos ultrapassem a tela */
+
+.card,
+.empresa-card,
+.plano,
+.clima-atual,
+.previsao {
+    min-width: 0;
+}
+
+/* Melhorar a quebra de textos longos */
+
+.card,
+.empresa-card,
+.plano {
+    overflow-wrap: anywhere;
+}
+
+/* Ajustes para tablets menores */
+
+@media screen and (min-width: 768px) and (max-width: 899px) {
+
+    .cabecalho {
+        padding: 1rem 1.5rem;
+    }
+
+    .identidade h2 {
+        font-size: 1.1rem;
+    }
+
+    #navegacao a {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Melhorar a distribuição em telas intermediárias */
+
+@media screen and (min-width: 600px) and (max-width: 767px) {
+
+    .clima-container {
+        grid-template-columns: 1fr;
+    }
 }
