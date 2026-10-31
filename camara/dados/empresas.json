@@ -1,56 +1,111 @@
 [
     {
         "id": 1,
-        "nome": "Garça Tecnologia",
+        "nome": "PPA Conforto e Segurança",
         "categoria": "Tecnologia",
-        "endereco": "Centro, Garça - SP",
-        "telefone": "(14) 0000-0001",
-        "site": "",
-        "descricao": "Empresa demonstrativa especializada em soluções tecnológicas e desenvolvimento de sistemas."
+        "endereco": "Av. Dr. Labieno da Costa Machado, 3526 Distrito Industrial Garça/SP",
+        "telefone": "0800 0550 250",
+        "site": "https://www.ppa.com.br/brasil",
+        "descricao": "A PPA, fundada em Garça (SP), é especializada em automação de portões, portas, cancelas e sistemas de segurança eletrônica. Referência em tecnologia e inovação, contribui para o desenvolvimento industrial e econômico do município."
     },
     {
         "id": 2,
-        "nome": "Café Jardim",
+        "nome": "Juliê Gelateria",
         "categoria": "Alimentação",
-        "endereco": "Centro, Garça - SP",
-        "telefone": "(14) 0000-0002",
-        "site": "",
-        "descricao": "Cafeteria fictícia com opções de cafés, lanches e produtos artesanais."
+        "endereco": "Endereço: R. Dep. Manoel Joaquim Fernandes, 225 - Rebelo, Garça - SP",
+        "telefone": "(14) 99711-5168",
+        "site": "https://www.instagram.com/juliegelateria/",
+        "descricao": "A Juliê Gelateria oferece sorvetes artesanais e sobremesas especiais, combinando qualidade, variedade de sabores e um ambiente aconchegante. É uma opção para quem busca momentos de lazer e experiências gastronômicas em Garça."
     },
     {
         "id": 3,
-        "nome": "Comercial Avenida",
+        "nome": "Big Mart Supermecados",
         "categoria": "Comércio",
-        "endereco": "Garça - SP",
-        "telefone": "(14) 0000-0003",
-        "site": "",
-        "descricao": "Estabelecimento comercial demonstrativo com produtos variados."
+        "endereco": "R. Targino Nunes, 50, Garça - SP",
+        "telefone": "(14) 3471-0840",
+        "site": "https://www.redebigmart.com.br/garca/",
+        "descricao": "O Big Mart é uma rede de supermercados que atua no comércio varejista de alimentos e produtos essenciais. Com variedade de mercadorias, oferece opções para as necessidades do dia a dia, contribuindo para a economia e a geração de empregos em Garça (SP)."
     },
     {
         "id": 4,
-        "nome": "Soluções Empresariais Garça",
-        "categoria": "Serviços",
-        "endereco": "Garça - SP",
-        "telefone": "(14) 0000-0004",
-        "site": "",
-        "descricao": "Empresa fictícia de consultoria administrativa e serviços empresariais."
+        "nome": "Full Time",
+        "categoria": "Tecnologia",
+        "endereco": "Av. Pres. Vargas, 70 - Centro, Garça - SP",
+        "telefone": "(14) 34078800",
+        "site": "https://fulltime.com.br/",
+        "descricao": "A Full Time, localizada em Garça (SP), é especializada em soluções tecnológicas, desenvolvimento de softwares e sistemas de rastreamento e monitoramento veicular. A empresa oferece tecnologias que contribuem para a segurança, o controle e a gestão de veículos."
     },
     {
         "id": 5,
-        "nome": "Centro Educacional Futuro",
+        "nome": "Etec - Centro Paulo de Souza",
         "categoria": "Educação",
-        "endereco": "Garça - SP",
-        "telefone": "(14) 0000-0005",
-        "site": "",
-        "descricao": "Instituição demonstrativa dedicada à formação profissional."
+        "endereco": " Praça Dr. Martinho Funchal de Barros, 277 - Williams, Garça - SP",
+        "telefone": "(14) 3471-0099",
+        "site": "https://etecmam.cps.sp.gov.br/",
+        "descricao": "A ETEC de Garça é uma instituição pública de ensino técnico e profissionalizante, vinculada ao Centro Paula Souza. Oferece formação de nível médio e técnico, preparando estudantes para o mercado de trabalho e contribuindo para o desenvolvimento educacional, tecnológico e econômico do município."
     },
     {
         "id": 6,
-        "nome": "Mercado Cidade Jardim",
+        "nome": "Supermecados Avenida",
         "categoria": "Comércio",
-        "endereco": "Garça - SP",
-        "telefone": "(14) 0000-0006",
-        "site": "",
-        "descricao": "Mercado fictício voltado ao atendimento da comunidade local."
+        "endereco": "R. Santo Antônio, 365 - José Ribeiro, Garça - SP",
+        "telefone": "(18) 3302-4239",
+        "site": "https://supermercadosavenida.com.br/",
+        "descricao": "O Supermercados Avenida atua no comércio varejista de alimentos, oferecendo variedade de produtos, qualidade e praticidade para seus clientes. A empresa contribui para o fortalecimento do comércio local, a geração de empregos e o desenvolvimento econômico de Garça (SP)."
+    },
+    {
+        "id": 7,
+        "nome": "Clinicar - Centro Automotivo",
+        "categoria": "Serviços",
+        "endereco": "Av. Dr. Labieno da Costa Machado, 2635 - Distrito Industrial, Garça - S",
+        "telefone": " (14) 99141-6772",
+        "site": "https://www.instagram.com/clinicarcentroautomotivo2/",
+        "descricao": "A Clinicar Centro Automotivo, localizada em Garça (SP), é especializada na venda de pneus, alinhamento, balanceamento e serviços de manutenção automotiva. Oferece soluções para a conservação e a segurança dos veículos, atendendo às necessidades dos motoristas da região."
+    },
+    {
+        "id": 8,
+        "nome": "Life Internet",
+        "categoria": "Serviços",
+        "endereco": "R. Alberto Alves, 266 - Williams, Garça - SP,",
+        "telefone": "(14) 3407-4800",
+        "site": "https://life.com.br/",
+        "descricao": "A Life Internet, localizada em Garça (SP), atua no setor de telecomunicações, oferecendo serviços de conexão à internet para residências e empresas. Com foco em conectividade, qualidade e tecnologia, contribui para a inclusão digital e o desenvolvimento tecnológico do município."
+    },
+    {
+        "id": 9,
+        "nome": "Fatec - Faculdade de Tecnologia de Garça",
+        "categoria": "Educação",
+        "endereco": "Av. Pres. Vargas, 2331 - José Ribeiro, Garça - SP,",
+        "telefone": "(14) 3588-1800",
+        "site": "https://fatecgarca.cps.sp.gov.br/",
+        "descricao": "A Fatec Garça, fundada em 2004 e vinculada ao Centro Paula Souza, é uma instituição pública de ensino superior gratuito. Oferece cursos nas áreas de tecnologia, gestão e indústria, como Análise e Desenvolvimento de Sistemas, Gestão Empresarial, Mecatrônica Industrial e Manufatura Avançada, contribuindo para a formação profissional e o desenvolvimento econômico e tecnológico da região."
+    },
+    {
+        "id": 10,
+        "nome": "Faef - Faculdade de Ensino Superior de Garça",
+        "categoria": "Educação",
+        "endereco": " Rod. Cmte. João Ribeiro de Barros, Km 420 - Garça, SP,",
+        "telefone": "(14) 3407-8000",
+        "site": "https://faef.br/home",
+        "descricao": "A FAEF - Faculdade de Ensino Superior e Formação Integral, localizada em Garça (SP), é uma instituição privada de ensino superior que oferece cursos de graduação e pós-graduação. Destaca-se pela formação acadêmica e profissional em áreas como Medicina Veterinária, Agronomia, Direito, Enfermagem, Farmácia, Psicologia, Pedagogia e Engenharia Florestal, contribuindo para o desenvolvimento educacional e econômico da região."
+    },
+    {
+        "id": 11,
+        "nome": "Tempero da Vovó",
+        "categoria": "Alimentação",
+        "endereco": "Av. Dr. Labieno da Costa Machado, 1906 - Labienópolis, Garça - SP",
+        "telefone": " (14) 99860-9824",
+        "site": "https://www.instagram.com/temperodavovogarca/",
+        "descricao": "O Tempero da Vovó, de Garça (SP), atua no setor de alimentação, valorizando os sabores da culinária caseira e a tradição das receitas familiares. Seu trabalho destaca o cuidado no preparo dos alimentos e o sabor característico da comida caseira."
+    },
+    {
+        "id": 12,
+        "nome": "Cóz Jeans",
+        "categoria": "Comércio",
+        "endereco": "R. Cel. Joaquim Piza, 147 - Williams, Garça - SP, ",
+        "telefone": "(14) 99839-8167",
+        "site": "https://www.instagram.com/cozjeansgarca/",
+        "descricao": "A Cóz Jeans, localizada em Garça (SP), é uma loja especializada em moda jeans e vestuário feminino e masculino. Oferece variedade de modelos e estilos, combinando conforto, qualidade e preços acessíveis, contribuindo para o fortalecimento do comércio local."
     }
+
 ]
