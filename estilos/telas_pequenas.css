@@ -76,7 +76,7 @@ img {
 .navegacao {
     display: none;
     background: var(--secundaria);
-    color:  #ffffff;
+    color: var(--branco);
 }
 
 .navegacao.aberto {
@@ -244,7 +244,9 @@ h1 {
     font-weight: 700;
 }
 
-/* RODAPÉ */
+/* ==========================================
+   RODAPÉ
+========================================== */
 
 footer {
     padding: 1.5rem 1rem;
@@ -253,24 +255,45 @@ footer {
     text-align: center;
 }
 
+/* ÍCONES DAS REDES SOCIAIS */
+
 .redes-sociais {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 1.5rem;
     margin-bottom: 1rem;
 }
 
 .redes-sociais a {
-    color: var(--branco);
-    font-weight: 700;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--branco);
+    color: var(--primaria);
     text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.redes-sociais a:hover,
+.redes-sociais img {
+    display: block;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.redes-sociais a:hover {
+    transform: translateY(-3px);
+    background: var(--destaque);
+}
+
 .redes-sociais a:focus-visible {
-    color: var(--destaque);
-    text-decoration: underline;
+    outline: 3px solid var(--destaque);
+    outline-offset: 3px;
 }
 
 footer p {
@@ -288,6 +311,16 @@ button:focus-visible,
 a:focus-visible {
     outline: 3px solid var(--destaque);
     outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .redes-sociais a {
+        transition: none;
+    }
+
+    .redes-sociais a:hover {
+        transform: none;
+    }
 }
 
 /* ==========================================
