@@ -27,7 +27,9 @@ main > .slideshow {
     margin: 0;
     padding: 0;
     overflow: hidden;
+
     background-color: var(--azul-principal);
+    color: var(--branco);
 }
 
 /* ÁREA DOS SLIDES */

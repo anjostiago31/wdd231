@@ -365,6 +365,10 @@
         color: #000000;
     }
 
+    footer p,
+    footer span,
+    footer a,
+    footer time,
     .rodape-conteudo h3 {
         color: #000000;
     }

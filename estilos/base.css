@@ -461,8 +461,23 @@ section > p {
    13. RODAPÉ
 ========================================== */
 
+/* ==========================================
+   13. RODAPÉ
+========================================== */
+
 footer {
     background-color: var(--azul-rodape);
+    color: var(--branco);
+}
+
+footer h3 {
+    color: var(--dourado);
+}
+
+footer p,
+footer span,
+footer a,
+footer time {
     color: var(--branco);
 }
 
@@ -485,9 +500,6 @@ footer time {
     padding: 3rem 1.5rem;
 }
 
-.rodape-conteudo h3 {
-    color: var(--dourado);
-}
 
 .rodape-conteudo p {
     margin-bottom: 0.5rem;
