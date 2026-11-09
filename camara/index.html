@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Conheça a Câmara de Comércio de Garça, suas empresas associadas, eventos e oportunidades de negócios.">
+
+    <meta name="author" content="Tiago dos Anjos">
+
+    <title>Câmara de Comércio de Garça | Início</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap"
+        rel="stylesheet">
+
+    <!-- ESTILOS EXTERNOS -->
+    <link rel="stylesheet" href="estilos/base.css">
+    <link rel="stylesheet" href="estilos/maior.css">
+    <link rel="stylesheet" href="estilos/inicio.css">
+
+    <!-- JAVASCRIPT -->
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/clima.js" defer></script>
+    <script src="scripts/slideshow.js" defer></script>
+    <script src="scripts/rodape.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <div class="identidade">
+            <img
+                src="imagens/garca_azul_oti.webp"
+                alt="Emblema da Câmara de Comércio de Garça"
+                width="80"
+                height="80">
+
+            <div>
+                <h2>Câmara de Comércio</h2>
+                <p>Garça - São Paulo</p>
+            </div>
+        </div>
+
+        <!-- MENU MOBILE -->
+        <button
+            id="menu"
+            type="button"
+            aria-label="Abrir menu de navegação"
+            aria-expanded="false"
+            aria-controls="navegacao">
+            ☰
+        </button>
+
+        <!-- NAVEGAÇÃO -->
+        <nav id="navegacao" aria-label="Navegação principal">
+            <ul>
+                <li>
+                    <a href="index.html" aria-current="page">Início</a>
+                </li>
+                <li>
+                    <a href="sobre.html">Sobre</a>
+                </li>
+                <li>
+                    <a href="diretorio.html">Diretório</a>
+                </li>
+                <li>
+                    <a href="associe-se.html">Associe-se</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <h1 class="titulo-acessivel">
+            Câmara de Comércio de Garça
+        </h1>
+
+        <!-- SLIDESHOW PRINCIPAL -->
+        <section class="slideshow" aria-label="Destaques de Garça">
+
+            <div class="slides">
+
+                <!-- SLIDE 1 -->
+                <div class="slide ativo">
+                    <img
+                        src="imagens/banner_principal_oti.webp"
+                        alt="Arte da Câmara de Comércio de Garça com a ave garça, cerejeiras e monumentos históricos da cidade"
+                        fetchpriority="high">
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="slide">
+                    <img
+                        src="imagens/banner_ppa_oti.webp"
+                        alt="Empresa do setor eletroeletrônico de Garça"
+                        loading="lazy">
+
+                    <div class="slide-conteudo">
+                        <h2>Garça: Capital da Eletroeletrônica</h2>
+
+                        <p>
+                            Nossa cidade se destaca pela presença
+                            de empresas que investem em tecnologia,
+                            inovação e desenvolvimento.
+                        </p>
+
+                        <a href="diretorio.html" class="slide-botao">
+                            Conhecer Empresas
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3 -->
+                <div class="slide">
+                    <img
+                        src="imagens/banner_garen_oti.webp"
+                        alt="Indústria e desenvolvimento econômico de Garça"
+                        loading="lazy">
+
+                    <div class="slide-conteudo">
+                        <h2>Indústria, Tecnologia e Inovação</h2>
+
+                        <p>
+                            Empresas que contribuem para a geração
+                            de empregos e o fortalecimento
+                            da economia local.
+                        </p>
+
+                        <a href="diretorio.html" class="slide-botao">
+                            Explorar Diretório
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SLIDE 4 -->
+                <div class="slide">
+                    <img
+                        src="imagens/camara_comercio_oti.webp"
+                        alt="Comércio e serviços da cidade de Garça"
+                        loading="lazy">
+
+                    <div class="slide-conteudo">
+                        <h2>Fortalecendo o Comércio Local</h2>
+
+                        <p>
+                            Valorizamos os empreendedores
+                            que movimentam a economia
+                            e contribuem para o crescimento de Garça.
+                        </p>
+
+                        <a href="associe-se.html" class="slide-botao">
+                            Faça Parte
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SLIDE 5 -->
+                <div class="slide">
+                    <img
+                        src="imagens/banner_cultura_oti.webp"
+                        alt="Cerejeiras floridas próximas ao lago em Garça"
+                        loading="lazy">
+
+                    <div class="slide-conteudo">
+                        <h2>Garça: Cultura e Tradição</h2>
+
+                        <p>
+                            A tradição das cerejeiras representa
+                            uma parte importante da identidade
+                            cultural do município.
+                        </p>
+
+                        <a href="sobre.html" class="slide-botao">
+                            Conheça Garça
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CONTROLES DO SLIDESHOW -->
+            <button
+                class="slide-anterior"
+                type="button"
+                aria-label="Imagem anterior">
+                &#10094;
+            </button>
+
+            <button
+                class="slide-proximo"
+                type="button"
+                aria-label="Próxima imagem">
+                &#10095;
+            </button>
+
+            <!-- INDICADORES -->
+            <div class="slide-indicadores" aria-label="Selecionar imagem">
+
+                <button
+                    class="indicador ativo"
+                    type="button"
+                    aria-label="Mostrar imagem 1"
+                    aria-current="true">
+                </button>
+
+                <button
+                    class="indicador"
+                    type="button"
+                    aria-label="Mostrar imagem 2">
+                </button>
+
+                <button
+                    class="indicador"
+                    type="button"
+                    aria-label="Mostrar imagem 3">
+                </button>
+
+                <button
+                    class="indicador"
+                    type="button"
+                    aria-label="Mostrar imagem 4">
+                </button>
+
+                <button
+                    class="indicador"
+                    type="button"
+                    aria-label="Mostrar imagem 5">
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- INFORMAÇÕES DA CIDADE -->
+        <section class="informacoes">
+
+            <h2>Bem-vindo a Garça</h2>
+
+            <p>
+                Localizada no interior do estado de São Paulo,
+                Garça é uma cidade reconhecida por sua história,
+                suas atividades econômicas e suas tradições culturais.
+            </p>
+
+            <div class="cards">
+
+                <article class="card">
+                    <h3>Comércio Local</h3>
+                    <p>
+                        Conheça empresas e profissionais que
+                        movimentam a economia da nossa cidade.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Oportunidades</h3>
+                    <p>
+                        Descubra possibilidades de negócios,
+                        parcerias e desenvolvimento profissional.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Comunidade</h3>
+                    <p>
+                        Valorizar o comércio local é contribuir
+                        para o crescimento de toda a comunidade.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- PREVISÃO DO TEMPO -->
+        <section class="clima">
+
+            <h2>Previsão do Tempo</h2>
+
+            <div class="clima-container">
+
+                <article class="clima-atual">
+                    <h3>Garça - SP</h3>
+
+                    <p id="temperatura">
+                        Carregando temperatura...
+                    </p>
+
+                    <p id="descricao-clima"></p>
+                </article>
+
+                <article class="previsao">
+                    <h3>Previsão para os próximos dias</h3>
+
+                    <div id="previsao-dias">
+                        <p>Carregando previsão...</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- EMPRESAS EM DESTAQUE -->
+        <section class="empresas-destaque">
+
+            <h2>Empresas em Destaque</h2>
+
+            <p>
+                Conheça algumas empresas que fazem parte
+                da nossa comunidade empresarial.
+            </p>
+
+            <div id="empresas-container" class="cards">
+
+                <article class="card">
+                    <h3>Comércio Local</h3>
+                    <p>
+                        Conheça estabelecimentos
+                        e serviços da cidade.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Empreendedores</h3>
+                    <p>
+                        Descubra iniciativas que
+                        fortalecem a economia.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Novas Oportunidades</h3>
+                    <p>
+                        Encontre empresas e possíveis
+                        parceiros comerciais.
+                    </p>
+                </article>
+
+            </div>
+
+            <a href="diretorio.html" class="botao">
+                Ver Diretório Completo
+            </a>
+
+        </section>
+
+        <!-- CHAMADA PARA ASSOCIAÇÃO -->
+        <section class="associacao-destaque">
+
+            <h2>Faça parte da Câmara de Comércio</h2>
+
+            <p>
+                Amplie sua rede de contatos, participe de iniciativas
+                empresariais e descubra os benefícios de fazer parte
+                da nossa comunidade.
+            </p>
+
+            <a href="associe-se.html" class="botao">
+                Quero me associar
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <div class="rodape-conteudo">
+
+            <div>
+                <h3>Câmara de Comércio de Garça</h3>
+                <p>Garça - São Paulo - Brasil</p>
+                <p>Projeto acadêmico demonstrativo</p>
+            </div>
+
+            <div>
+                <h3>Desenvolvimento</h3>
+                <p>Tiago dos Anjos e Oliveira</p>
+                <p>Desenvolvimento Frontend para Web 1</p>
+            </div>
+
+        </div>
+
+        <div class="rodape-final">
+    <p>&copy; 2026 Câmara de Comércio de Garça</p>
+
+    <p>
+        Última modificação:
+        <span id="ultima-modificacao"></span>
+    </p>
+</div>
+
+    </footer>
+
+</body>
+</html>
