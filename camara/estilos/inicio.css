@@ -1,8 +1,9 @@
+
 /* ==========================================
    CÂMARA DE COMÉRCIO DE GARÇA
    Arquivo: inicio.css
    Autor: Tiago dos Anjos
-   Descrição: Estilos da página inicial
+   Página inicial - WDD231
 ========================================== */
 
 /* ACESSIBILIDADE */
@@ -18,7 +19,10 @@
     border: 0;
 }
 
-/* SLIDESHOW */
+/* ==========================================
+   SLIDESHOW
+========================================== */
+
 main > .slideshow {
     position: relative;
     width: 100%;
@@ -41,8 +45,9 @@ main > .slideshow {
     inset: 0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 1.2s ease-in-out,
-                visibility 1.2s ease-in-out;
+    transition:
+        opacity 1.2s ease-in-out,
+        visibility 1.2s ease-in-out;
 }
 
 .slideshow .slide.ativo {
@@ -58,7 +63,8 @@ main > .slideshow {
     object-position: center;
 }
 
-/* CONTEÚDO */
+/* CONTEÚDO DO SLIDE */
+
 .slideshow .slide-conteudo {
     position: absolute;
     bottom: 0;
@@ -85,7 +91,8 @@ main > .slideshow {
     margin-bottom: 1rem;
 }
 
-/* BOTÃO */
+/* BOTÃO DO SLIDE */
+
 .slideshow .slide-botao {
     display: inline-block;
     padding: 0.8rem 1.5rem;
@@ -93,6 +100,7 @@ main > .slideshow {
     color: var(--azul-principal);
     border-radius: 5px;
     font-weight: bold;
+    transition: background 0.3s ease;
 }
 
 .slideshow .slide-botao:hover {
@@ -100,6 +108,7 @@ main > .slideshow {
 }
 
 /* SETAS */
+
 .slideshow .slide-anterior,
 .slideshow .slide-proximo {
     position: absolute;
@@ -133,6 +142,7 @@ main > .slideshow {
 }
 
 /* INDICADORES */
+
 .slideshow .slide-indicadores {
     position: absolute;
     bottom: 12px;
@@ -156,7 +166,347 @@ main > .slideshow {
     background: var(--dourado);
 }
 
-/* TELAS GRANDES */
+/* ==========================================
+   ESTILOS GERAIS DA PÁGINA INICIAL
+========================================== */
+
+main > .informacoes,
+main > .eventos,
+main > .clima,
+main > .empresas-destaque,
+main > .associacao-destaque {
+    width: 100%;
+    max-width: none;
+    padding: 3rem max(1.25rem, calc((100% - 1200px) / 2));
+}
+
+.informacoes h2,
+.eventos h2,
+.clima h2,
+.empresas-destaque h2,
+.associacao-destaque h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.informacoes > p,
+.eventos > p,
+.clima > p,
+.empresas-destaque > p,
+.associacao-destaque > p {
+    max-width: 850px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+/* ==========================================
+   CARTÕES
+========================================== */
+
+.informacoes .cards,
+.eventos .cards,
+.empresas-destaque .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.informacoes .card,
+.eventos .card,
+.empresas-destaque .card {
+    min-width: 0;
+    padding: 1.5rem;
+    border: 1px solid var(--cinza-medio);
+    border-radius: var(--borda);
+    background: var(--branco);
+    box-shadow: var(--sombra);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.informacoes .card:hover,
+.eventos .card:hover,
+.empresas-destaque .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.informacoes .card h3,
+.eventos .card h3,
+.empresas-destaque .card h3 {
+    color: var(--azul-principal);
+    margin-bottom: 0.8rem;
+}
+
+.informacoes .card p,
+.eventos .card p,
+.empresas-destaque .card p {
+    margin-bottom: 0.75rem;
+}
+
+/* ==========================================
+   INFORMAÇÕES
+========================================== */
+
+.informacoes {
+    background: var(--branco);
+}
+
+.informacoes .card {
+    border-top: 4px solid var(--dourado);
+}
+
+/* ==========================================
+   EVENTOS
+========================================== */
+
+.eventos {
+    background: var(--cinza-claro);
+}
+
+.eventos .evento-card {
+    border-top: 4px solid var(--azul-secundario);
+}
+
+.eventos .evento-card a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--azul-principal);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.eventos .evento-card a:hover {
+    color: var(--dourado-escuro);
+}
+
+.eventos .aviso-eventos {
+    max-width: 900px;
+    margin: 2rem auto 0;
+    padding: 1rem;
+    background: var(--azul-aviso);
+    border-left: 4px solid var(--azul-secundario);
+    border-radius: 5px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   CLIMA
+========================================== */
+
+.clima {
+    background: var(--branco);
+}
+
+.clima-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.clima-atual,
+.previsao {
+    min-width: 0;
+    padding: 2rem;
+    border: 1px solid var(--cinza-medio);
+    border-radius: var(--borda);
+    background: var(--cinza-claro);
+    box-shadow: var(--sombra);
+}
+
+.clima-atual h3,
+.previsao h3 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#temperatura {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--vermelho-temperatura);
+    text-align: center;
+}
+
+#descricao-clima {
+    text-align: center;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+#previsao-dias {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* Cartões de previsão que poderão ser
+   gerados pelo JavaScript */
+
+#previsao-dias .dia,
+#previsao-dias .previsao-dia,
+#previsao-dias .dia-previsao {
+    padding: 1rem;
+    background: var(--branco);
+    border: 1px solid var(--cinza-medio);
+    border-radius: var(--borda);
+    text-align: center;
+}
+
+#previsao-dias img {
+    max-width: 70px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   EMPRESAS EM DESTAQUE
+========================================== */
+
+.empresas-destaque {
+    background: var(--cinza-claro);
+    text-align: center;
+}
+
+.empresas-destaque .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.empresas-destaque .card img {
+    width: 120px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 0.75rem;
+}
+
+.empresas-destaque .card a {
+    color: var(--azul-principal);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+}
+
+.empresas-destaque .card a:hover {
+    color: var(--dourado-escuro);
+}
+
+/* NÍVEIS DE ASSOCIAÇÃO */
+
+.nivel-ouro,
+.nivel-prata {
+    display: inline-block;
+    padding: 0.35rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.nivel-ouro {
+    background: #f5e5ad;
+    color: #60440b;
+}
+
+.nivel-prata {
+    background: #e1e5e9;
+    color: #35434f;
+}
+
+/* ==========================================
+   BOTÕES
+========================================== */
+
+.empresas-destaque > .botao,
+.associacao-destaque > .botao {
+    display: inline-block;
+    padding: 0.9rem 1.6rem;
+    border-radius: 5px;
+    font-weight: 700;
+    text-align: center;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.empresas-destaque > .botao {
+    margin-top: 2rem;
+    background: var(--azul-principal);
+    color: var(--branco);
+}
+
+.empresas-destaque > .botao:hover {
+    background: var(--azul-secundario);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   CHAMADA PARA ASSOCIAÇÃO
+========================================== */
+
+main > .associacao-destaque {
+    background: var(--azul-principal);
+    color: var(--branco);
+    text-align: center;
+}
+
+.associacao-destaque h2 {
+    color: var(--branco);
+}
+
+.associacao-destaque > .botao {
+    background: var(--dourado);
+    color: var(--azul-principal);
+}
+
+.associacao-destaque > .botao:hover {
+    background: var(--dourado-hover);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media screen and (min-width: 600px) {
+
+    .informacoes .cards,
+    .eventos .cards,
+    .empresas-destaque .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #previsao-dias {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* ==========================================
+   DESKTOP
+========================================== */
+
+@media screen and (min-width: 900px) {
+
+    .informacoes .cards,
+    .eventos .cards,
+    .empresas-destaque .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .clima-container {
+        grid-template-columns: 1fr 1.5fr;
+    }
+}
+
+/* ==========================================
+   SLIDESHOW EM TELAS GRANDES
+========================================== */
+
 @media screen and (min-width: 1200px) {
     .slideshow .slides {
         height: 520px;
@@ -169,8 +519,12 @@ main > .slideshow {
     }
 }
 
-/* TABLETS */
+/* ==========================================
+   SLIDESHOW EM TABLETS
+========================================== */
+
 @media screen and (max-width: 768px) {
+
     .slideshow .slides {
         height: 350px;
     }
@@ -178,10 +532,22 @@ main > .slideshow {
     .slideshow .slide-conteudo {
         padding: 1.5rem 3.5rem 2.5rem;
     }
+
+    main > .informacoes,
+    main > .eventos,
+    main > .clima,
+    main > .empresas-destaque,
+    main > .associacao-destaque {
+        padding: 2.5rem 1.25rem;
+    }
 }
 
-/* CELULARES */
+/* ==========================================
+   CELULARES
+========================================== */
+
 @media screen and (max-width: 480px) {
+
     .slideshow .slides {
         height: 280px;
     }
@@ -217,11 +583,35 @@ main > .slideshow {
     .slideshow .slide-proximo {
         right: 8px;
     }
+
+    .clima-atual,
+    .previsao {
+        padding: 1.25rem;
+    }
+
+    .informacoes .card,
+    .eventos .card,
+    .empresas-destaque .card {
+        padding: 1.25rem;
+    }
+
+    .slideshow .slide-indicadores {
+        bottom: 8px;
+    }
 }
 
-/* MOVIMENTO REDUZIDO */
+/* ==========================================
+   MOVIMENTO REDUZIDO
+========================================== */
+
 @media (prefers-reduced-motion: reduce) {
-    .slideshow .slide {
+
+    .slideshow .slide,
+    .informacoes .card,
+    .eventos .card,
+    .empresas-destaque .card,
+    .empresas-destaque > .botao,
+    .associacao-destaque > .botao {
         transition: none;
     }
 }

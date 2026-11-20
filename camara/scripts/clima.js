@@ -1,74 +1,78 @@
+
 /* ==========================================
    CÂMARA DE COMÉRCIO DE GARÇA
    Arquivo: clima.js
    Autor: Tiago dos Anjos
-   Descrição: Previsão do tempo para Garça - SP
+   Descrição: Clima atual e previsão para Garça - SP
+   API: OpenWeatherMap
 ========================================== */
+
+"use strict";
 
 // ==========================================
 // 1. ELEMENTOS DO HTML
 // ==========================================
 
-const temperaturaElemento = document.querySelector("#temperatura");
-const descricaoElemento = document.querySelector("#descricao-clima");
-const previsaoElemento = document.querySelector("#previsao-dias");
+const temperaturaElemento =
+    document.querySelector("#temperatura");
+
+const descricaoElemento =
+    document.querySelector("#condicao");
+
+const umidadeElemento =
+    document.querySelector("#umidade");
+
+const ventoElemento =
+    document.querySelector("#vento");
+
+const atualizacaoElemento =
+    document.querySelector("#atualizacao");
+
+const previsaoElemento =
+    document.querySelector("#previsao");
 
 // ==========================================
 // 2. CONFIGURAÇÃO DA API
 // ==========================================
 
+// Insira sua chave da OpenWeatherMap
+const API_KEY = "f154f5b18b77de8774f4d97bf47b1f8d";
+
 // Coordenadas aproximadas de Garça - SP
-const latitude = -22.21;
-const longitude = -49.65;
+const LATITUDE = -22.21;
+const LONGITUDE = -49.65;
 
-// Endereço da API Open-Meteo
-const urlClima =
-    `https://api.open-meteo.com/v1/forecast?` +
-    `latitude=${latitude}&longitude=${longitude}` +
-    `&current=temperature_2m,relative_humidity_2m,` +
-    `weather_code,wind_speed_10m` +
-    `&daily=temperature_2m_max,temperature_2m_min,weather_code` +
-    `&timezone=America%2FSao_Paulo` +
-    `&forecast_days=4`;
+const URL_CLIMA =
+    "https://api.openweathermap.org/data/2.5/weather";
+
+const URL_PREVISAO =
+    "https://api.openweathermap.org/data/2.5/forecast";
 
 // ==========================================
-// 3. DESCRIÇÕES DO CLIMA
+// 3. CONSULTAR API
 // ==========================================
 
-function obterDescricaoClima(codigo) {
+async function consultarAPI(endereco) {
 
-    const descricoes = {
-        0: "Céu limpo ☀️",
-        1: "Predominantemente limpo 🌤️",
-        2: "Parcialmente nublado ⛅",
-        3: "Nublado ☁️",
-        45: "Nevoeiro 🌫️",
-        48: "Nevoeiro com geada 🌫️",
-        51: "Garoa fraca 🌦️",
-        53: "Garoa moderada 🌦️",
-        55: "Garoa intensa 🌧️",
-        56: "Garoa congelante fraca 🌧️",
-        57: "Garoa congelante intensa 🌧️",
-        61: "Chuva fraca 🌧️",
-        63: "Chuva moderada 🌧️",
-        65: "Chuva forte 🌧️",
-        66: "Chuva congelante fraca 🌧️",
-        67: "Chuva congelante forte 🌧️",
-        71: "Neve fraca ❄️",
-        73: "Neve moderada ❄️",
-        75: "Neve forte ❄️",
-        77: "Grãos de neve ❄️",
-        80: "Pancadas de chuva fracas 🌦️",
-        81: "Pancadas de chuva moderadas 🌧️",
-        82: "Pancadas de chuva fortes ⛈️",
-        85: "Pancadas de neve fracas ❄️",
-        86: "Pancadas de neve fortes ❄️",
-        95: "Trovoadas ⛈️",
-        96: "Trovoadas com granizo fraco ⛈️",
-        99: "Trovoadas com granizo forte ⛈️"
-    };
+    const url = new URL(endereco);
 
-    return descricoes[codigo] || "Condição não disponível";
+    url.search = new URLSearchParams({
+        lat: LATITUDE,
+        lon: LONGITUDE,
+        appid: API_KEY,
+        units: "metric",
+        lang: "pt_br"
+    });
+
+    const resposta = await fetch(url);
+
+    if (!resposta.ok) {
+        throw new Error(
+            `Erro na OpenWeatherMap: ${resposta.status}`
+        );
+    }
+
+    return await resposta.json();
 }
 
 // ==========================================
@@ -77,16 +81,21 @@ function obterDescricaoClima(codigo) {
 
 function formatarData(data) {
 
-    // A API retorna datas no formato YYYY-MM-DD
-    const [ano, mes, dia] = data.split("-").map(Number);
+    const [ano, mes, dia] =
+        data.split("-").map(Number);
 
-    const dataFormatada = new Date(ano, mes - 1, dia);
+    const dataFormatada =
+        new Date(Date.UTC(ano, mes - 1, dia, 12));
 
-    return dataFormatada.toLocaleDateString("pt-BR", {
-        weekday: "long",
-        day: "2-digit",
-        month: "2-digit"
-    });
+    return dataFormatada.toLocaleDateString(
+        "pt-BR",
+        {
+            weekday: "long",
+            day: "2-digit",
+            month: "2-digit",
+            timeZone: "UTC"
+        }
+    );
 }
 
 // ==========================================
@@ -95,141 +104,210 @@ function formatarData(data) {
 
 function exibirClimaAtual(dados) {
 
-    const climaAtual = dados.current;
-
-    const temperatura = climaAtual.temperature_2m;
-    const umidade = climaAtual.relative_humidity_2m;
-    const vento = climaAtual.wind_speed_10m;
-    const codigoClima = climaAtual.weather_code;
-
     temperaturaElemento.textContent =
-        `${Math.round(temperatura)}°C`;
+        `${Math.round(dados.main.temp)}°C`;
 
     descricaoElemento.textContent =
-        obterDescricaoClima(codigoClima);
+        dados.weather[0].description;
 
-    // Informações complementares
-    const informacoes = document.createElement("div");
-
-    informacoes.classList.add("informacoes-clima");
-
-    const textoUmidade = document.createElement("p");
-    textoUmidade.textContent = `💧 Umidade: ${umidade}%`;
-
-    const textoVento = document.createElement("p");
-    textoVento.textContent = `💨 Vento: ${vento} km/h`;
-
-    informacoes.appendChild(textoUmidade);
-    informacoes.appendChild(textoVento);
-
-    const informacoesAntigas =
-        document.querySelector(".informacoes-clima");
-
-    if (informacoesAntigas) {
-        informacoesAntigas.remove();
+    if (umidadeElemento) {
+        umidadeElemento.textContent =
+            `${dados.main.humidity}%`;
     }
 
-    descricaoElemento.insertAdjacentElement(
-        "afterend",
-        informacoes
-    );
+    if (ventoElemento) {
+        const velocidade =
+            dados.wind.speed * 3.6;
+
+        ventoElemento.textContent =
+            `${velocidade.toFixed(1)} km/h`;
+    }
+
+    if (atualizacaoElemento) {
+
+        const horarioLocal = new Date(
+            (dados.dt + dados.timezone) * 1000
+        );
+
+        const horario = horarioLocal
+            .toISOString()
+            .slice(11, 16);
+
+        atualizacaoElemento.textContent =
+            `Dados referentes às ${horario}`;
+    }
 }
 
 // ==========================================
-// 6. EXIBIR PREVISÃO DOS PRÓXIMOS DIAS
+// 6. EXIBIR PREVISÃO DOS PRÓXIMOS 3 DIAS
 // ==========================================
 
 function exibirPrevisao(dados) {
 
-    const previsao = dados.daily;
+    const deslocamento = dados.city.timezone;
 
-    // Limpar conteúdo anterior
-    previsaoElemento.innerHTML = "";
+    const agoraLocal = new Date(
+        Date.now() + deslocamento * 1000
+    );
 
-    // Começa no índice 1 para não repetir o dia atual
-    for (let i = 1; i <= 3; i++) {
+    const hoje = agoraLocal
+        .toISOString()
+        .slice(0, 10);
 
-        const data = previsao.time[i];
+    // Agrupar previsões por data local
+    const dias = new Map();
 
-        const maxima = previsao.temperature_2m_max[i];
-        const minima = previsao.temperature_2m_min[i];
-        const codigo = previsao.weather_code[i];
+    dados.list.forEach(item => {
+
+        const dataLocal = new Date(
+            (item.dt + deslocamento) * 1000
+        );
+
+        const data = dataLocal
+            .toISOString()
+            .slice(0, 10);
+
+        if (data <= hoje) return;
+
+        if (!dias.has(data)) {
+            dias.set(data, []);
+        }
+
+        dias.get(data).push(item);
+    });
+
+    previsaoElemento.replaceChildren();
+
+    const proximosDias =
+        Array.from(dias.entries()).slice(0, 3);
+
+    proximosDias.forEach(([data, registros]) => {
+
+        // Máximas e mínimas entre os horários
+        // disponibilizados para cada dia
+        const maxima = Math.max(
+            ...registros.map(item => item.main.temp_max)
+        );
+
+        const minima = Math.min(
+            ...registros.map(item => item.main.temp_min)
+        );
+
+        // Condição prevista mais próxima do meio-dia
+        const registro = registros.reduce(
+            (melhor, atual) => {
+
+                function distanciaMeioDia(item) {
+
+                    const hora = new Date(
+                        (item.dt + deslocamento) * 1000
+                    ).getUTCHours();
+
+                    return Math.abs(hora - 12);
+                }
+
+                return distanciaMeioDia(atual) <
+                    distanciaMeioDia(melhor)
+                    ? atual
+                    : melhor;
+            }
+        );
 
         // Criar cartão
-        const cartao = document.createElement("div");
-        cartao.classList.add("dia-previsao");
+        const cartao =
+            document.createElement("div");
 
-        // Informações do dia
-        const informacoesDia = document.createElement("div");
+        cartao.classList.add(
+            "dia-previsao",
+            "cartao-previsao"
+        );
 
-        const tituloDia = document.createElement("h4");
-        tituloDia.textContent = formatarData(data);
+        const informacoesDia =
+            document.createElement("div");
 
-        const descricaoDia = document.createElement("p");
-        descricaoDia.textContent = obterDescricaoClima(codigo);
+        const tituloDia =
+            document.createElement("h4");
 
-        informacoesDia.appendChild(tituloDia);
-        informacoesDia.appendChild(descricaoDia);
+        tituloDia.textContent =
+            formatarData(data);
+
+        const descricaoDia =
+            document.createElement("p");
+
+        descricaoDia.textContent =
+            registro.weather[0].description;
+
+        informacoesDia.append(
+            tituloDia,
+            descricaoDia
+        );
 
         // Temperaturas
-        const temperaturas = document.createElement("div");
-        temperaturas.classList.add("temperaturas-dia");
+        const temperaturas =
+            document.createElement("div");
 
-        const maximaElemento = document.createElement("p");
+        temperaturas.classList.add(
+            "temperaturas-dia"
+        );
+
+        const maximaElemento =
+            document.createElement("p");
+
         maximaElemento.textContent =
             `Máx: ${Math.round(maxima)}°C`;
 
-        const minimaElemento = document.createElement("p");
+        const minimaElemento =
+            document.createElement("p");
+
         minimaElemento.textContent =
             `Mín: ${Math.round(minima)}°C`;
 
-        temperaturas.appendChild(maximaElemento);
-        temperaturas.appendChild(minimaElemento);
+        temperaturas.append(
+            maximaElemento,
+            minimaElemento
+        );
 
-        // Adicionar informações ao cartão
-        cartao.appendChild(informacoesDia);
-        cartao.appendChild(temperaturas);
+        cartao.append(
+            informacoesDia,
+            temperaturas
+        );
 
-        // Adicionar cartão à página
         previsaoElemento.appendChild(cartao);
-    }
+    });
 }
 
 // ==========================================
-// 7. CONSULTAR API
+// 7. CARREGAR CLIMA E PREVISÃO
 // ==========================================
 
 async function carregarClima() {
 
     try {
 
-        const resposta = await fetch(urlClima);
+        const [climaAtual, previsao] =
+            await Promise.all([
+                consultarAPI(URL_CLIMA),
+                consultarAPI(URL_PREVISAO)
+            ]);
 
-        if (!resposta.ok) {
-            throw new Error("Erro ao consultar a previsão do tempo.");
-        }
-
-        const dados = await resposta.json();
-
-        if (!dados.current || !dados.daily) {
-            throw new Error("Dados meteorológicos incompletos.");
-        }
-
-        exibirClimaAtual(dados);
-        exibirPrevisao(dados);
+        exibirClimaAtual(climaAtual);
+        exibirPrevisao(previsao);
 
     } catch (erro) {
 
-        console.error("Erro na previsão do tempo:", erro);
+        console.error(
+            "Erro na previsão do tempo:",
+            erro
+        );
 
         temperaturaElemento.textContent =
             "Temperatura indisponível";
 
         descricaoElemento.textContent =
-            "Não foi possível carregar o clima no momento.";
+            "Não foi possível carregar o clima.";
 
         previsaoElemento.textContent =
-            "Tente novamente mais tarde.";
+            "Previsão indisponível no momento.";
     }
 }
 
@@ -242,5 +320,20 @@ if (
     descricaoElemento &&
     previsaoElemento
 ) {
-    carregarClima();
+
+    if (API_KEY === "SUA_CHAVE_AQUI") {
+
+        temperaturaElemento.textContent =
+            "Configure a chave da API";
+
+        previsaoElemento.textContent =
+            "Aguardando configuração.";
+
+    } else {
+
+        carregarClima();
+
+        // Atualização automática a cada 15 minutos
+        setInterval(carregarClima, 900000);
+    }
 }

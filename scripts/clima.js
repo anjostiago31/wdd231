@@ -1,86 +1,264 @@
+
+"use strict";
+
+// Elementos do clima atual
 const temperatura = document.querySelector("#temperatura");
 const condicao = document.querySelector("#condicao");
 const umidade = document.querySelector("#umidade");
 const vento = document.querySelector("#vento");
 const atualizacao = document.querySelector("#atualizacao");
 
-// Coordenadas aproximadas de Garça - SP
-const latitude = -22.21;
-const longitude = -49.66;
+// Container da previsão
+const previsaoContainer = document.querySelector("#previsao");
 
-// API Open-Meteo
-const url = new URL("https://api.open-meteo.com/v1/forecast");
+// Configuração da OpenWeatherMap
+const API_KEY = "SUA_CHAVE_AQUI";
 
-url.search = new URLSearchParams({
-    latitude,
-    longitude,
-    current: [
-        "temperature_2m",
-        "relative_humidity_2m",
-        "weather_code",
-        "wind_speed_10m"
-    ].join(","),
-    timezone: "America/Sao_Paulo"
-});
+const LATITUDE = -22.21;
+const LONGITUDE = -49.66;
 
-function descricaoClima(codigo) {
+const URL_ATUAL =
+    "https://api.openweathermap.org/data/2.5/weather";
 
-    if (codigo === 0) return "☀️ Céu limpo";
-    if (codigo <= 3) return "⛅ Parcialmente nublado";
-    if (codigo <= 48) return "🌫️ Neblina";
-    if (codigo <= 67) return "🌧️ Chuva";
-    if (codigo <= 77) return "❄️ Neve";
-    if (codigo <= 82) return "🌦️ Pancadas de chuva";
-    if (codigo <= 86) return "🌨️ Neve";
-    if (codigo <= 99) return "⛈️ Tempestade";
+const URL_PREVISAO =
+    "https://api.openweathermap.org/data/2.5/forecast";
 
-    return "Condição não disponível";
+// Formatar temperatura
+function formatarTemperatura(valor) {
+    return `${Math.round(valor)}°C`;
 }
 
-async function carregarClima() {
+// Consultar a API
+async function consultarAPI(endpoint) {
+
+    const url = new URL(endpoint);
+
+    url.search = new URLSearchParams({
+        lat: LATITUDE,
+        lon: LONGITUDE,
+        appid: API_KEY,
+        units: "metric",
+        lang: "pt_br"
+    });
+
+    const resposta = await fetch(url);
+
+    if (!resposta.ok) {
+        throw new Error(
+            `Erro na API: ${resposta.status}`
+        );
+    }
+
+    return await resposta.json();
+}
+
+// Exibir clima atual
+async function carregarClimaAtual() {
+
+    if (!temperatura || !condicao) return;
 
     try {
 
-        const resposta = await fetch(url);
-
-        if (!resposta.ok) {
-            throw new Error("Erro ao consultar o clima");
-        }
-
-        const dados = await resposta.json();
-        const clima = dados.current;
+        const dados = await consultarAPI(URL_ATUAL);
 
         temperatura.textContent =
-            `${clima.temperature_2m.toFixed(1)}°C`;
+            formatarTemperatura(dados.main.temp);
 
         condicao.textContent =
-            descricaoClima(clima.weather_code);
+            dados.weather[0].description;
 
-        umidade.textContent =
-            `${clima.relative_humidity_2m}%`;
+        if (umidade) {
+            umidade.textContent =
+                `${dados.main.humidity}%`;
+        }
 
-        vento.textContent =
-            `${clima.wind_speed_10m} km/h`;
+        if (vento) {
+            vento.textContent =
+                `${(dados.wind.speed * 3.6).toFixed(1)} km/h`;
+        }
 
-        const horario = clima.time.split("T")[1];
+        if (atualizacao) {
 
-        atualizacao.textContent =
-            `Dados referentes às ${horario}`;
+            const horario = new Date(
+                (dados.dt + dados.timezone) * 1000
+            );
+
+            const horas = String(
+                horario.getUTCHours()
+            ).padStart(2, "0");
+
+            const minutos = String(
+                horario.getUTCMinutes()
+            ).padStart(2, "0");
+
+            atualizacao.textContent =
+                `Dados referentes às ${horas}:${minutos}`;
+        }
 
     } catch (erro) {
+
+        console.error(
+            "Erro ao carregar clima atual:",
+            erro
+        );
 
         temperatura.textContent =
             "Clima indisponível";
 
         condicao.textContent =
             "Não foi possível consultar os dados.";
-
-        console.error("Erro:", erro);
     }
 }
 
-// Carregar ao abrir a página
-carregarClima();
+// Exibir previsão dos próximos 3 dias
+async function carregarPrevisao() {
 
-// Atualizar a cada 15 minutos
-setInterval(carregarClima, 900000);
+    if (!previsaoContainer) return;
+
+    try {
+
+        const dados = await consultarAPI(
+            URL_PREVISAO
+        );
+
+        const deslocamento = dados.city.timezone;
+
+        // Data atual na localização da cidade
+        const agoraLocal = new Date(
+            Date.now() + deslocamento * 1000
+        );
+
+        const hoje = agoraLocal
+            .toISOString()
+            .slice(0, 10);
+
+        // Agrupar previsões por dia
+        const dias = new Map();
+
+        dados.list.forEach(item => {
+
+            const dataLocal = new Date(
+                (item.dt + deslocamento) * 1000
+            );
+
+            const data = dataLocal
+                .toISOString()
+                .slice(0, 10);
+
+            if (data <= hoje) return;
+
+            if (!dias.has(data)) {
+                dias.set(data, []);
+            }
+
+            dias.get(data).push(item);
+        });
+
+        const proximosDias = Array.from(
+            dias.entries()
+        ).slice(0, 3);
+
+        previsaoContainer.replaceChildren();
+
+        proximosDias.forEach(([data, registros]) => {
+
+            // Selecionar o horário mais próximo de 12h
+            const registro = registros.reduce(
+                (melhor, atual) => {
+
+                    const horaAtual = new Date(
+                        (atual.dt + deslocamento) * 1000
+                    ).getUTCHours();
+
+                    const horaMelhor = new Date(
+                        (melhor.dt + deslocamento) * 1000
+                    ).getUTCHours();
+
+                    return Math.abs(horaAtual - 12) <
+                        Math.abs(horaMelhor - 12)
+                        ? atual
+                        : melhor;
+                }
+            );
+
+            const dataFormatada = new Date(
+                `${data}T12:00:00Z`
+            ).toLocaleDateString("pt-BR", {
+                weekday: "long",
+                day: "2-digit",
+                month: "2-digit",
+                timeZone: "UTC"
+            });
+
+            const cartao = document.createElement("article");
+            cartao.className = "cartao-previsao";
+
+            const titulo = document.createElement("h4");
+            titulo.textContent = dataFormatada;
+
+            const temperaturaDia = document.createElement("p");
+            temperaturaDia.className = "temperatura-previsao";
+            temperaturaDia.textContent =
+                formatarTemperatura(registro.main.temp);
+
+            const descricao = document.createElement("p");
+            descricao.textContent =
+                registro.weather[0].description;
+
+            cartao.append(
+                titulo,
+                temperaturaDia,
+                descricao
+            );
+
+            previsaoContainer.appendChild(cartao);
+        });
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao carregar previsão:",
+            erro
+        );
+
+        previsaoContainer.textContent =
+            "Previsão indisponível no momento.";
+    }
+}
+
+// Atualizar todas as informações
+async function carregarDadosMeteorologicos() {
+
+    await Promise.all([
+        carregarClimaAtual(),
+        carregarPrevisao()
+    ]);
+}
+
+// Inicializar
+if (API_KEY !== "SUA_CHAVE_AQUI") {
+
+    carregarDadosMeteorologicos();
+
+    // Atualizar a cada 15 minutos
+    setInterval(
+        carregarDadosMeteorologicos,
+        900000
+    );
+
+} else {
+
+    console.warn(
+        "Configure sua chave da OpenWeatherMap."
+    );
+
+    if (temperatura) {
+        temperatura.textContent =
+            "Configure a chave da API";
+    }
+
+    if (previsaoContainer) {
+        previsaoContainer.textContent =
+            "Aguardando configuração da API.";
+    }
+}
