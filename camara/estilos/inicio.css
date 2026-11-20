@@ -183,8 +183,7 @@ main > .associacao-destaque {
 .informacoes h2,
 .eventos h2,
 .clima h2,
-.empresas-destaque h2,
-.associacao-destaque h2 {
+.empresas-destaque h2 {
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -206,7 +205,6 @@ main > .associacao-destaque {
 .informacoes .cards,
 .eventos .cards,
 .empresas-destaque .cards {
-    display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 2rem;
@@ -217,13 +215,6 @@ main > .associacao-destaque {
 .empresas-destaque .card {
     min-width: 0;
     padding: 1.5rem;
-    border: 1px solid var(--cinza-medio);
-    border-radius: var(--borda);
-    background: var(--branco);
-    box-shadow: var(--sombra);
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
 }
 
 .informacoes .card:hover,
@@ -249,10 +240,6 @@ main > .associacao-destaque {
 /* ==========================================
    INFORMAÇÕES
 ========================================== */
-
-.informacoes {
-    background: var(--branco);
-}
 
 .informacoes .card {
     border-top: 4px solid var(--dourado);
@@ -298,24 +285,20 @@ main > .associacao-destaque {
    CLIMA
 ========================================== */
 
-.clima {
+main > .clima {
     background: var(--branco);
 }
 
-.clima-container {
-    display: grid;
+main > .clima .clima-container {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
 }
 
-.clima-atual,
-.previsao {
+main > .clima .clima-atual,
+main > .clima .previsao {
     min-width: 0;
     padding: 2rem;
     border: 1px solid var(--cinza-medio);
-    border-radius: var(--borda);
     background: var(--cinza-claro);
-    box-shadow: var(--sombra);
 }
 
 .clima-atual h3,
@@ -324,31 +307,54 @@ main > .associacao-destaque {
     text-align: center;
 }
 
-#temperatura {
+/* TEMPERATURA ATUAL */
+
+main > .clima #temperatura {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
     color: var(--vermelho-temperatura);
     text-align: center;
 }
 
-#descricao-clima {
+/* DESCRIÇÃO DO TEMPO */
+
+#condicao {
     text-align: center;
     font-size: 1.1rem;
     text-transform: capitalize;
 }
 
-#previsao-dias {
+/* DETALHES METEOROLÓGICOS */
+
+.detalhes-clima {
+    margin-top: 1.5rem;
+}
+
+.detalhes-clima p {
+    margin-bottom: 0.5rem;
+}
+
+/* ATUALIZAÇÃO */
+
+#atualizacao {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* PREVISÃO DE TRÊS DIAS */
+
+#previsao {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
 }
 
-/* Cartões de previsão que poderão ser
-   gerados pelo JavaScript */
+/* CARTÕES GERADOS PELO JAVASCRIPT */
 
-#previsao-dias .dia,
-#previsao-dias .previsao-dia,
-#previsao-dias .dia-previsao {
+#previsao .dia,
+#previsao .previsao-dia,
+#previsao .dia-previsao {
     padding: 1rem;
     background: var(--branco);
     border: 1px solid var(--cinza-medio);
@@ -356,7 +362,7 @@ main > .associacao-destaque {
     text-align: center;
 }
 
-#previsao-dias img {
+#previsao img {
     max-width: 70px;
     margin: 0 auto;
 }
@@ -365,7 +371,7 @@ main > .associacao-destaque {
    EMPRESAS EM DESTAQUE
 ========================================== */
 
-.empresas-destaque {
+main > .empresas-destaque {
     background: var(--cinza-claro);
     text-align: center;
 }
@@ -455,10 +461,6 @@ main > .associacao-destaque {
     text-align: center;
 }
 
-.associacao-destaque h2 {
-    color: var(--branco);
-}
-
 .associacao-destaque > .botao {
     background: var(--dourado);
     color: var(--azul-principal);
@@ -481,7 +483,7 @@ main > .associacao-destaque {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    #previsao-dias {
+    #previsao {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
@@ -498,7 +500,7 @@ main > .associacao-destaque {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .clima-container {
+    main > .clima .clima-container {
         grid-template-columns: 1fr 1.5fr;
     }
 }
@@ -508,12 +510,14 @@ main > .associacao-destaque {
 ========================================== */
 
 @media screen and (min-width: 1200px) {
+
     .slideshow .slides {
         height: 520px;
     }
 }
 
 @media screen and (min-width: 1600px) {
+
     .slideshow .slides {
         height: 600px;
     }
@@ -584,8 +588,8 @@ main > .associacao-destaque {
         right: 8px;
     }
 
-    .clima-atual,
-    .previsao {
+    main > .clima .clima-atual,
+    main > .clima .previsao {
         padding: 1.25rem;
     }
 
