@@ -1,0 +1,73 @@
+
+/* ==========================================
+   CÂMARA DE COMÉRCIO DE GARÇA
+   Arquivo: reset.css
+   Autor: Tiago dos Anjos
+   Descrição: Reset CSS global
+========================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style-position: inside;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+textarea {
+    max-width: 100%;
+}
+
+[hidden] {
+    display: none !important;
+}

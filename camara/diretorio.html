@@ -1,37 +1,73 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Conheça as empresas e organizações associadas à Câmara de Comércio de Garça, São Paulo.">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <meta name="author" content="Tiago dos Anjos">
-
+    <!-- METADADOS PRINCIPAIS -->
     <title>Diretório de Empresas | Câmara de Comércio de Garça</title>
 
+    <meta name="description"
+          content="Conheça as empresas e organizações associadas à Câmara de Comércio de Garça, São Paulo.">
+
+    <meta name="author"
+          content="Tiago dos Anjos de Oliveira">
+
+    <!-- FAVICON -->
+    <link rel="icon"
+          type="image/webp"
+          href="imagens/garca_azul_oti.webp">
+
+    <!-- OPEN GRAPH - FACEBOOK -->
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:locale"
+          content="pt_BR">
+
+    <meta property="og:title"
+          content="Diretório de Empresas | Câmara de Comércio de Garça">
+
+    <meta property="og:description"
+          content="Conheça empresas e organizações que contribuem para o desenvolvimento econômico de Garça, São Paulo.">
+
+    <meta property="og:image"
+          content="https://anjostiago31.github.io/wdd231/camara/imagens/garca_azul_oti.webp">
+
+    <meta property="og:url"
+          content="https://anjostiago31.github.io/wdd231/camara/diretorio.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="estilos/reset.css">
     <link rel="stylesheet" href="estilos/base.css">
     <link rel="stylesheet" href="estilos/maior.css">
     <link rel="stylesheet" href="estilos/diretorio.css">
 
+    <!-- JAVASCRIPT -->
     <script src="scripts/menu.js" defer></script>
     <script src="scripts/diretorio.js" defer></script>
-    
+
 </head>
 
 <body>
 
-    <!-- CABEÇALHO -->
+    <!-- ======================================
+         CABEÇALHO
+    ======================================= -->
+
     <header class="cabecalho">
 
         <div class="identidade">
 
-            <img src="imagens/garca_azul_oti.webp"
-                 alt="Logotipo da Câmara de Comércio de Garça"
-                 width="80"
-                 height="80">
+            <img
+                src="imagens/garca_azul_oti.webp"
+                alt="Logotipo da Câmara de Comércio de Garça"
+                width="80"
+                height="80">
 
             <div>
                 <h2>Câmara de Comércio</h2>
@@ -40,41 +76,71 @@
 
         </div>
 
-        <button id="menu"
-                type="button"
-                aria-label="Abrir menu de navegação"
-                aria-expanded="false"
-                aria-controls="navegacao">
+        <!-- MENU RESPONSIVO -->
+        <button
+            id="menu"
+            type="button"
+            aria-label="Abrir menu de navegação"
+            aria-expanded="false"
+            aria-controls="navegacao">
             ☰
         </button>
 
-        <nav id="navegacao" aria-label="Navegação principal">
+        <!-- NAVEGAÇÃO PRINCIPAL -->
+        <nav
+            id="navegacao"
+            aria-label="Navegação principal">
 
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
 
                 <li>
-                    <a href="diretorio.html" aria-current="page">
+                    <a href="index.html">
+                        Início
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sobre.html">
+                        Sobre
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="diretorio.html"
+                        aria-current="page">
                         Diretório
                     </a>
                 </li>
 
-                <li><a href="associe-se.html">Associe-se</a></li>
+                <li>
+                    <a href="associe-se.html">
+                        Associe-se
+                    </a>
+                </li>
+
             </ul>
 
         </nav>
 
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main>
+    <!-- ======================================
+         CONTEÚDO PRINCIPAL
+    ======================================= -->
 
-        <section class="diretorio-introducao">
+    <main id="conteudo-principal">
+
+        <!-- INTRODUÇÃO -->
+        <section
+            class="diretorio-introducao"
+            aria-labelledby="titulo-diretorio">
 
             <div class="pagina-conteudo">
 
-                <h1>Diretório de Empresas</h1>
+                <h1 id="titulo-diretorio">
+                    Diretório de Empresas
+                </h1>
 
                 <p>
                     Conheça empresas e organizações que contribuem
@@ -90,15 +156,23 @@
 
         </section>
 
-        <!-- PESQUISA E FILTROS -->
-        <section class="diretorio-pesquisa">
+        <!-- ==================================
+             PESQUISA E FILTROS
+        =================================== -->
+
+        <section
+            class="diretorio-pesquisa"
+            aria-labelledby="titulo-pesquisa">
 
             <div class="pagina-conteudo">
 
-                <h2>Encontre uma Empresa</h2>
+                <h2 id="titulo-pesquisa">
+                    Encontre uma Empresa
+                </h2>
 
                 <div class="filtros-diretorio">
 
+                    <!-- PESQUISA POR NOME -->
                     <div class="campo-pesquisa">
 
                         <label for="pesquisa-empresa">
@@ -108,17 +182,22 @@
                         <input
                             type="search"
                             id="pesquisa-empresa"
-                            placeholder="Digite o nome da empresa">
+                            name="pesquisa-empresa"
+                            placeholder="Digite o nome da empresa"
+                            autocomplete="off">
 
                     </div>
 
+                    <!-- FILTRO POR CATEGORIA -->
                     <div class="campo-categoria">
 
                         <label for="categoria">
                             Categoria
                         </label>
 
-                        <select id="categoria">
+                        <select
+                            id="categoria"
+                            name="categoria">
 
                             <option value="todas">
                                 Todas as categorias
@@ -150,26 +229,39 @@
 
                 </div>
 
-                <!-- VISUALIZAÇÃO -->
+                <!-- ==================================
+                     CONTROLES DE VISUALIZAÇÃO
+                =================================== -->
+
                 <div class="controles-diretorio">
 
-                    <p id="total-empresas" role="status">
+                    <p
+                        id="total-empresas"
+                        role="status"
+                        aria-live="polite">
                         Carregando empresas...
                     </p>
 
-                    <div class="botoes-visualizacao">
+                    <div
+                        class="botoes-visualizacao"
+                        role="group"
+                        aria-label="Escolher visualização das empresas">
 
+                        <!-- BOTÃO GRADE -->
                         <button
                             type="button"
                             id="visualizar-grade"
                             class="ativo"
+                            aria-label="Exibir empresas em grade"
                             aria-pressed="true">
                             Grade
                         </button>
 
+                        <!-- BOTÃO LISTA -->
                         <button
                             type="button"
                             id="visualizar-lista"
+                            aria-label="Exibir empresas em lista"
                             aria-pressed="false">
                             Lista
                         </button>
@@ -178,12 +270,18 @@
 
                 </div>
 
-                <!-- EMPRESAS -->
+                <!-- ==================================
+                     LISTAGEM DE EMPRESAS
+                =================================== -->
+
                 <div
                     id="lista-empresas"
-                    class="empresas-grade">
+                    class="empresas-grade"
+                    aria-label="Empresas associadas">
 
-                    <p>Carregando diretório...</p>
+                    <p>
+                        Carregando diretório...
+                    </p>
 
                 </div>
 
@@ -191,17 +289,26 @@
 
         </section>
 
-        <!-- ASSOCIAÇÃO -->
-        <section class="associacao-destaque">
+        <!-- ==================================
+             DESTAQUE PARA ASSOCIAÇÃO
+        =================================== -->
 
-            <h2>Sua Empresa Ainda Não Faz Parte?</h2>
+        <section
+            class="associacao-destaque"
+            aria-labelledby="titulo-associacao">
+
+            <h2 id="titulo-associacao">
+                Sua Empresa Ainda Não Faz Parte?
+            </h2>
 
             <p>
                 Faça parte da nossa comunidade empresarial
                 e conheça os benefícios de se associar.
             </p>
 
-            <a href="associe-se.html" class="botao">
+            <a
+                href="associe-se.html"
+                class="botao">
                 Quero me Associar
             </a>
 
@@ -209,29 +316,56 @@
 
     </main>
 
-    <!-- RODAPÉ -->
+    <!-- ======================================
+         RODAPÉ
+    ======================================= -->
+
     <footer>
 
         <div class="rodape-conteudo">
 
+            <!-- INFORMAÇÕES DA CÂMARA -->
             <div>
-                <h3>Câmara de Comércio de Garça</h3>
-                <p>Garça - São Paulo - Brasil</p>
-                <p>Projeto acadêmico demonstrativo</p>
+
+                <h3>
+                    Câmara de Comércio de Garça
+                </h3>
+
+                <p>
+                    Garça - São Paulo - Brasil
+                </p>
+
+                <p>
+                    Projeto acadêmico demonstrativo
+                </p>
+
             </div>
 
+            <!-- INFORMAÇÕES ACADÊMICAS -->
             <div>
-                <h3>Desenvolvimento</h3>
-                <p>Tiago dos Anjos de Oliveira</p>
-                <p>Desenvolvimento Frontend para Web 1</p>
+
+                <h3>
+                    Desenvolvimento
+                </h3>
+
+                <p>
+                    Tiago dos Anjos de Oliveira
+                </p>
+
+                <p>
+                    WDD 231 - Desenvolvimento Frontend para Web 1
+                </p>
+
             </div>
 
         </div>
 
+        <!-- DIREITOS AUTORAIS E MODIFICAÇÃO -->
         <div class="rodape-final">
 
             <p>
-                &copy; <span id="ano-atual"></span>
+                &copy;
+                <span id="ano-atual"></span>
                 Câmara de Comércio de Garça
             </p>
 

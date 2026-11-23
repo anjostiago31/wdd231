@@ -1,11 +1,15 @@
+
 /* ==========================================
    CÂMARA DE COMÉRCIO DE GARÇA
    Arquivo: diretorio.css
    Autor: Tiago dos Anjos
-   Descrição: Estilos do diretório de empresas
+   Descrição: Estilos da página de diretório
 ========================================== */
 
-/* INTRODUÇÃO */
+/* ==========================================
+   1. INTRODUÇÃO
+========================================== */
+
 .diretorio-introducao {
     background-color: var(--cinza-claro);
     text-align: center;
@@ -20,7 +24,10 @@
     margin: 0 auto 1rem;
 }
 
-/* PESQUISA E FILTROS */
+/* ==========================================
+   2. PESQUISA E FILTROS
+========================================== */
+
 .filtros-diretorio {
     display: grid;
     gap: 1.5rem;
@@ -36,13 +43,26 @@
 .filtros-diretorio input,
 .filtros-diretorio select {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     padding: 0.9rem;
     border: 1px solid var(--cinza-borda-formulario);
     border-radius: 5px;
     background-color: var(--branco);
+    font: inherit;
 }
 
-/* CONTROLES DE VISUALIZAÇÃO */
+.filtros-diretorio input:focus-visible,
+.filtros-diretorio select:focus-visible {
+    outline: 3px solid var(--dourado);
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   3. CONTROLES DE VISUALIZAÇÃO
+========================================== */
+
 .controles-diretorio {
     display: flex;
     flex-direction: column;
@@ -52,16 +72,23 @@
 
 .botoes-visualizacao {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
 }
 
 .botoes-visualizacao button {
     padding: 0.7rem 1.2rem;
+    min-height: 44px;
     border: 1px solid var(--azul-principal);
     border-radius: 5px;
     background-color: var(--branco);
     color: var(--azul-principal);
+    font: inherit;
     font-weight: bold;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
 
 .botoes-visualizacao button:hover,
@@ -70,27 +97,78 @@
     color: var(--branco);
 }
 
-/* VISUALIZAÇÃO EM GRADE */
-.empresas-grade {
-    display: grid;
-    gap: 1.5rem;
+.botoes-visualizacao button:focus-visible {
+    outline: 3px solid var(--dourado);
+    outline-offset: 3px;
 }
 
-/* CARTÕES DAS EMPRESAS */
+/* ==========================================
+   4. VISUALIZAÇÃO EM GRADE
+========================================== */
+
+.empresas-grade {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+/* ==========================================
+   5. CARTÕES DAS EMPRESAS
+========================================== */
+
 .empresa-card {
+    min-width: 0;
     padding: 1.8rem;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    background-color: var(--branco);
+    border: 1px solid var(--cinza-borda-formulario);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.empresa-card:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 
 .empresa-card h3 {
     margin-bottom: 0.7rem;
+    color: var(--azul-principal);
+    overflow-wrap: anywhere;
 }
 
 .empresa-card p {
     margin-bottom: 0.8rem;
+    line-height: 1.6;
 }
+
+/* ==========================================
+   6. LOGOTIPOS DAS EMPRESAS
+========================================== */
+
+.empresa-logo {
+    display: block;
+    width: 160px;
+    height: 100px;
+    max-width: 100%;
+    object-fit: contain;
+    align-self: center;
+    margin: 0 auto 1.5rem;
+}
+
+/* ==========================================
+   7. CATEGORIA DA EMPRESA
+========================================== */
 
 .empresa-categoria {
     display: inline-block;
+    align-self: flex-start;
     background-color: var(--cinza-claro);
     color: var(--azul-principal);
     padding: 0.3rem 0.8rem;
@@ -99,14 +177,45 @@
     font-size: 0.9rem;
 }
 
-.empresa-card a {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: var(--azul-secundario);
-    text-decoration: underline;
+/* ==========================================
+   8. NÍVEL DE ASSOCIAÇÃO
+========================================== */
+
+.empresa-nivel {
+    display: block;
+    font-weight: bold;
+    color: var(--azul-principal);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
 }
 
-/* VISUALIZAÇÃO EM LISTA */
+/* ==========================================
+   9. LINKS DAS EMPRESAS
+========================================== */
+
+.empresa-card a {
+    display: inline-block;
+    margin-top: auto;
+    padding-top: 0.5rem;
+    color: var(--azul-secundario);
+    text-decoration: underline;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.empresa-card a:hover {
+    text-decoration-thickness: 2px;
+}
+
+.empresa-card a:focus-visible {
+    outline: 3px solid var(--dourado);
+    outline-offset: 3px;
+}
+
+/* ==========================================
+   10. VISUALIZAÇÃO EM LISTA
+========================================== */
+
 .empresas-lista {
     display: flex;
     flex-direction: column;
@@ -117,4 +226,103 @@
     width: 100%;
     box-shadow: none;
     border-left: 5px solid var(--dourado);
+}
+
+.empresas-lista .empresa-logo {
+    width: 120px;
+    height: 80px;
+}
+
+/* ==========================================
+   11. RESPONSIVIDADE - TABLETS
+========================================== */
+
+@media (min-width: 600px) {
+
+    .filtros-diretorio {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .controles-diretorio {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .empresas-grade {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .empresas-lista .empresa-card {
+        display: grid;
+        grid-template-columns: 140px minmax(0, 1fr);
+        column-gap: 1.5rem;
+        align-items: start;
+    }
+
+    .empresas-lista .empresa-logo {
+        grid-column: 1;
+        grid-row: 1 / span 7;
+        margin: 0 auto;
+    }
+
+    .empresas-lista .empresa-card > :not(.empresa-logo) {
+        grid-column: 2;
+    }
+}
+
+/* ==========================================
+   12. RESPONSIVIDADE - DESKTOP
+========================================== */
+
+@media (min-width: 900px) {
+
+    .empresas-grade {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .empresa-card {
+        padding: 2rem;
+    }
+
+    .empresa-logo {
+        width: 180px;
+        height: 110px;
+    }
+}
+
+/* ==========================================
+   13. TELAS MUITO PEQUENAS
+========================================== */
+
+@media (max-width: 359px) {
+
+    .empresa-card {
+        padding: 1rem;
+    }
+
+    .empresa-logo {
+        width: 130px;
+        height: 85px;
+    }
+
+    .botoes-visualizacao button {
+        padding: 0.65rem 0.9rem;
+    }
+}
+
+/* ==========================================
+   14. PREFERÊNCIA POR MOVIMENTO REDUZIDO
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .empresa-card,
+    .botoes-visualizacao button {
+        transition: none;
+    }
 }

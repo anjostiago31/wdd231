@@ -1,3 +1,4 @@
+
 /* ==========================================
    CÂMARA DE COMÉRCIO DE GARÇA
    Arquivo: diretorio.js
@@ -38,13 +39,19 @@ async function carregarEmpresas() {
             throw new Error("Não foi possível carregar as empresas.");
         }
 
-        empresas = await resposta.json();
+        const dados = await resposta.json();
+
+        if (!Array.isArray(dados)) {
+            throw new Error("O JSON deve conter uma lista de empresas.");
+        }
+
+        empresas = dados;
 
         exibirEmpresas(empresas);
 
     } catch (erro) {
 
-        console.error("Erro:", erro);
+        console.error("Erro ao carregar empresas:", erro);
 
         containerEmpresas.textContent =
             "Não foi possível carregar o diretório.";
@@ -55,7 +62,28 @@ async function carregarEmpresas() {
 }
 
 // ==========================================
-// 3. CRIAR CARTÕES
+// 3. IDENTIFICAR NÍVEL DE ASSOCIAÇÃO
+// ==========================================
+
+function obterNivelAssociacao(nivel) {
+
+    const niveis = {
+        1: "Membro",
+        2: "Prata",
+        3: "Ouro",
+        bronze: "Membro",
+        membro: "Membro",
+        prata: "Prata",
+        ouro: "Ouro"
+    };
+
+    const chave = String(nivel ?? "").toLowerCase();
+
+    return niveis[chave] || "Membro";
+}
+
+// ==========================================
+// 4. CRIAR CARTÕES DAS EMPRESAS
 // ==========================================
 
 function criarCartaoEmpresa(empresa) {
@@ -64,37 +92,134 @@ function criarCartaoEmpresa(empresa) {
 
     artigo.classList.add("empresa-card");
 
+    // ======================================
+    // LOGOTIPO DA EMPRESA
+    // ======================================
+
+    if (empresa.imagem) {
+
+        const imagem = document.createElement("img");
+
+        imagem.src = empresa.imagem;
+
+        imagem.alt = `Logotipo da empresa ${empresa.nome}`;
+
+        imagem.loading = "lazy";
+
+        imagem.decoding = "async";
+
+        imagem.width = 160;
+
+        imagem.height = 100;
+
+        imagem.classList.add("empresa-logo");
+
+        // Caso a imagem não seja encontrada
+        imagem.addEventListener("error", () => {
+
+            console.warn(
+                `Imagem não encontrada: ${empresa.imagem}`
+            );
+
+            imagem.remove();
+
+        });
+
+        artigo.appendChild(imagem);
+    }
+
+    // ======================================
+    // NOME DA EMPRESA
+    // ======================================
+
     const titulo = document.createElement("h3");
+
     titulo.textContent = empresa.nome;
 
+    // ======================================
+    // CATEGORIA
+    // ======================================
+
     const categoria = document.createElement("p");
+
     categoria.classList.add("empresa-categoria");
+
     categoria.textContent = empresa.categoria;
 
+    // ======================================
+    // NÍVEL DE ASSOCIAÇÃO
+    // ======================================
+
+    const nivel = document.createElement("p");
+
+    nivel.classList.add("empresa-nivel");
+
+    const nomeNivel = obterNivelAssociacao(empresa.nivel);
+
+    nivel.textContent = `Associação: ${nomeNivel}`;
+
+    // ======================================
+    // DESCRIÇÃO
+    // ======================================
+
     const descricao = document.createElement("p");
-    descricao.textContent = empresa.descricao;
+
+    descricao.textContent = empresa.descricao || "";
+
+    // ======================================
+    // ENDEREÇO
+    // ======================================
 
     const endereco = document.createElement("p");
-    endereco.textContent = `Endereço: ${empresa.endereco}`;
+
+    endereco.textContent =
+        `Endereço: ${empresa.endereco || "Não informado"}`;
+
+    // ======================================
+    // TELEFONE
+    // ======================================
 
     const telefone = document.createElement("p");
-    telefone.textContent = `Telefone: ${empresa.telefone}`;
+
+    telefone.textContent =
+        `Telefone: ${empresa.telefone || "Não informado"}`;
+
+    // ======================================
+    // ADICIONAR ELEMENTOS AO CARTÃO
+    // ======================================
 
     artigo.appendChild(titulo);
+
     artigo.appendChild(categoria);
+
+    artigo.appendChild(nivel);
+
     artigo.appendChild(descricao);
+
     artigo.appendChild(endereco);
+
     artigo.appendChild(telefone);
 
-    // Exibir site apenas quando existir
+    // ======================================
+    // SITE DA EMPRESA
+    // ======================================
+
     if (empresa.site) {
 
         const link = document.createElement("a");
 
         link.href = empresa.site;
+
         link.textContent = "Visitar site";
+
         link.target = "_blank";
+
         link.rel = "noopener noreferrer";
+
+        link.setAttribute(
+            "aria-label",
+            `Visitar o site da empresa ${empresa.nome}`
+        );
 
         artigo.appendChild(link);
     }
@@ -103,7 +228,7 @@ function criarCartaoEmpresa(empresa) {
 }
 
 // ==========================================
-// 4. EXIBIR EMPRESAS
+// 5. EXIBIR EMPRESAS
 // ==========================================
 
 function exibirEmpresas(lista) {
@@ -125,31 +250,35 @@ function exibirEmpresas(lista) {
         return;
     }
 
+    const fragmento = document.createDocumentFragment();
+
     lista.forEach((empresa) => {
 
         const cartao = criarCartaoEmpresa(empresa);
 
-        containerEmpresas.appendChild(cartao);
+        fragmento.appendChild(cartao);
 
     });
+
+    containerEmpresas.appendChild(fragmento);
 }
 
 // ==========================================
-// 5. FILTRAR EMPRESAS
+// 6. FILTRAR EMPRESAS
 // ==========================================
 
 function filtrarEmpresas() {
 
     const pesquisa = campoPesquisa.value
-        .toLowerCase()
+        .toLocaleLowerCase("pt-BR")
         .trim();
 
     const categoriaSelecionada = campoCategoria.value;
 
     const resultado = empresas.filter((empresa) => {
 
-        const nomeCorresponde = empresa.nome
-            .toLowerCase()
+        const nomeCorresponde = String(empresa.nome || "")
+            .toLocaleLowerCase("pt-BR")
             .includes(pesquisa);
 
         const categoriaCorresponde =
@@ -164,7 +293,7 @@ function filtrarEmpresas() {
 }
 
 // ==========================================
-// 6. VISUALIZAÇÃO EM GRADE
+// 7. VISUALIZAÇÃO EM GRADE
 // ==========================================
 
 function visualizarGrade() {
@@ -183,7 +312,7 @@ function visualizarGrade() {
 }
 
 // ==========================================
-// 7. VISUALIZAÇÃO EM LISTA
+// 8. VISUALIZAÇÃO EM LISTA
 // ==========================================
 
 function visualizarLista() {
@@ -202,7 +331,7 @@ function visualizarLista() {
 }
 
 // ==========================================
-// 8. EVENTOS
+// 9. EVENTOS
 // ==========================================
 
 if (
@@ -214,13 +343,29 @@ if (
     botaoLista
 ) {
 
-    campoPesquisa.addEventListener("input", filtrarEmpresas);
+    campoPesquisa.addEventListener(
+        "input",
+        filtrarEmpresas
+    );
 
-    campoCategoria.addEventListener("change", filtrarEmpresas);
+    campoCategoria.addEventListener(
+        "change",
+        filtrarEmpresas
+    );
 
-    botaoGrade.addEventListener("click", visualizarGrade);
+    botaoGrade.addEventListener(
+        "click",
+        visualizarGrade
+    );
 
-    botaoLista.addEventListener("click", visualizarLista);
+    botaoLista.addEventListener(
+        "click",
+        visualizarLista
+    );
 
+    // Configurar visualização inicial
+    visualizarGrade();
+
+    // Carregar as empresas
     carregarEmpresas();
 }

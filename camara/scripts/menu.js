@@ -1,3 +1,4 @@
+
 /* ==========================================
    CÂMARA DE COMÉRCIO DE GARÇA
    Arquivo: menu.js
@@ -27,17 +28,25 @@ if (botaoMenu && navegacao) {
         const menuAberto = navegacao.classList.contains("aberto");
 
         // Atualiza o atributo de acessibilidade
-        botaoMenu.setAttribute("aria-expanded", String(menuAberto));
+        botaoMenu.setAttribute(
+            "aria-expanded",
+            String(menuAberto)
+        );
 
         // Altera o ícone e a descrição do botão
         if (menuAberto) {
+
             botaoMenu.textContent = "✕";
+
             botaoMenu.setAttribute(
                 "aria-label",
                 "Fechar menu de navegação"
             );
+
         } else {
+
             botaoMenu.textContent = "☰";
+
             botaoMenu.setAttribute(
                 "aria-label",
                 "Abrir menu de navegação"
@@ -60,7 +69,10 @@ if (botaoMenu && navegacao) {
 
             botaoMenu.textContent = "☰";
 
-            botaoMenu.setAttribute("aria-expanded", "false");
+            botaoMenu.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
             botaoMenu.setAttribute(
                 "aria-label",
@@ -77,19 +89,31 @@ if (botaoMenu && navegacao) {
 
     document.addEventListener("keydown", (evento) => {
 
-        if (evento.key === "Escape") {
+        // Só executa se a tecla for Esc
+        // e o menu estiver aberto
+        if (
+            evento.key === "Escape" &&
+            navegacao.classList.contains("aberto")
+        ) {
 
+            // Fecha o menu
             navegacao.classList.remove("aberto");
 
+            // Restaura o ícone
             botaoMenu.textContent = "☰";
 
-            botaoMenu.setAttribute("aria-expanded", "false");
+            // Atualiza a acessibilidade
+            botaoMenu.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
             botaoMenu.setAttribute(
                 "aria-label",
                 "Abrir menu de navegação"
             );
 
+            // Devolve o foco ao botão
             botaoMenu.focus();
 
         }
@@ -116,17 +140,22 @@ if (anoAtual) {
 // 6. DATA DA ÚLTIMA MODIFICAÇÃO
 // ==========================================
 
-const ultimaModificacao = document.querySelector("#ultima-modificacao");
+const ultimaModificacao =
+    document.querySelector("#ultima-modificacao");
 
 if (ultimaModificacao) {
 
-    const dataModificacao = new Date(document.lastModified);
+    const dataModificacao =
+        new Date(document.lastModified);
 
-    const dataFormatada = dataModificacao.toLocaleDateString("pt-BR", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric"
-    });
+    const dataFormatada =
+        dataModificacao.toLocaleString("pt-BR", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit"
+        });
 
     ultimaModificacao.textContent =
         `Última modificação: ${dataFormatada}`;
