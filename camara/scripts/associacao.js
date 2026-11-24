@@ -93,7 +93,10 @@ modais.forEach((modal) => {
 ========================================== */
 
 const botoesPlanos = document.querySelectorAll(".escolher-plano");
-const campoNivel = document.querySelector("#nivel");
+
+const campoNivel =
+    document.querySelector("#membership") ||
+    document.querySelector("#nivel");
 
 botoesPlanos.forEach((botao) => {
 
