@@ -39,14 +39,32 @@ linksModais.forEach((link) => {
 });
 
 /* ==========================================
-   3. FECHAMENTO DOS MODAIS
+   3. FECHAMENTO DOS MODAIS PELO BOTÃO
+========================================== */
+
+const botoesFechar = document.querySelectorAll(".fechar-modal");
+
+botoesFechar.forEach((botao) => {
+
+    botao.addEventListener("click", () => {
+
+        const modal = botao.closest("dialog");
+
+        if (modal && modal.open) {
+            modal.close();
+        }
+
+    });
+
+});
+
+/* ==========================================
+   4. FECHAMENTO AO CLICAR FORA DO MODAL
 ========================================== */
 
 const modais = document.querySelectorAll(".modal-associacao");
 
 modais.forEach((modal) => {
-
-    // Fecha o modal ao clicar fora da janela.
 
     modal.addEventListener("click", (evento) => {
 
@@ -68,13 +86,10 @@ modais.forEach((modal) => {
 
     });
 
-    // O botão Fechar utiliza method="dialog".
-    // A tecla Esc é controlada pelo próprio elemento dialog.
-
 });
 
 /* ==========================================
-   4. SELEÇÃO DO NÍVEL DE ASSOCIAÇÃO
+   5. SELEÇÃO DO NÍVEL DE ASSOCIAÇÃO
 ========================================== */
 
 const botoesPlanos = document.querySelectorAll(".escolher-plano");
