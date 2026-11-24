@@ -1,6 +1,14 @@
-/* Câmara de Comércio de Garça | associacao.css */
+/* ==========================================
+   CÂMARA DE COMÉRCIO DE GARÇA
+   Arquivo: associacao.css
+   Autor: Tiago dos Anjos
+   Descrição: Estilos da página de associação
+========================================== */
 
-/* INTRODUÇÃO */
+/* ==========================================
+   1. INTRODUÇÃO
+========================================== */
+
 .associacao-introducao {
     background-color: var(--azul-principal);
     color: var(--branco);
@@ -17,51 +25,314 @@
     margin: 0 auto 2rem;
 }
 
-/* BENEFÍCIOS E PLANOS */
-.planos-associacao {
+/* ==========================================
+   2. BENEFÍCIOS DA ASSOCIAÇÃO
+========================================== */
+
+.beneficios-associacao {
     background-color: var(--cinza-claro);
+}
+
+.beneficios-associacao h2,
+.beneficios-associacao .pagina-conteudo > p {
+    text-align: center;
+}
+
+.beneficios-associacao .cards {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.beneficios-associacao .card {
+    background-color: var(--branco);
+    padding: 1.5rem;
+    border-radius: var(--borda);
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+.beneficios-associacao .card p {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   3. SEÇÃO DO FORMULÁRIO
+========================================== */
+
+.secao-formulario {
+    background-color: var(--branco);
+}
+
+.secao-formulario .pagina-conteudo > h2 {
+    margin-bottom: 1rem;
+}
+
+.secao-formulario .pagina-conteudo > p {
+    margin-bottom: 2rem;
+}
+
+#formulario-associacao {
+    scroll-margin-top: 2rem;
+}
+
+/* ==========================================
+   4. LAYOUT DO FORMULÁRIO E DOS PLANOS
+========================================== */
+
+.layout-associacao {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+.layout-associacao > * {
+    min-width: 0;
+}
+
+/* ==========================================
+   5. FORMULÁRIO
+========================================== */
+
+.formulario {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 1.5rem;
+    background-color: var(--cinza-claro);
+    border: 1px solid var(--cinza-medio);
+    border-radius: var(--borda);
+    box-shadow: var(--sombra);
+}
+
+.formulario fieldset {
+    min-width: 0;
+    border: none;
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+.formulario legend {
+    width: 100%;
+    color: var(--azul-principal);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--dourado);
+}
+
+/* ==========================================
+   6. CAMPOS DO FORMULÁRIO
+========================================== */
+
+.formulario label {
+    display: block;
+    margin-bottom: 1.3rem;
+    color: var(--azul-principal);
+    font-weight: 600;
+}
+
+.formulario input:not([type="hidden"]),
+.formulario select,
+.formulario textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    margin-top: 0.5rem;
+    padding: 0.85rem;
+    border: 1px solid var(--cinza-borda-formulario);
+    border-radius: 5px;
+    background-color: var(--branco);
+    color: var(--cinza-escuro);
+    font: inherit;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+.formulario input::placeholder,
+.formulario textarea::placeholder {
+    color: #59636d;
+    opacity: 1;
+}
+
+.formulario input:focus-visible,
+.formulario select:focus-visible,
+.formulario textarea:focus-visible {
+    outline: 3px solid var(--azul-secundario);
+    outline-offset: 2px;
+    border-color: var(--azul-secundario);
+}
+
+.formulario textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.formulario input[type="hidden"] {
+    display: none;
+}
+
+/* ==========================================
+   7. AVISOS DO FORMULÁRIO
+========================================== */
+
+.aviso-formulario {
+    color: var(--azul-principal);
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.aviso-privacidade {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--azul-aviso);
+    color: var(--azul-principal);
+    border-left: 4px solid var(--azul-secundario);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   8. BOTÃO DE ENVIO
+========================================== */
+
+.formulario button[type="submit"] {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    padding: 1rem;
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button[type="submit"]:hover {
+    background-color: var(--azul-secundario);
+}
+
+.formulario button[type="submit"]:focus-visible {
+    outline: 3px solid var(--azul-secundario);
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   9. NÍVEIS DE ASSOCIAÇÃO
+========================================== */
+
+.planos-associacao {
+    min-width: 0;
+    padding: 1.5rem;
+    background-color: var(--cinza-claro);
+    border-radius: var(--borda);
+}
+
+.planos-associacao > h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.planos-associacao > p {
+    text-align: center;
 }
 
 .planos-container {
     display: grid;
-    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
     margin-top: 2rem;
 }
+
+/* ==========================================
+   10. CARTÕES DE ASSOCIAÇÃO
+========================================== */
 
 .plano {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    align-items: stretch;
+    min-width: 0;
+    padding: 1.5rem;
+    background-color: var(--branco);
+    border: 1px solid var(--cinza-medio);
+    border-top: 5px solid var(--azul-principal);
+    border-radius: var(--borda);
+    box-shadow: var(--sombra);
+    text-align: center;
+    overflow-wrap: anywhere;
+
+    /* Animação inicial exigida na atividade S04 */
+    animation: entrada-plano 0.7s ease-out both;
+
+    transition: box-shadow 0.3s ease;
+}
+
+.plano:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
 }
 
 .plano h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
     text-align: center;
 }
 
 .plano-descricao {
+    margin-bottom: 1rem;
     text-align: center;
+}
+
+.plano-valor {
+    color: var(--azul-principal);
+    font-size: 1.25rem;
+    font-weight: bold;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
-.plano ul {
-    padding-left: 1.5rem;
-    margin-bottom: 2rem;
+/* ==========================================
+   11. IDENTIDADE VISUAL DOS PLANOS
+========================================== */
+
+/* Associação NP */
+
+.plano-np {
+    border-top-color: #64748b;
 }
 
-.plano li {
-    margin-bottom: 0.8rem;
+/* Associação Bronze */
+
+.plano-bronze {
+    border-top-color: #a66b35;
 }
 
-.plano .botao {
-    margin-top: auto;
-    border: none;
+/* Associação Prata */
+
+.plano-prata {
+    border-top-color: #8996a3;
 }
 
-/* PLANO OURO */
+/* Associação Ouro */
+
+.plano-ouro {
+    border-top-color: var(--dourado);
+}
+
 .plano-destaque {
     border: 2px solid var(--dourado);
+    border-top-width: 5px;
 }
 
 .selo-plano {
@@ -69,45 +340,335 @@
     background-color: var(--dourado);
     color: var(--azul-principal);
     padding: 0.5rem 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
+    font-size: 0.9rem;
 }
 
-/* FORMULÁRIO */
-.formulario fieldset {
+/* ==========================================
+   12. BOTÕES DOS PLANOS
+========================================== */
+
+.plano .botao {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    margin-top: auto;
+    padding: 0.8rem;
     border: none;
-    margin-bottom: 2rem;
+    border-radius: 5px;
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-.formulario legend {
+.plano .botao:hover {
+    background-color: var(--azul-secundario);
+}
+
+.escolher-plano {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 0.8rem;
+    padding: 0.8rem;
+    border: 1px solid var(--azul-principal);
+    border-radius: 5px;
+    background-color: var(--branco);
     color: var(--azul-principal);
-    font-size: 1.3rem;
     font-weight: bold;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.escolher-plano:hover {
+    background-color: var(--azul-principal);
+    color: var(--branco);
+}
+
+.plano .botao:focus-visible,
+.escolher-plano:focus-visible {
+    outline: 3px solid var(--azul-secundario);
+    outline-offset: 3px;
+}
+
+.aviso-planos {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    color: var(--cinza-escuro);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* ==========================================
+   13. ANIMAÇÃO INICIAL DOS CARTÕES
+========================================== */
+
+@keyframes entrada-plano {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Entrada progressiva dos quatro cartões */
+
+.plano:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.plano:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.plano:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.plano:nth-child(4) {
+    animation-delay: 0.55s;
+}
+
+/* ==========================================
+   14. MODAIS DE ASSOCIAÇÃO
+========================================== */
+
+.modal-associacao {
+    position: fixed;
+    inset: 0;
+    width: calc(100% - 2rem);
+    max-width: 600px;
+    max-height: 85vh;
+    margin: auto;
+    padding: 1.5rem;
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+    background-color: var(--branco);
+    color: var(--cinza-escuro);
+    border: none;
+    border-top: 6px solid var(--dourado);
+    border-radius: var(--borda);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.modal-associacao::backdrop {
+    background-color: rgba(16, 38, 58, 0.75);
+}
+
+.modal-associacao[open] {
+    animation: entrada-modal 0.25s ease-out;
+}
+
+.modal-associacao h2 {
+    color: var(--azul-principal);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
     border-bottom: 2px solid var(--dourado);
 }
 
-.formulario textarea {
-    resize: vertical;
+.modal-associacao h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.aviso-formulario {
-    font-size: 0.9rem;
-    font-weight: bold;
+.modal-associacao p {
+    line-height: 1.6;
 }
 
-.aviso-privacidade {
-    border-radius: 4px;
+.modal-associacao ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.formulario button[type="submit"] {
+.modal-associacao li {
+    margin-bottom: 0.6rem;
+}
+
+.modal-associacao strong {
+    color: var(--azul-principal);
+}
+
+/* ==========================================
+   15. BOTÃO DE FECHAMENTO DOS MODAIS
+========================================== */
+
+.modal-associacao form {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.modal-associacao .fechar-modal {
+    display: block;
     width: 100%;
-    transition: background-color 0.3s;
+    min-height: 44px;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-#formulario-associacao {
-    scroll-margin-top: 2rem;
+.modal-associacao .fechar-modal:hover {
+    background-color: var(--azul-secundario);
+}
+
+.modal-associacao .fechar-modal:focus-visible {
+    outline: 3px solid var(--azul-secundario);
+    outline-offset: 3px;
+}
+
+/* Animação de abertura do modal */
+
+@keyframes entrada-modal {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   16. RESPONSIVIDADE - TABLETS
+========================================== */
+
+@media (min-width: 600px) {
+
+    .beneficios-associacao .cards {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .formulario {
+        padding: 2rem;
+    }
+
+    .planos-container {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .modal-associacao {
+        padding: 2rem;
+    }
+}
+
+/* ==========================================
+   17. RESPONSIVIDADE - DESKTOP
+========================================== */
+
+@media (min-width: 900px) {
+
+    .beneficios-associacao .cards {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    /* Formulário à esquerda e planos à direita */
+
+    .layout-associacao {
+        grid-template-columns:
+            minmax(0, 3fr) minmax(0, 2fr);
+        gap: 2.5rem;
+        align-items: start;
+    }
+
+    .formulario {
+        padding: 2rem;
+    }
+
+    .planos-associacao {
+        padding: 1.5rem;
+    }
+
+    .planos-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+    }
+
+    .plano {
+        padding: 1.8rem;
+    }
+
+    .modal-associacao .fechar-modal {
+        width: auto;
+        min-width: 120px;
+        margin-left: auto;
+    }
+}
+
+/* ==========================================
+   18. TELAS MUITO PEQUENAS
+========================================== */
+
+@media (max-width: 359px) {
+
+    .formulario,
+    .planos-associacao,
+    .plano {
+        padding: 1rem;
+    }
+
+    .formulario legend {
+        font-size: 1.1rem;
+    }
+
+    .plano h3 {
+        font-size: 1.15rem;
+    }
+
+    .plano-valor {
+        font-size: 1.1rem;
+    }
+
+    .modal-associacao {
+        padding: 1rem;
+    }
+}
+
+/* ==========================================
+   19. PREFERÊNCIA POR MOVIMENTO REDUZIDO
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .plano,
+    .modal-associacao[open] {
+        animation: none;
+    }
+
+    .plano,
+    .plano .botao,
+    .escolher-plano,
+    .formulario button[type="submit"],
+    .modal-associacao .fechar-modal {
+        transition: none;
+    }
 }

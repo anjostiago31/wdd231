@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Conheça os benefícios de se associar à Câmara de Comércio de Garça e solicite sua associação.">
+
+    <meta name="author" content="Tiago dos Anjos">
+
+    <title>Associe-se | Câmara de Comércio de Garça</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" href="imagens/garca_azul_oti.webp" type="image/webp">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title"
+        content="Associe-se | Câmara de Comércio de Garça">
+
+    <meta property="og:description"
+        content="Conheça nossos níveis de associação e participe da comunidade empresarial de Garça.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:image"
+        content="https://anjostiago31.github.io/wdd231/camara/imagens/garca_azul_oti.webp">
+
+    <meta property="og:url"
+        content="https://anjostiago31.github.io/wdd231/camara/associacao.html">
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="estilos/base.css">
+    <link rel="stylesheet" href="estilos/maior.css">
+    <link rel="stylesheet" href="estilos/associacao.css">
+
+    <!-- SCRIPTS -->
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/associacao.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         CABEÇALHO
+    ========================================== -->
+
+    <header class="cabecalho">
+
+        <div class="identidade">
+
+            <img
+                src="imagens/garca_azul_oti.webp"
+                alt="Logotipo da Câmara de Comércio de Garça"
+                width="80"
+                height="80">
+
+            <div>
+                <h2>Câmara de Comércio</h2>
+                <p>Garça - São Paulo</p>
+            </div>
+
+        </div>
+
+        <button
+            id="menu"
+            type="button"
+            aria-label="Abrir menu de navegação"
+            aria-expanded="false"
+            aria-controls="navegacao">
+            ☰
+        </button>
+
+        <nav id="navegacao" aria-label="Navegação principal">
+
+            <ul>
+
+                <li>
+                    <a href="index.html">Início</a>
+                </li>
+
+                <li>
+                    <a href="sobre.html">Sobre</a>
+                </li>
+
+                <li>
+                    <a href="diretorio.html">Diretório</a>
+                </li>
+
+                <li>
+                    <a href="associacao.html" aria-current="page">
+                        Associe-se
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- ==========================================
+         CONTEÚDO PRINCIPAL
+    ========================================== -->
+
+    <main>
+
+        <!-- APRESENTAÇÃO -->
+
+        <section class="associacao-introducao">
+
+            <div class="pagina-conteudo">
+
+                <h1>Faça parte da nossa Comunidade Empresarial</h1>
+
+                <p>
+                    Associar-se à Câmara de Comércio de Garça
+                    é uma oportunidade de ampliar contatos,
+                    fortalecer parcerias e participar de
+                    iniciativas voltadas ao desenvolvimento
+                    econômico local.
+                </p>
+
+                <a href="#formulario-associacao" class="botao">
+                    Solicitar Associação
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             BENEFÍCIOS
+        ========================================== -->
+
+        <section class="beneficios-associacao">
+
+            <div class="pagina-conteudo">
+
+                <h2>Por Que Se Associar?</h2>
+
+                <p>
+                    Conheça algumas vantagens de participar
+                    de uma comunidade empresarial organizada.
+                </p>
+
+                <div class="cards">
+
+                    <article class="card">
+
+                        <h3>Visibilidade</h3>
+
+                        <p>
+                            Divulgue sua empresa e seus serviços
+                            por meio do diretório empresarial.
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>Networking</h3>
+
+                        <p>
+                            Amplie sua rede de contatos
+                            e estabeleça novas parcerias.
+                        </p>
+
+                    </article>
+
+                    <article class="card">
+
+                        <h3>Capacitação</h3>
+
+                        <p>
+                            Participe de treinamentos,
+                            palestras e atividades de
+                            desenvolvimento profissional.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             FORMULÁRIO E NÍVEIS DE ASSOCIAÇÃO
+        ========================================== -->
+
+        <section
+            id="formulario-associacao"
+            class="secao-formulario">
+
+            <div class="pagina-conteudo">
+
+                <h2>Solicitação de Associação</h2>
+
+                <p>
+                    Preencha o formulário para demonstrar
+                    interesse em participar da Câmara de Comércio.
+                </p>
+
+                <div class="layout-associacao">
+
+                    <!-- ======================================
+                         FORMULÁRIO
+                    ====================================== -->
+
+                    <form
+                        class="formulario"
+                        id="formulario"
+                        action="agradecimento.html"
+                        method="get">
+
+                        <!-- DADOS DO RESPONSÁVEL -->
+
+                        <fieldset>
+
+                            <legend>
+                                Informações do Responsável
+                            </legend>
+
+                            <label for="nome">
+
+                                Nome *
+
+                                <input
+                                    type="text"
+                                    id="nome"
+                                    name="nome"
+                                    title="Informe seu primeiro nome"
+                                    autocomplete="given-name"
+                                    required>
+
+                            </label>
+
+                            <label for="sobrenome">
+
+                                Sobrenome *
+
+                                <input
+                                    type="text"
+                                    id="sobrenome"
+                                    name="sobrenome"
+                                    title="Informe seu sobrenome"
+                                    autocomplete="family-name"
+                                    required>
+
+                            </label>
+
+                            <label for="cargo">
+
+                                Cargo ou Função
+
+                                <input
+                                    type="text"
+                                    id="cargo"
+                                    name="cargo"
+                                    title="Informe pelo menos sete caracteres, utilizando apenas letras, espaços ou hífens"
+                                    autocomplete="organization-title"
+                                    pattern="[\p{L} \-]{7,}"
+                                    minlength="7"
+                                    placeholder="Ex.: Gerente Comercial">
+
+                            </label>
+
+                            <label for="email">
+
+                                E-mail *
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    title="Informe seu endereço de e-mail"
+                                    autocomplete="email"
+                                    placeholder="exemplo@email.com"
+                                    required>
+
+                            </label>
+
+                            <label for="telefone">
+
+                                Número de Celular *
+
+                                <input
+                                    type="tel"
+                                    id="telefone"
+                                    name="telefone"
+                                    title="Informe seu número de celular"
+                                    autocomplete="tel"
+                                    placeholder="(14) 99999-9999"
+                                    required>
+
+                            </label>
+
+                        </fieldset>
+
+                        <!-- DADOS DA ORGANIZAÇÃO -->
+
+                        <fieldset>
+
+                            <legend>
+                                Informações da Organização
+                            </legend>
+
+                            <label for="empresa">
+
+                                Nome da Empresa ou Organização *
+
+                                <input
+                                    type="text"
+                                    id="empresa"
+                                    name="empresa"
+                                    title="Informe o nome da empresa ou organização"
+                                    autocomplete="organization"
+                                    required>
+
+                            </label>
+
+                            <label for="nivel">
+
+                                Nível de Associação *
+
+                                <select
+                                    id="nivel"
+                                    name="nivel"
+                                    title="Selecione um nível de associação"
+                                    required>
+
+                                    <option value="">
+                                        Selecione uma modalidade
+                                    </option>
+
+                                    <option value="np">
+                                        Associação NP - Sem Fins Lucrativos
+                                    </option>
+
+                                    <option value="bronze">
+                                        Associação Bronze
+                                    </option>
+
+                                    <option value="silver">
+                                        Associação Prata
+                                    </option>
+
+                                    <option value="gold">
+                                        Associação Ouro
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+                            <label for="descricao">
+
+                                Descrição da Empresa ou Organização
+
+                                <textarea
+                                    id="descricao"
+                                    name="descricao"
+                                    title="Descreva as atividades da empresa ou organização"
+                                    rows="5"
+                                    placeholder="Conte um pouco sobre sua empresa ou organização."></textarea>
+
+                            </label>
+
+                        </fieldset>
+
+                        <!-- DATA E HORA AUTOMÁTICAS -->
+
+                        <input
+                            type="hidden"
+                            id="data-solicitacao"
+                            name="dataSolicitacao">
+
+                        <p class="aviso-formulario">
+                            * Campos obrigatórios.
+                        </p>
+
+                        <p class="aviso-privacidade">
+                            Este formulário faz parte de um projeto
+                            acadêmico demonstrativo. Não utilize
+                            dados pessoais reais.
+                        </p>
+
+                        <button type="submit">
+                            Enviar Solicitação
+                        </button>
+
+                    </form>
+
+                    <!-- ======================================
+                         CARTÕES DE ASSOCIAÇÃO
+                    ====================================== -->
+
+                    <section
+                        class="planos-associacao"
+                        aria-labelledby="titulo-planos">
+
+                        <h2 id="titulo-planos">
+                            Níveis de Associação
+                        </h2>
+
+                        <p>
+                            Escolha a modalidade que melhor atende
+                            às necessidades da sua organização.
+                        </p>
+
+                        <div class="planos-container">
+
+                            <!-- PLANO NP -->
+
+                            <article class="plano plano-np">
+
+                                <h3>Associação NP</h3>
+
+                                <p class="plano-descricao">
+                                    Organizações sem fins lucrativos.
+                                </p>
+
+                                <p class="plano-valor">
+                                    Gratuita
+                                </p>
+
+                                <a
+                                    href="#modal-np"
+                                    class="botao abrir-modal"
+                                    data-modal="modal-np"
+                                    aria-haspopup="dialog">
+                                    Saiba mais sobre a Associação NP
+                                </a>
+
+                                <button
+                                    type="button"
+                                    class="escolher-plano"
+                                    data-plano="np">
+                                    Escolher modalidade
+                                </button>
+
+                            </article>
+
+                            <!-- PLANO BRONZE -->
+
+                            <article class="plano plano-bronze">
+
+                                <h3>Associação Bronze</h3>
+
+                                <p class="plano-descricao">
+                                    Para empresas que desejam
+                                    iniciar sua participação.
+                                </p>
+
+                                <p class="plano-valor">
+                                    R$ 50,00 por mês
+                                </p>
+
+                                <a
+                                    href="#modal-bronze"
+                                    class="botao abrir-modal"
+                                    data-modal="modal-bronze"
+                                    aria-haspopup="dialog">
+                                    Saiba mais sobre a Associação Bronze
+                                </a>
+
+                                <button
+                                    type="button"
+                                    class="escolher-plano"
+                                    data-plano="bronze">
+                                    Escolher modalidade
+                                </button>
+
+                            </article>
+
+                            <!-- PLANO PRATA -->
+
+                            <article class="plano plano-prata">
+
+                                <h3>Associação Prata</h3>
+
+                                <p class="plano-descricao">
+                                    Para empresas que desejam
+                                    ampliar sua presença no comércio local.
+                                </p>
+
+                                <p class="plano-valor">
+                                    R$ 100,00 por mês
+                                </p>
+
+                                <a
+                                    href="#modal-prata"
+                                    class="botao abrir-modal"
+                                    data-modal="modal-prata"
+                                    aria-haspopup="dialog">
+                                    Saiba mais sobre a Associação Prata
+                                </a>
+
+                                <button
+                                    type="button"
+                                    class="escolher-plano"
+                                    data-plano="silver">
+                                    Escolher modalidade
+                                </button>
+
+                            </article>
+
+                            <!-- PLANO OURO -->
+
+                            <article class="plano plano-ouro plano-destaque">
+
+                                <span class="selo-plano">
+                                    Maior Visibilidade
+                                </span>
+
+                                <h3>Associação Ouro</h3>
+
+                                <p class="plano-descricao">
+                                    Para empresas que buscam
+                                    maior participação e destaque.
+                                </p>
+
+                                <p class="plano-valor">
+                                    R$ 200,00 por mês
+                                </p>
+
+                                <a
+                                    href="#modal-ouro"
+                                    class="botao abrir-modal"
+                                    data-modal="modal-ouro"
+                                    aria-haspopup="dialog">
+                                    Saiba mais sobre a Associação Ouro
+                                </a>
+
+                                <button
+                                    type="button"
+                                    class="escolher-plano"
+                                    data-plano="gold">
+                                    Escolher modalidade
+                                </button>
+
+                            </article>
+
+                        </div>
+
+                        <p class="aviso-planos">
+                            Valores e benefícios fictícios,
+                            destinados exclusivamente a este
+                            projeto acadêmico.
+                        </p>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             MODAL - ASSOCIAÇÃO NP
+        ========================================== -->
+
+        <dialog
+            id="modal-np"
+            class="modal-associacao"
+            aria-labelledby="titulo-modal-np">
+
+            <h2 id="titulo-modal-np">
+                Associação NP
+            </h2>
+
+            <p>
+                Modalidade gratuita destinada a organizações
+                sociais, culturais e comunitárias sem fins lucrativos.
+            </p>
+
+            <h3>Benefícios</h3>
+
+            <ul>
+                <li>Participação na comunidade empresarial.</li>
+                <li>Listagem no diretório.</li>
+                <li>Divulgação institucional.</li>
+                <li>Participação em eventos comunitários.</li>
+            </ul>
+
+            <p>
+                <strong>Mensalidade:</strong> Gratuita.
+            </p>
+
+            <form method="dialog">
+
+                <button type="submit" class="botao fechar-modal">
+                    Fechar
+                </button>
+
+            </form>
+
+        </dialog>
+
+        <!-- ==========================================
+             MODAL - ASSOCIAÇÃO BRONZE
+        ========================================== -->
+
+        <dialog
+            id="modal-bronze"
+            class="modal-associacao"
+            aria-labelledby="titulo-modal-bronze">
+
+            <h2 id="titulo-modal-bronze">
+                Associação Bronze
+            </h2>
+
+            <p>
+                Modalidade destinada a empresas que desejam
+                iniciar sua participação na Câmara de Comércio.
+            </p>
+
+            <h3>Benefícios</h3>
+
+            <ul>
+                <li>Divulgação no diretório empresarial.</li>
+                <li>Participação em encontros empresariais.</li>
+                <li>Acesso a informações comerciais.</li>
+                <li>Oportunidades de networking.</li>
+                <li>Descontos de 5% em eventos selecionados.</li>
+            </ul>
+
+            <p>
+                <strong>Mensalidade:</strong> R$ 50,00.
+            </p>
+
+            <form method="dialog">
+
+                <button type="submit" class="botao fechar-modal">
+                    Fechar
+                </button>
+
+            </form>
+
+        </dialog>
+
+        <!-- ==========================================
+             MODAL - ASSOCIAÇÃO PRATA
+        ========================================== -->
+
+        <dialog
+            id="modal-prata"
+            class="modal-associacao"
+            aria-labelledby="titulo-modal-prata">
+
+            <h2 id="titulo-modal-prata">
+                Associação Prata
+            </h2>
+
+            <p>
+                Modalidade destinada a empresas que desejam
+                ampliar sua presença no comércio local.
+            </p>
+
+            <h3>Benefícios</h3>
+
+            <ul>
+                <li>Todos os benefícios da Associação Bronze.</li>
+                <li>Participação em treinamentos.</li>
+                <li>Publicações institucionais.</li>
+                <li>Divulgação nas redes sociais.</li>
+                <li>Participação em eventos especiais.</li>
+                <li>Descontos de 15% em eventos selecionados.</li>
+            </ul>
+
+            <p>
+                <strong>Mensalidade:</strong> R$ 100,00.
+            </p>
+
+            <form method="dialog">
+
+                <button type="submit" class="botao fechar-modal">
+                    Fechar
+                </button>
+
+            </form>
+
+        </dialog>
+
+        <!-- ==========================================
+             MODAL - ASSOCIAÇÃO OURO
+        ========================================== -->
+
+        <dialog
+            id="modal-ouro"
+            class="modal-associacao"
+            aria-labelledby="titulo-modal-ouro">
+
+            <h2 id="titulo-modal-ouro">
+                Associação Ouro
+            </h2>
+
+            <p>
+                Modalidade destinada a empresas que buscam
+                maior participação, publicidade e destaque.
+            </p>
+
+            <h3>Benefícios</h3>
+
+            <ul>
+                <li>Todos os benefícios da Associação Prata.</li>
+                <li>Destaque na página inicial do site.</li>
+                <li>Destaque no diretório empresarial.</li>
+                <li>Publicidade institucional.</li>
+                <li>Oportunidades de patrocínio.</li>
+                <li>Prioridade em eventos especiais.</li>
+                <li>Participação em encontros exclusivos.</li>
+                <li>Descontos de 30% em eventos selecionados.</li>
+            </ul>
+
+            <p>
+                <strong>Mensalidade:</strong> R$ 200,00.
+            </p>
+
+            <form method="dialog">
+
+                <button type="submit" class="botao fechar-modal">
+                    Fechar
+                </button>
+
+            </form>
+
+        </dialog>
+
+    </main>
+
+    <!-- ==========================================
+         RODAPÉ
+    ========================================== -->
+
+    <footer>
+
+        <div class="rodape-conteudo">
+
+            <div>
+
+                <h3>Câmara de Comércio de Garça</h3>
+
+                <p>Garça - São Paulo - Brasil</p>
+
+                <p>Projeto acadêmico demonstrativo</p>
+
+            </div>
+
+            <div>
+
+                <h3>Desenvolvimento</h3>
+
+                <p>Tiago dos Anjos de Oliveira</p>
+
+                <p>
+                    WDD 231 - Desenvolvimento Frontend para Web 1
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="rodape-final">
+
+            <p>
+                &copy; <span id="ano-atual"></span>
+                Câmara de Comércio de Garça
+            </p>
+
+            <p id="ultima-modificacao"></p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

@@ -2,79 +2,109 @@
    CÂMARA DE COMÉRCIO DE GARÇA
    Arquivo: associacao.js
    Autor: Tiago dos Anjos
-   Descrição: Interações do formulário
+   Descrição: Funcionalidades da associação
 ========================================== */
 
-// ==========================================
-// 1. SELECIONAR ELEMENTOS
-// ==========================================
-
-const formulario = document.querySelector("#formulario");
-
-const campoNivel = document.querySelector("#nivel");
+/* ==========================================
+   1. REGISTRO DE DATA E HORA
+========================================== */
 
 const campoData = document.querySelector("#data-solicitacao");
 
-const botoesPlano = document.querySelectorAll(".escolher-plano");
+if (campoData) {
+    campoData.value = new Date().toISOString();
+}
 
-// ==========================================
-// 2. SELECIONAR PLANO
-// ==========================================
+/* ==========================================
+   2. ABERTURA DOS MODAIS
+========================================== */
 
-botoesPlano.forEach((botao) => {
+const linksModais = document.querySelectorAll(".abrir-modal");
 
-    botao.addEventListener("click", () => {
+linksModais.forEach((link) => {
 
-        const plano = botao.dataset.plano;
+    link.addEventListener("click", (evento) => {
 
-        campoNivel.value = plano;
+        evento.preventDefault();
 
-        document.querySelector("#formulario-associacao")
-            .scrollIntoView({
-                behavior: "smooth"
-            });
+        const idModal = link.dataset.modal;
+        const modal = document.getElementById(idModal);
 
-        campoNivel.focus({
-            preventScroll: true
-        });
+        if (modal && !modal.open) {
+            modal.showModal();
+        }
 
     });
 
 });
 
-// ==========================================
-// 3. DATA E HORA DA SOLICITAÇÃO
-// ==========================================
+/* ==========================================
+   3. FECHAMENTO DOS MODAIS
+========================================== */
 
-function atualizarDataSolicitacao() {
+const modais = document.querySelectorAll(".modal-associacao");
 
-    const dataAtual = new Date();
+modais.forEach((modal) => {
 
-    campoData.value = dataAtual.toISOString();
-}
+    // Fecha o modal ao clicar fora da janela.
 
-// ==========================================
-// 4. VALIDAÇÃO E ENVIO
-// ==========================================
+    modal.addEventListener("click", (evento) => {
 
-if (formulario) {
-
-    formulario.addEventListener("submit", (evento) => {
-
-        atualizarDataSolicitacao();
-
-        if (!formulario.checkValidity()) {
-
-            evento.preventDefault();
-
-            formulario.reportValidity();
-
+        if (evento.target !== modal) {
             return;
         }
 
-        // O navegador enviará os dados para obrigado.html
-        // utilizando o método GET.
+        const limites = modal.getBoundingClientRect();
+
+        const cliqueFora =
+            evento.clientX < limites.left ||
+            evento.clientX > limites.right ||
+            evento.clientY < limites.top ||
+            evento.clientY > limites.bottom;
+
+        if (cliqueFora) {
+            modal.close();
+        }
 
     });
 
-}
+    // O botão Fechar utiliza method="dialog".
+    // A tecla Esc é controlada pelo próprio elemento dialog.
+
+});
+
+/* ==========================================
+   4. SELEÇÃO DO NÍVEL DE ASSOCIAÇÃO
+========================================== */
+
+const botoesPlanos = document.querySelectorAll(".escolher-plano");
+const campoNivel = document.querySelector("#nivel");
+
+botoesPlanos.forEach((botao) => {
+
+    botao.addEventListener("click", () => {
+
+        const planoSelecionado = botao.dataset.plano;
+
+        if (campoNivel) {
+
+            campoNivel.value = planoSelecionado;
+
+            campoNivel.focus({
+                preventScroll: true
+            });
+
+            const movimentoReduzido = window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+            campoNivel.scrollIntoView({
+                behavior: movimentoReduzido ? "instant" : "smooth",
+                block: "center"
+            });
+
+        }
+
+    });
+
+});

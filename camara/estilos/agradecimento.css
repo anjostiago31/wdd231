@@ -1,0 +1,373 @@
+/* ==========================================
+   CÂMARA DE COMÉRCIO DE GARÇA
+   Arquivo: agradecimento.css
+   Autor: Tiago dos Anjos
+   Descrição: Página de confirmação da associação
+========================================== */
+
+/* ==========================================
+   1. SEÇÃO DE CONFIRMAÇÃO
+========================================== */
+
+.confirmacao {
+    background-color: var(--cinza-claro);
+    padding: 3rem 0;
+    min-height: 65vh;
+}
+
+.confirmacao .pagina-conteudo {
+    width: 100%;
+    min-width: 0;
+}
+
+/* ==========================================
+   2. CARTÃO DE CONFIRMAÇÃO
+========================================== */
+
+.confirmacao-card {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: var(--branco);
+    border: 1px solid var(--cinza-medio);
+    border-top: 5px solid var(--dourado);
+    border-radius: var(--borda);
+    box-shadow: var(--sombra);
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   3. ÍCONE DE CONFIRMAÇÃO
+========================================== */
+
+.icone-confirmacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background-color: var(--verde-claro-confirmacao);
+    color: var(--verde-confirmacao);
+    border: 2px solid var(--verde-confirmacao);
+    border-radius: 50%;
+    font-size: 2.8rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* ==========================================
+   4. MENSAGEM DE AGRADECIMENTO
+========================================== */
+
+.confirmacao-card h1 {
+    color: var(--azul-principal);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.mensagem-confirmacao {
+    color: var(--azul-principal);
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.confirmacao-card > p {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   5. RESUMO DA SOLICITAÇÃO
+========================================== */
+
+.resumo-solicitacao {
+    min-width: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.2rem;
+    background-color: var(--cinza-claro);
+    border: 1px solid var(--cinza-medio);
+    border-radius: var(--borda);
+    text-align: left;
+}
+
+.resumo-solicitacao h2 {
+    color: var(--azul-principal);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--dourado);
+    text-align: center;
+}
+
+/* ==========================================
+   6. DADOS DO CANDIDATO
+========================================== */
+
+.dados-confirmacao {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.dados-confirmacao > div {
+    min-width: 0;
+    padding: 1rem;
+    background-color: var(--branco);
+    border: 1px solid var(--cinza-medio);
+    border-left: 4px solid var(--azul-principal);
+    border-radius: 5px;
+    overflow-wrap: anywhere;
+}
+
+/* Nome do campo */
+
+.dados-confirmacao dt {
+    color: var(--azul-principal);
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Informação preenchida pelo candidato */
+
+.dados-confirmacao dd {
+    color: var(--cinza-escuro);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Destaque do nível de associação */
+
+#confirmacao-nivel {
+    color: var(--azul-principal);
+    font-weight: bold;
+}
+
+/* Data e hora */
+
+#confirmacao-data {
+    color: var(--cinza-escuro);
+    font-weight: 500;
+}
+
+/* ==========================================
+   7. AVISO ACADÊMICO
+========================================== */
+
+.aviso-confirmacao {
+    padding: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: var(--azul-aviso);
+    color: var(--azul-principal);
+    border-left: 4px solid var(--azul-secundario);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* ==========================================
+   8. BOTÕES DE NAVEGAÇÃO
+========================================== */
+
+.acoes-confirmacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.acoes-confirmacao .botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    padding: 0.9rem 1.3rem;
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    border: 2px solid var(--azul-principal);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.acoes-confirmacao .botao:hover {
+    background-color: var(--azul-secundario);
+    border-color: var(--azul-secundario);
+    color: var(--branco);
+}
+
+/* Botões secundários */
+
+.acoes-confirmacao .botao-secundario {
+    background-color: var(--branco);
+    color: var(--azul-principal);
+    border: 2px solid var(--azul-principal);
+}
+
+.acoes-confirmacao .botao-secundario:hover {
+    background-color: var(--azul-principal);
+    color: var(--branco);
+}
+
+/* ==========================================
+   9. ACESSIBILIDADE
+========================================== */
+
+.acoes-confirmacao .botao:focus-visible {
+    outline: 3px solid var(--azul-secundario);
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   10. RESPONSIVIDADE - TABLETS
+========================================== */
+
+@media (min-width: 600px) {
+
+    .confirmacao {
+        padding: 4rem 0;
+    }
+
+    .confirmacao-card {
+        padding: 2rem;
+    }
+
+    .confirmacao-card h1 {
+        font-size: 2.2rem;
+    }
+
+    .resumo-solicitacao {
+        padding: 1.5rem;
+    }
+
+    .dados-confirmacao {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .acoes-confirmacao {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .acoes-confirmacao .botao {
+        width: auto;
+        flex: 1 1 180px;
+    }
+}
+
+/* ==========================================
+   11. RESPONSIVIDADE - COMPUTADORES
+========================================== */
+
+@media (min-width: 900px) {
+
+    .confirmacao {
+        padding: 5rem 0;
+    }
+
+    .confirmacao-card {
+        padding: 3rem;
+    }
+
+    .confirmacao-card h1 {
+        font-size: 2.5rem;
+    }
+
+    .icone-confirmacao {
+        width: 90px;
+        height: 90px;
+        font-size: 3.2rem;
+    }
+
+    .mensagem-confirmacao {
+        font-size: 1.25rem;
+    }
+
+    .resumo-solicitacao {
+        padding: 2rem;
+    }
+
+    .resumo-solicitacao h2 {
+        font-size: 1.6rem;
+    }
+
+    .dados-confirmacao {
+        gap: 1.2rem;
+    }
+
+    .dados-confirmacao > div {
+        padding: 1.2rem;
+    }
+
+    .acoes-confirmacao {
+        gap: 1.2rem;
+    }
+}
+
+/* ==========================================
+   12. TELAS MUITO PEQUENAS
+========================================== */
+
+@media (max-width: 359px) {
+
+    .confirmacao-card {
+        padding: 1rem;
+    }
+
+    .confirmacao-card h1 {
+        font-size: 1.5rem;
+    }
+
+    .resumo-solicitacao {
+        padding: 0.8rem;
+    }
+
+    .dados-confirmacao > div {
+        padding: 0.8rem;
+    }
+
+    .acoes-confirmacao .botao {
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================
+   13. PREFERÊNCIA POR MOVIMENTO REDUZIDO
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .acoes-confirmacao .botao {
+        transition: none;
+    }
+}
