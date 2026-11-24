@@ -96,7 +96,7 @@
    5. FORMULÁRIO
 ========================================== */
 
-.formulario {
+.layout-associacao .formulario {
     width: 100%;
     max-width: 100%;
     min-width: 0;
@@ -129,7 +129,7 @@
    6. CAMPOS DO FORMULÁRIO
 ========================================== */
 
-.formulario label {
+.layout-associacao .formulario label {
     display: block;
     margin-bottom: 1.3rem;
     color: var(--azul-principal);
@@ -504,14 +504,6 @@
    15. BOTÃO DE FECHAMENTO DOS MODAIS
 ========================================== */
 
-.modal-associacao form {
-    margin: 0;
-    padding: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-}
-
 .modal-associacao .fechar-modal {
     display: block;
     width: 100%;
@@ -562,7 +554,7 @@
             repeat(2, minmax(0, 1fr));
     }
 
-    .formulario {
+    .layout-associacao .formulario {
         padding: 2rem;
     }
 
@@ -596,7 +588,7 @@
         align-items: start;
     }
 
-    .formulario {
+    .layout-associacao .formulario {
         padding: 2rem;
     }
 
@@ -626,7 +618,7 @@
 
 @media (max-width: 359px) {
 
-    .formulario,
+    .layout-associacao .formulario,
     .planos-associacao,
     .plano {
         padding: 1rem;
